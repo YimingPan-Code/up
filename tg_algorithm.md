@@ -123,3 +123,73 @@ RUN QUERY astar(("Kings Cross","Station"), ("Kentish Town","Station"),["CONNECTI
 <div align=center>
 <img src="astar.png"/>
 </div>
+## Article Rank
+
+### Description and Uses
+
+ArticleRank is a variant of the Page Rank algorithm, which measures the transitive influence of nodes.
+
+Page Rank follows the assumption that relationships originating from low-degree nodes have a higher influence than relationships from high-degree nodes. Article Rank lowers the influence of low-degree nodes by lowering the scores being sent to their neighbors in each iteration.
+
+formula:see google folder
+
+### Specifications
+
+```
+CREATE QUERY tg_slpa (SET<STRING> v_type, SET<STRING> e_type, FLOAT threshold, INT max_iter, INT output_limit, 
+BOOL print_accum = TRUE, STRING file_path = "")
+```
+
+
+|  Characteristic   | Value  |
+|  ----  | ----  |
+| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
+| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
+| Result Size  | V = number of vertices |
+| Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
+| Graph Types  | Undirected edges |
+
+## Speaker-listener Label Propagation Algorithm
+
+### Description and Uses
+
+The Speaker-listener Label Propagation Algorithm (SLPA) is a variation of the Label Propagation algorithm that is able to detect overlapping communities. The main difference between LPA and SLPA is that each node can only hold a single label in LPA while it is allowed to possess multiple labels in SLPA. The algorithm begins with each vertex having its own unique label. Next we iteratively record labels in a local accumulator based on specific speaking rule and listening rule. Then the post-processing of the record labels is applied. Finally we remove the nested communities and output all the communities. Note that it is not guaranteed to produce the same results every time.
+
+### Specifications
+
+```
+CREATE QUERY tg_slpa (SET<STRING> v_type, SET<STRING> e_type, FLOAT threshold, INT max_iter, INT output_limit, 
+BOOL print_accum = TRUE, STRING file_path = "")
+```
+
+
+|  Characteristic   | Value  |
+|  ----  | ----  |
+| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
+| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
+| Result Size  | V = number of vertices |
+| Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
+| Graph Types  | Undirected edges |
+
+## Speaker-listener Label Propagation Algorithm
+
+### Description and Uses
+
+The Speaker-listener Label Propagation Algorithm (SLPA) is a variation of the Label Propagation algorithm that is able to detect overlapping communities. The main difference between LPA and SLPA is that each node can only hold a single label in LPA while it is allowed to possess multiple labels in SLPA. The algorithm begins with each vertex having its own unique label. Next we iteratively record labels in a local accumulator based on specific speaking rule and listening rule. Then the post-processing of the record labels is applied. Finally we remove the nested communities and output all the communities. Note that it is not guaranteed to produce the same results every time.
+
+### Specifications
+
+```
+CREATE QUERY tg_slpa (SET<STRING> v_type, SET<STRING> e_type, FLOAT threshold, INT max_iter, INT output_limit, 
+BOOL print_accum = TRUE, STRING file_path = "")
+```
+
+
+|  Characteristic   | Value  |
+|  ----  | ----  |
+| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
+| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
+| Result Size  | V = number of vertices |
+| Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
+| Graph Types  | Undirected edges |
+
