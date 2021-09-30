@@ -1,0 +1,91 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_BETWEENNESS_CENT_C11.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 8.20996,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 6.81423,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": 5.81839,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 4.77807,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 4.69915,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 3.8279,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 2.0563,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 1.74491,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 1.42332,
+      "Vertex_ID": "R"
+    },
+    {
+      "score": 1.41838,
+      "Vertex_ID": "Q"
+    },
+    {
+      "score": 1.20475,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 1.06844,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.95932,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 0.9162,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.37949,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "M"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "S"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "E"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

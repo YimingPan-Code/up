@@ -1,0 +1,51 @@
+use graph poc_graph
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# Test unsupported types.                       #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create batch query minmaxac_neg_test2() FOR GRAPH poc_graph api("v2") {
+  MinAccum<MinAccum<int>> @@minMinAccum;
+
+  # The compiler will quit when checking the above line,
+  # so the following lines will NOT be checked.
+  # It will be better to create a query for each of them.
+  MaxAccum<MinAccum<int>> @@maxMinAccum;
+  OrAccum<MinAccum<int>> @@orMinAccum;
+  AndAccum<MinAccum<int>> @@andMinAccum;
+  AvgAccum<MinAccum<int>> @@avgMinAccum;
+  ListAccum<MinAccum<int>> @@listMinAccum;
+  HeapAccum<MinAccum<int>> @@heapMinAccum;
+  MapAccum<MinAccum<int>> @@mapMinAccum;
+  GroupByAccum<MinAccum<int>> @@groupByMinAccum;
+  BagAccum<MinAccum<int>> @@bagMinAccum;
+  SetAccum<MinAccum<int>> @@setMinAccum;
+  BitwiseAndAccum<MinAccum<int>> @@bwAndMinAccum;
+  BitwiseOrAccum<MinAccum<int>> @@bwOrMinAccum;
+
+  MaxAccum<string> @@strMax;
+  MaxAccum<string compress> @@cstrMax;
+  SumAccum<MaxAccum<int>> @@sumMaxAccum;
+  MinAccum<MaxAccum<int>> @@minMaxAccum;
+  MaxAccum<MaxAccum<int>> @@maxMaxAccum;
+  OrAccum<MaxAccum<int>> @@orMaxAccum;
+  AndAccum<MaxAccum<int>> @@andMaxAccum;
+  AvgAccum<MaxAccum<int>> @@avgMaxAccum;
+  ListAccum<MaxAccum<int>> @@listMaxAccum;
+  HeapAccum<MaxAccum<int>> @@heapMaxAccum;
+  MapAccum<MaxAccum<int>> @@mapMaxAccum;
+  GroupByAccum<MaxAccum<int>> @@groupByMaxAccum;
+  BagAccum<MaxAccum<int>> @@bagMaxAccum;
+  SetAccum<MaxAccum<int>> @@setMaxAccum;
+  BitwiseAndAccum<MaxAccum<int>> @@bwAndMaxAccum;
+  BitwiseOrAccum<MaxAccum<int>> @@bwOrMaxAccum;
+
+  PRINT @@minMinAccum;
+}
+

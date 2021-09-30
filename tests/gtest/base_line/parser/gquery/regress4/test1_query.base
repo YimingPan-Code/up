@@ -1,0 +1,15 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress4/test1_query.gsql
+[GTEST_IL] 2020-10-04 08:33:02.882
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+line 16:11 no viable alternative at input 'AndAccum andAccumVar'
+line 17:11 no viable alternative at input 'OrAccum  orAccumVar'
+line 18:11 no viable alternative at input 'AndAccum @'
+line 19:11 no viable alternative at input 'OrAccum  @'
+line 23:8 extraneous input '@' expecting {ABORT, ANY, AVG, BY, COALESCE, COMMIT, COUNT, DATETIME_ADD, DATETIME_SUB, DISTINCT, FALSE, FILE, GROUP, ISEMPTY, LASTHOP, LIST, LOG, MAP, MATCH, MAX, MIN, NOT, NOW, PATH, PER, RANGE, REPLACE, SELECT_VERTEX, SRC, SUM, TGT, TO_DATETIME, TRIM, TRUE, UPDATE, GSQL_INT_MAX, GSQL_INT_MIN, GSQL_UINT_MAX, '__ENGINE__E_ATTR', '__ENGINE__SRC_ATTR', '__ENGINE__TGT_ATTR', '__ENGINE__V_ATTR', '__ENGINE__SRC_VAL', '__ENGINE__TGT_VAL', '__ENGINE__V_VAL', '__ENGINE__MESSAGE', '__ENGINE__CONTEXT', '__ENGINE__REQUEST', '__ENGINE__SERVICEAPI', '(', '[', '-', '.', '_', CONST_INT, CONST_STR, NAME, GACCNAME}
+line 24:8 extraneous input '@' expecting {ABORT, ANY, AVG, BY, COALESCE, COMMIT, COUNT, DATETIME_ADD, DATETIME_SUB, DISTINCT, FALSE, FILE, GROUP, ISEMPTY, LASTHOP, LIST, LOG, MAP, MATCH, MAX, MIN, NOT, NOW, PATH, PER, RANGE, REPLACE, SELECT_VERTEX, SRC, SUM, TGT, TO_DATETIME, TRIM, TRUE, UPDATE, GSQL_INT_MAX, GSQL_INT_MIN, GSQL_UINT_MAX, '__ENGINE__E_ATTR', '__ENGINE__SRC_ATTR', '__ENGINE__TGT_ATTR', '__ENGINE__V_ATTR', '__ENGINE__SRC_VAL', '__ENGINE__TGT_VAL', '__ENGINE__V_VAL', '__ENGINE__MESSAGE', '__ENGINE__CONTEXT', '__ENGINE__REQUEST', '__ENGINE__SERVICEAPI', '(', '[', '-', '.', '_', CONST_INT, CONST_STR, NAME, GACCNAME}
+Parsing encountered 6 syntax error(s)
+
+The query AndOrAccum_neg_test1 cannot be added!
+[GTEST_END]
+[GTEST_IL] 2020-10-04 08:33:02.895

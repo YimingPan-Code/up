@@ -1,0 +1,26 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress3/test2_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query avgac_neg_test2_1 (SEM-424): line 19, col 12
+The assignment operator '=' cannot be used on a global accumulator in a DML
+block!
+Only '+=' is allowed for global accumulators inside a DML block.
+The query avgac_neg_test2_1 cannot be added!
+
+Semantic Check Error in query avgac_neg_test2_2 (SEM-8): line 25, col 9
+The accumulator type AvgAccum cannot be given an element type.
+The query avgac_neg_test2_2 cannot be added!
+
+Semantic Check Error in query avgac_neg_test2_3 (SEM-8): line 31, col 9
+The accumulator type AvgAccum cannot be given an element type.
+The query avgac_neg_test2_3 cannot be added!
+
+Type Check Error in query avgac_neg_test2_4 (TYP-500): line 39, col 7
+Incompatible operand types AvgAccum and string for the operator +=
+The query avgac_neg_test2_4 cannot be added!
+
+Type Check Error in query avgac_neg_test2_5 (TYP-500): line 49, col 19
+Incompatible operand types AvgAccum and string for the operator +=
+The query avgac_neg_test2_5 cannot be added!
+[GTEST_END]

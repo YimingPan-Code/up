@@ -1,0 +1,163 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test6.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@vList.size()": 1,
+      "@@twoList.size()": 1,
+      "@@floatList.size()": 1,
+      "@@strList.size()": 1,
+      "@@tupleList.size()": 1,
+      "@@boolList.size()": 1,
+      "@@uintList.size()": 1,
+      "@@threeList.size()": 1,
+      "@@doubleList.size()": 1,
+      "@@strcomList.size()": 1,
+      "@@eList.size()": 1,
+      "@@dateList.size()": 1,
+      "@@intList.size()": 1
+    },
+    {
+      "@@floatList.get(0)": 1,
+      "@@vList.get(0)": "c1",
+      "@@strList.get(0)": "i1",
+      "@@tupleList.get(0)": {
+        "score": 37,
+        "name": "m3"
+      },
+      "@@threeList.get(0)": [[
+        1,
+        5
+      ]],
+      "@@dateList.get(0)": "2016-12-31 23:59:59",
+      "@@uintList.get(0)": 0,
+      "@@intList.get(0)": 31,
+      "@@doubleList.get(0)": 2,
+      "@@strcomList.get(0)": "m3",
+      "@@eList.get(0)": {
+        "from_type": "members",
+        "to_type": "company",
+        "directed": false,
+        "from_id": "m3",
+        "to_id": "c1",
+        "attributes": {
+          "industryId": 1,
+          "positionId": 2
+        },
+        "e_type": "member_work_company"
+      },
+      "@@twoList.get(0)": [
+        0,
+        5
+      ]
+    },
+    {
+      "@@floatList.get(1)": 0,
+      "@@vList.get(1)": "Unknown",
+      "@@eList.get(1)": {},
+      "@@tupleList.get(1)": {
+        "score": 0,
+        "name": ""
+      },
+      "@@threeList.get(1)": [],
+      "@@strList.get(1)": "",
+      "@@dateList.get(1)": "1970-01-01 00:00:00",
+      "@@boolList.get(1)": false,
+      "@@uintList.get(1)": 0,
+      "@@strcomList.get(1)": "",
+      "@@intList.get(1)": 0,
+      "@@doubleList.get(1)": 0,
+      "@@twoList.get(1)": []
+    },
+    {
+      "@@uintList.contains(1)": false,
+      "@@vList.contains(vertex2)": false,
+      "@@vList.contains(vertex1)": false,
+      "@@strcomList.contains(c1)": false,
+      "@@tupleList.contains(myTuple(m2,2))": false,
+      "@@dateList.contains(dt)": true,
+      "@@intList.contains(2)": false,
+      "@@floatList.contains(1)": true,
+      "@@uintList.contains(0)": true,
+      "@@floatList.contains(2)": false,
+      "@@eList.contains(edge1)": true,
+      "@@boolList.contains(true)": false,
+      "@@boolList.contains(false)": true,
+      "@@strList.contains(com1)": false,
+      "@@eList.contains(edge2)": false,
+      "@@strList.contains(com2)": false,
+      "@@strcomList.contains(google)": false,
+      "@@tupleList.contains(myTuple(m3,1))": false,
+      "@@twoList.contains([1])": false,
+      "@@dateList.contains(dd)": false,
+      "@@threeList.contains([[1,5]])": true,
+      "@@doubleList.contains(1)": false,
+      "@@doubleList.contains(2)": true,
+      "@@threeList.contains([[2]])": false,
+      "@@intList.contains(1)": false,
+      "@@twoList.contains([0,5])": true
+    },
+    {
+      "@@floatList.get(0)": 0,
+      "@@vList.get(0)": "Unknown",
+      "@@eList.get(0)": {
+        "from_type": "company",
+        "to_type": "members",
+        "directed": false,
+        "from_id": "c1",
+        "to_id": "m10",
+        "attributes": {
+          "industryId": 3,
+          "positionId": 5
+        },
+        "e_type": "member_work_company"
+      },
+      "@@strList.get(0)": "changed",
+      "@@tupleList.get(0)": {
+        "score": 1,
+        "name": "changed"
+      },
+      "@@threeList.get(0)": [[
+        1,
+        1
+      ]],
+      "@@dateList.get(0)": "2011-12-12 23:11:11",
+      "@@uintList.get(0)": 1,
+      "@@intList.get(0)": 0,
+      "@@boolList.get(0)": false,
+      "@@doubleList.get(0)": 3,
+      "@@strcomList.get(0)": "changed",
+      "@@twoList.get(0)": [
+        0,
+        0
+      ]
+    },
+    {"vertexSet": []},
+    {
+      "@@vList.size()": 0,
+      "@@twoList.size()": 0,
+      "@@floatList.size()": 0,
+      "@@strList.size()": 0,
+      "@@tupleList.size()": 0,
+      "@@boolList.size()": 0,
+      "@@uintList.size()": 0,
+      "@@threeList.size()": 0,
+      "@@doubleList.size()": 0,
+      "@@strcomList.size()": 0,
+      "@@eList.size()": 0,
+      "@@dateList.size()": 0,
+      "@@intList.size()": 0
+    },
+    {"findMaxOfListAccum(@@doubleList)": 200}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

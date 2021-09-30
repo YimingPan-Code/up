@@ -1,0 +1,51 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_CLOSENESS_CENT_C5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 0.52083,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.52083,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.44643,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.44643,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0.34722,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.34722,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 0.25,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 0.25,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.25,
+      "Vertex_ID": "A"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

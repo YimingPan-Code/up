@@ -1,0 +1,56 @@
+drop all
+create vertex product (primary_id pid string)
+create vertex tag (primary_id tid string)
+create directed edge product_tag (from tag, to product)
+create graph poc_graph(*)
+
+CREATE OR REPLACE QUERY tagEdgeNum(vertex<tag> tagId) FOR GRAPH poc_graph {
+  int tagEdgeNum = 0;
+  allTags = {tagId};
+  products = SELECT p
+    FROM allTags-(product_tag)->:p;
+  tagEdgeNum = products.size();
+  PRINT tagEdgeNum;
+}
+
+CREATE OR REPLACE QUERY productVertexNum(int out) FOR GRAPH poc_graph {
+  int productVertexNum = 0;
+  allProducts = {product.*};
+  selectedProducts = SELECT p
+    FROM allProducts:p
+    WHERE p.outdegree() == out;
+  productVertexNum = selectedProducts.size();
+  PRINT productVertexNum;
+}
+
+INSTALL QUERY tagEdgeNum, productVertexNum
+
+create LOADING JOB load1 for graph poc_graph {
+  LOAD "dataset/1.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}
+
+create LOADING JOB load2 for graph poc_graph {
+  LOAD "dataset/2.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}
+
+create LOADING JOB load3 for graph poc_graph {
+  LOAD "dataset/3.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}
+
+create LOADING JOB load4 for graph poc_graph {
+  LOAD "dataset/4.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}
+
+create LOADING JOB load5 for graph poc_graph {
+  LOAD "dataset/5.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}
+
+create LOADING JOB load6 for graph poc_graph {
+  LOAD "dataset/6.csv" 
+    TO EDGE product_tag VALUES ($1, $0) USING SEPARATOR=",", EOL="\n";
+}

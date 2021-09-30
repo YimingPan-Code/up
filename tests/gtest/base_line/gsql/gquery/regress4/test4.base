@@ -1,0 +1,67 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress4/test4.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@avgMap": {"1": 1.5}},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "id": "m2",
+        "@avgarray": [0],
+        "profileIndustryId": "i1",
+        "@avggroup": [],
+        "@avgmap": {"2": 3}
+      },
+      "v_type": "members"
+    }]},
+    {"@@avgGroup": [{
+      "a": 1,
+      "b": "a",
+      "avg1": 1.5,
+      "avg2": 2
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "id": "m2",
+        "@avgarray": [0],
+        "profileIndustryId": "i1",
+        "@avggroup": [{
+          "c": 2,
+          "d": "b",
+          "avg3": 3.5,
+          "avg4": 4.5
+        }],
+        "@avgmap": {"2": 3}
+      },
+      "v_type": "members"
+    }]},
+    {"@@avgArray": [4]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "id": "m2",
+        "@avgarray": [3],
+        "profileIndustryId": "i1",
+        "@avggroup": [{
+          "c": 2,
+          "d": "b",
+          "avg3": 3.5,
+          "avg4": 4.5
+        }],
+        "@avgmap": {"2": 3}
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

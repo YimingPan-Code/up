@@ -1,0 +1,153 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test SumAccum with mathematical operators	#
+#################################################
+
+DROP QUERY sumac_test7_1
+create query sumac_test7_1(VERTEX<members> seed) FOR GRAPH poc_graph {
+	SumAccum<INT> @@intSum;
+	SumAccum<FLOAT> @@floatSum;
+	SumAccum<DOUBLE> @@doubleSum;
+	SumAccum<STRING> @@stringSum = "test";
+	INT myint = 2;
+	FLOAT myfloat = 2.2;
+	DOUBLE mydouble = 4.4;
+	SumAccum<INT> @@count = 0;
+	
+	@@intSum = @@intSum + 6;
+	@@intSum = @@intSum - 2;
+	@@intSum = @@intSum * mydouble;
+	@@intSum = @@intSum / myfloat;
+	@@intSum = @@intSum % myint;
+	print @@intSum;	// should be 1
+	@@intSum = 0;
+
+	@@floatSum = @@floatSum + mydouble;
+	@@floatSum = @@floatSum - myfloat;
+	@@floatSum = @@floatSum * 7;
+	@@floatSum = @@floatSum / myint;
+	print @@floatSum; // should be 7.7
+	@@floatSum = 0;
+	
+	@@doubleSum = @@doubleSum + 20;
+	@@doubleSum = @@doubleSum - mydouble;
+	@@doubleSum = @@doubleSum * myfloat;
+	@@doubleSum = @@doubleSum / myint;
+	print @@doubleSum; // should be 17.16
+	@@doubleSum = 0;
+
+	@@stringSum = @@stringSum + "test";
+	print @@stringSum; // should be "testtest";
+	@@stringSum = "test";
+	
+	@@intSum += @@intSum + 6;
+	@@intSum += @@intSum - 2;
+	@@intSum += @@intSum * mydouble;
+	@@intSum += @@intSum / myfloat;
+	@@intSum += @@intSum % myint;
+	print @@intSum;
+	@@intSum = 0;
+
+	@@floatSum += @@floatSum + mydouble;
+	@@floatSum += @@floatSum - myfloat;
+	@@floatSum += @@floatSum * 7;
+	@@floatSum += @@floatSum / myint;
+	print @@floatSum;
+	@@floatSum = 0;
+	
+	@@doubleSum += @@doubleSum + 20;
+	@@doubleSum += @@doubleSum - mydouble;
+	@@doubleSum += @@doubleSum * myfloat;
+	@@doubleSum += @@doubleSum / myint;
+	print @@doubleSum;
+	@@doubleSum = 0;
+	
+	@@stringSum += @@stringSum + "test";
+	print @@stringSum;
+	@@stringSum = "test";
+
+	// test in select block
+	L0 (ANY) = {seed};
+	while (@@count < 4) do
+	    L0 = select tgt
+		from L0: s - (member_work_company: e) - : tgt
+		where tgt.id == "m3" or tgt.id == "c1"
+		accum case when @@count == 0 then
+			@@intSum += @@intSum + 6, @@floatSum += @@floatSum + mydouble, @@doubleSum += @@doubleSum + 20
+		      end,
+		      case when @@count == 1 then
+			@@intSum += @@intSum - 2, @@floatSum += @@floatSum - myfloat, @@doubleSum += @@doubleSum - mydouble
+		      end,
+		      case when @@count == 2 then
+			@@intSum += @@intSum * mydouble, @@floatSum += @@floatSum * 7, @@doubleSum += @@doubleSum * myfloat
+		      end,
+		      case when @@count == 3 then
+			@@intSum += @@intSum / myfloat, @@floatSum += @@floatSum / myint, @@doubleSum += @@doubleSum / myint
+		      end
+		post-accum @@count += 1;
+	end;
+	
+	L1 = select tgt
+	    from L0:s - (member_work_company: e) - company: tgt
+	    accum @@intSum += @@intSum % myint, @@stringSum += @@stringSum + "test";
+	
+	print @@intSum, @@floatSum, @@doubleSum, @@stringSum; // should be the same as the second result
+}	
+
+DROP QUERY sumac_test7_2
+create query sumac_test7_2(VERTEX<members> seed) FOR GRAPH poc_graph {
+	SumAccum<INT> @intsum;
+	SumAccum<FLOAT> @floatsum;
+	SumAccum<DOUBLE> @doublesum;
+	SumAccum<STRING> @stringsum = "test";
+	INT myint = 2;
+	FLOAT myfloat = 2.2;
+	DOUBLE mydouble = 4.4;
+
+	L0 = {seed};
+    L1 = select tgt
+        from L0: s - (member_work_company: e) - company: tgt
+        accum s.@intsum = s.@intsum + 6, s.@floatsum = s.@floatsum + mydouble, s.@doublesum = s.@doublesum + 20;
+    L2 = select tgt
+        from L0: s - (member_work_company: e) - company: tgt
+        accum s.@intsum = s.@intsum - 2, s.@floatsum = s.@floatsum - myfloat, s.@doublesum = s.@doublesum - mydouble;
+    L3 = select tgt
+        from L0: s - (member_work_company: e) - company: tgt
+        accum s.@intsum = s.@intsum * mydouble, s.@floatsum = s.@floatsum * 7, s.@doublesum = s.@doublesum * myfloat;
+    L4 = select tgt
+        from L0: s - (member_work_company: e) - company: tgt
+        accum s.@intsum = s.@intsum / myfloat, s.@floatsum = s.@floatsum / myint, s.@doublesum = s.@doublesum / myint;
+    L5 = select tgt
+        from L0:s - (member_work_company: e) - company: tgt
+        accum s.@intsum = s.@intsum % myint, s.@stringsum = s.@stringsum + "test";
+
+    print L0;
+
+    L6 = select tgt
+        from L2: s - (member_work_company: e) - members: tgt
+        where tgt.id == "m3"
+        accum s.@intsum += s.@intsum + 6, s.@floatsum += s.@floatsum + mydouble, s.@doublesum += s.@doublesum + 20;
+    L7 = select tgt
+        from L2: s - (member_work_company: e) - members: tgt
+        where tgt.id == "m3"
+        accum s.@intsum += s.@intsum - 2, s.@floatsum += s.@floatsum - myfloat, s.@doublesum += s.@doublesum - mydouble;
+    L8 = select tgt
+        from L2: s - (member_work_company: e) - members: tgt
+        where tgt.id == "m3"
+        accum s.@intsum += s.@intsum * mydouble, s.@floatsum += s.@floatsum * 7, s.@doublesum += s.@doublesum * myfloat;
+    L9 = select tgt
+        from L2: s - (member_work_company: e) - members: tgt
+        where tgt.id == "m3"
+        accum s.@intsum += s.@intsum / myfloat, s.@floatsum += s.@floatsum / myint, s.@doublesum += s.@doublesum / myint;
+    L10 = select tgt
+        from L2: s - (member_work_company: e) - members: tgt
+        where tgt.id == "m3"
+        accum s.@intsum += s.@intsum % myint, s.@stringsum += s.@stringsum + "test";
+
+    print L2;	
+}
+

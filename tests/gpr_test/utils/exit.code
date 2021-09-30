@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# not exist
+E_File_Not_Exist=11
+E_Folder_Not_Exist=12
+
+# not match
+E_Parameter_Not_Match=21
+
+# build failed
+E_Build_Binary_Failed=31
+
+# miss tool
+E_Miss_Tool=41
+
+# test failed
+E_Test_Failed=51

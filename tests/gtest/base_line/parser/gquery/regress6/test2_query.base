@@ -1,0 +1,60 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress6/test2_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query listac_neg_test2_1 (SEM-1301): line 14, col 11
+SumAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_1 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_2 (SEM-1301): line 19, col 11
+MaxAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_2 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_3 (SEM-1301): line 24, col 11
+MinAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_3 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_4 (SEM-1301): line 29, col 11
+AvgAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_4 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_5 (SEM-45): line 34, col 11
+The tuple name OrAccum is not defined.
+The query listac_neg_test2_5 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_6 (SEM-45): line 39, col 11
+The tuple name AndAccum is not defined.
+The query listac_neg_test2_6 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_7 (SEM-1301): line 44, col 11
+BitwiseOrAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_7 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_8 (SEM-1301): line 49, col 11
+BitwiseAndAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_8 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_9 (SEM-1301): line 54, col 11
+SetAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_9 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_10 (SEM-1301): line 59, col 11
+BagAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_10 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_11 (SEM-1301): line 64, col 11
+MapAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_11 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_12 (SEM-1301): line 69, col 11
+ArrayAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_12 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_13 (SEM-1301): line 75, col 11
+HeapAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_13 cannot be added!
+
+Semantic Check Error in query listac_neg_test2_14 (SEM-1301): line 80, col 11
+GroupByAccum cannot be nested within ListAccum accumulator!
+The query listac_neg_test2_14 cannot be added!
+[GTEST_END]

@@ -1,0 +1,71 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress4/test2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@staticAvg2": 0,
+      "@@staticAvg3": 0,
+      "@@staticAvg1": 0
+    },
+    {"@@count": 1},
+    {"@@staticAvg1": 0},
+    {"@@staticAvg1": 2},
+    {"@@staticAvg1": 2.25}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@staticAvg2": 0,
+      "@@staticAvg3": 0,
+      "@@staticAvg1": 2.25
+    },
+    {"@@count": 2},
+    {"@@staticAvg1": 2.25},
+    {
+      "str": "Assign new value for the second run: ",
+      "@@staticAvg1": 2
+    },
+    {"@@staticAvg1": 2},
+    {"@@staticAvg1": 3.5}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@staticAvg2": 0,
+      "@@staticAvg3": 0,
+      "@@staticAvg1": 3.5
+    },
+    {"@@count": 3},
+    {"@@staticAvg1": 3.5},
+    {"@@staticAvg1": 3.2},
+    {"@@staticAvg1": 3.6},
+    {"str": "This is the third time you call query avgac_test2. @@count will reset to 0"},
+    {"@@staticAvg1": 0}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

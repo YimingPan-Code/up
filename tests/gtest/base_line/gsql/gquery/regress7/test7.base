@@ -1,0 +1,186 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@vList.size()": 1,
+        "L0.@dateList.size()": 1,
+        "L0.@eList.size()": 1,
+        "L0.@strList.size()": 1,
+        "L0.@boolList.size()": 1,
+        "L0.@doubleList.size()": 1,
+        "L0.@threeList.size()": 1,
+        "L0.@twoList.size()": 1,
+        "L0.@tupleList.size()": 1,
+        "L0.@intList.size()": 1,
+        "L0.@uintList.size()": 1,
+        "L0.@floatList.size()": 1,
+        "L0.@strcomList.size()": 1
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@uintList.get(0)": 0,
+        "L0.@strList.get(0)": "com1",
+        "L0.@dateList.get(0)": "2016-12-31 23:59:59",
+        "L0.@threeList.get(0)": [[
+          1,
+          5
+        ]],
+        "L0.@strcomList.get(0)": "c1",
+        "L0.@eList.get(0)": {
+          "from_type": "members",
+          "to_type": "company",
+          "directed": false,
+          "from_id": "m3",
+          "to_id": "c1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 2
+          },
+          "e_type": "member_work_company"
+        },
+        "L0.@doubleList.get(0)": 2,
+        "L0.@vList.get(0)": "c1",
+        "L0.@tupleList.get(0)": {
+          "score": 1,
+          "name": "m3"
+        },
+        "L0.@twoList.get(0)": [
+          0,
+          5
+        ],
+        "L0.@floatList.get(0)": 1,
+        "L0.@intList.get(0)": 1
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@uintList.get(1)": 0,
+        "L0.@dateList.get(1)": "1970-01-01 00:00:00",
+        "L0.@strcomList.get(1)": "",
+        "L0.@tupleList.get(1)": {
+          "score": 0,
+          "name": ""
+        },
+        "L0.@intList.get(1)": 0,
+        "L0.@floatList.get(1)": 0,
+        "L0.@boolList.get(1)": false,
+        "L0.@threeList.get(1)": [],
+        "L0.@strList.get(1)": "",
+        "L0.@vList.get(1)": "Unknown",
+        "L0.@twoList.get(1)": [],
+        "L0.@doubleList.get(1)": 0,
+        "L0.@eList.get(1)": {}
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@vList.contains(vertex1)": true,
+        "L0.@uintList.contains(1)": false,
+        "L0.@boolList.contains(true)": true,
+        "L0.@twoList.contains([1])": false,
+        "L0.@intList.contains(2)": false,
+        "L0.@floatList.contains(1)": true,
+        "L0.@doubleList.contains(2)": true,
+        "L0.@dateList.contains(dd)": false,
+        "L0.@eList.contains(edge1)": true,
+        "L0.@strList.contains(com1)": true,
+        "L0.@threeList.contains([[1,5]])": true,
+        "L0.@vList.contains(vertex2)": false,
+        "L0.@boolList.contains(false)": false,
+        "L0.@uintList.contains(0)": true,
+        "L0.@strcomList.contains(c1)": true,
+        "L0.@twoList.contains([0,5])": true,
+        "L0.@tupleList.contains(myTuple(m2,2))": false,
+        "L0.@dateList.contains(dt)": true,
+        "L0.@intList.contains(1)": true,
+        "L0.@threeList.contains([[2]])": false,
+        "L0.@strcomList.contains(google)": false,
+        "L0.@doubleList.contains(1)": false,
+        "L0.@floatList.contains(2)": false,
+        "L0.@tupleList.contains(myTuple(m3,1))": true,
+        "L0.@eList.contains(edge2)": false,
+        "L0.@strList.contains(com2)": false
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@uintList.get(0)": 1,
+        "L0.@strList.get(0)": "changed",
+        "L0.@dateList.get(0)": "2011-12-12 23:11:11",
+        "L0.@strcomList.get(0)": "changed",
+        "L0.@tupleList.get(0)": {
+          "score": 1,
+          "name": "changed"
+        },
+        "L0.@floatList.get(0)": 0,
+        "L0.@intList.get(0)": 0,
+        "L0.@boolList.get(0)": false,
+        "L0.@threeList.get(0)": [[
+          1,
+          1
+        ]],
+        "L0.@eList.get(0)": {
+          "from_type": "company",
+          "to_type": "members",
+          "directed": false,
+          "from_id": "c1",
+          "to_id": "m1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 1
+          },
+          "e_type": "member_work_company"
+        },
+        "L0.@doubleList.get(0)": 3,
+        "L0.@vList.get(0)": "m3",
+        "L0.@twoList.get(0)": [
+          0,
+          0
+        ]
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "L0.@vList.size()": 0,
+        "L0.@dateList.size()": 0,
+        "L0.@eList.size()": 0,
+        "L0.@strList.size()": 0,
+        "L0.@boolList.size()": 0,
+        "L0.@doubleList.size()": 0,
+        "L0.@threeList.size()": 0,
+        "L0.@twoList.size()": 0,
+        "L0.@tupleList.size()": 0,
+        "L0.@intList.size()": 0,
+        "L0.@uintList.size()": 0,
+        "L0.@floatList.size()": 0,
+        "L0.@strcomList.size()": 0
+      },
+      "v_type": "members"
+    }]},
+    {"result": 200}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

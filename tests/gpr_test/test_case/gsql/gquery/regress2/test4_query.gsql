@@ -1,0 +1,95 @@
+#################################################
+# GSQL language SumAccum declaration            #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test static global variable declaration,	#
+# default initial value, nested type,           #
+# = and += operator in query block		#
+# result when run several times of the query    #
+#################################################
+
+DROP QUERY sumac_test4
+#create batch query sumac_test4() FOR GRAPH poc_graph{
+#	STATIC SumAccum<UINT> @@uintSum;	// test declaration of static global variable with type UINT 
+#	STATIC SumAccum<INT> @@intSum;	// test declaration of static global variable with type INT 
+#	STATIC SumAccum<FLOAT> @@floatSum;	// test declaration of static global variable with type FLOAT 
+#	STATIC SumAccum<DOUBLE> @@doubleSum;	// test declaration of static global variable with type DOUBLE 
+#	STATIC SumAccum<STRING> @@stringSum;	// test declaration of static global variable with type STRING
+#	STATIC SumAccum<INT> @@int1, @@int2;	// test declaration of more than one variables in the same line, with INT type
+#	STATIC SumAccum<UINT> @@uint1, @@uint2;	// test declaration of more than one variables in the same line, with UINT type
+#	STATIC SumAccum<FLOAT> @@float1, @@float2;	// test declaration of more than one variables in the same line, with FLOAT type
+#	STATIC SumAccum<DOUBLE> @@double1, @@double2;	// test declaration of more than one variables in the same line, with DOUBLE type
+#	STATIC SumAccum<STRING> @@str1, @@str2;	// test declaration of more than one variables in the same line, with STRING type
+#	
+#	// test print statement on default initial value of all variables
+#	print @@uintSum;
+#	print @@intSum;
+#	print @@floatSum;
+#	print @@doubleSum;
+#	print @@stringSum;
+#	print @@int1, @@int2;
+#	print @@uint1, @@uint2;
+#	print @@float1, @@float2;
+#	print @@double1, @@double2;
+#	print @@str1, @@str2;
+#
+#	// test '=' operator in query block
+#	@@uintSum = 1;
+#	@@intSum = 2;
+#	@@floatSum = 1.2;
+#	@@doubleSum = 2.22;
+#	@@stringSum = "test";
+#	@@int1 = 3;
+#	@@int2 = 4;
+#	@@uint1 = 5;
+#	@@uint2 = 6;
+#	@@float1 = 1.3;
+#	@@float2 = 1.4;
+#	@@double1 = 3.33;
+#	@@double2 = 5.55;
+#	@@str1 = "mystr1";
+#	@@str2 = "mystr2";
+#
+#	// test print statement on modified value of all variables
+#	print @@uintSum;
+#	print @@intSum;
+#	print @@floatSum;
+#	print @@doubleSum;
+#	print @@stringSum;
+#	print @@int1, @@int2;
+#	print @@uint1, @@uint2;
+#	print @@float1, @@float2;
+#	print @@double1, @@double2;
+#	print @@str1, @@str2;
+#
+#	// test '+=' operator in query block
+#	@@uintSum += 1;
+#	@@intSum += 2;
+#	@@floatSum += 1.2;
+#	@@doubleSum += 2.22;
+#	@@stringSum += "test";
+#	@@int1 += 3;
+#	@@int2 += 4;
+#	@@uint1 += 5;
+#	@@uint2 += 6;
+#	@@float1 += 1.3;
+#	@@float2 += 1.4;
+#	@@double1 += 3.33;
+#	@@double2 += 5.55;
+#	@@str1 += "mystr1";
+#	@@str2 += "mystr2";
+#
+#	// test print statement on modified value of all variables
+#	print @@uintSum;
+#	print @@intSum;
+#	print @@floatSum;
+#	print @@doubleSum;
+#	print @@stringSum;
+#	print @@int1, @@int2;
+#	print @@uint1, @@uint2;
+#	print @@float1, @@float2;
+#	print @@double1, @@double2;
+#	print @@str1, @@str2;
+#}

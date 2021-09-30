@@ -1,0 +1,82 @@
+use graph poc_graph
+#################################################
+# GSQL language ListAccum declaration           #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# global variable                               #
+# nested with other accumulator than ListAccum  #
+#################################################
+set exit_on_error = false
+
+create query listac_neg_test2_1() FOR GRAPH poc_graph {
+	ListAccum<SumAccum<INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_2() FOR GRAPH poc_graph {
+	ListAccum<MaxAccum<INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_3() FOR GRAPH poc_graph {
+	ListAccum<MinAccum<INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_4() FOR GRAPH poc_graph {
+	ListAccum<AvgAccum> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_5() FOR GRAPH poc_graph {
+	ListAccum<OrAccum> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_6() FOR GRAPH poc_graph {
+	ListAccum<AndAccum> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_7() FOR GRAPH poc_graph {
+	ListAccum<BitwiseOrAccum> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_8() FOR GRAPH poc_graph {
+	ListAccum<BitwiseAndAccum> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_9() FOR GRAPH poc_graph {
+	ListAccum<SetAccum<INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_10() FOR GRAPH poc_graph {
+	ListAccum<BagAccum<INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_11() FOR GRAPH poc_graph {
+	ListAccum<MapAccum<STRING, INT>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_12() FOR GRAPH poc_graph {
+	ListAccum<ArrayAccum<SumAccum<INT>>> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_13() FOR GRAPH poc_graph {
+	TYPEDEF TUPLE<STRING name, INT score> mytuple;
+	ListAccum<HeapAccum<mytuple>(2, score ASC)> @@list;
+	print @@list;
+}
+
+create query listac_neg_test2_14() FOR GRAPH poc_graph {
+	ListAccum<GroupByAccum<INT a, STRING b, MaxAccum<INT> maxa, SumAccum<INT> suma>> @@list;
+	print @@list;
+}

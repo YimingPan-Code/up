@@ -1,0 +1,36 @@
+#!/bin/bash
+
+install_platform(){
+  OSG=$1
+  # root directory must be tigergraph, gtest baseline is this
+  root_dir="/home/tigergraph"
+  if [ "$OSG" = 'RHEL 6.9' ]; then
+    # pre-installed tigergraph 1.0, user: graphsql, root.dir: ~/tigergraph
+    rm -rf /home/graphsql/tigergraph/dev*
+    echo -ne "y\n" | sudo bash install.sh -u graphsql -r $root_dir -f
+  elif [ "$OSG" = 'RHEL 7.2' ]; then
+    # pre-installed tigergraph 1.0, user: kevin, root.dir: /ebs/tigergraph
+    # limited /home space: 8GB. 
+    sudo bash install.sh -u graphsql -r $root_dir -f
+  elif [ "$OSG" = 'RHEL 7.3' ]; then
+    # pre-installed graphsql master, user: kevin, root.dir: /ebs/graphsql
+    # limited /home space: 8GB
+    rm -rf /home/graphsql/tigergraph/dev*
+    sudo bash install.sh -u graphsql -r $root_dir -f
+  elif [ "$OSG" = 'UBUNTU 14.04' ]; then
+    # pre-installed graphsql 0.8.1, user: graphsql, root.dir: ~/graphsql
+    rm -rf /home/graphsql/tigergraph/dev*
+    sudo bash install.sh -u graphsql -r $root_dir -f
+  elif [ "$OSG" = 'UBUNTU 16.04' ]; then
+    # pre-installed graphsql 0.8.2, user: kevin, root.dir: ~/graphsql
+    whoami
+    rm -rf /home/graphsql/tigergraph/dev*
+    sudo bash install.sh -u graphsql -r $root_dir -f
+  elif [ "$OSG" = 'DEBIAN 8.7' ]; then
+    # naked OS, fresh install
+    sudo bash install.sh -f
+  else
+    warn "Unsupported OS: $OSG"
+    exit $E_UNSUPPORTOS
+  fi
+}

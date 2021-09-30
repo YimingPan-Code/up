@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"max_core":[{"v_id":"L","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"K","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"M","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"H","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"F","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"E","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"B","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"A","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"C","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"},{"v_id":"O","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C10"}],"core_size":10,"k":2}]}
+>>>>>>> base
+

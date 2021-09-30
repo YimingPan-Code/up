@@ -1,0 +1,57 @@
+#################################################
+#                                               #
+# GSQL language SumAccum declaration            #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test vertex-attached SumAccum declaration,	#
+# default initial value, nested type            #
+# assign value when defining		        #
+# = and += operator in select block             # 
+#################################################
+
+DROP QUERY sumac_teset3
+create query sumac_test3(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<UINT> @uintSum;	// test declaration of local variable with type UINT 
+	SumAccum<INT> @intSum;	// test declaration of local variable with type INT 
+	SumAccum<FLOAT> @floatSum;	// test declaration of local variable with type FLOAT 
+	SumAccum<DOUBLE> @doubleSum;	// test declaration of local variable with type DOUBLE 
+	SumAccum<STRING> @stringSum;	// test declaration of local variable with type STRING
+	SumAccum<UINT> @uintsum = 10;   // test declaration of local variable with type UINT
+    	SumAccum<INT> @intsum = 1;      // test declaration local variable with assignment with type INT
+    	SumAccum<FLOAT> @floatsum = 2.2;        // test declaration of local variable with assignment with type FLOAT
+    	SumAccum<DOUBLE> @doublesum = 3.32;     // test declaration of local variable with assignment with type DOUBLE
+    	SumAccum<STRING> @stringsum = "string"; // test declaration of local variable with assignment type STRING
+	SumAccum<INT> @int1 = 10, @int2 = 0;	// test declaration of more than one variables in the same line, with INT type
+	SumAccum<UINT> @uint1 = 20, @uint2 = 2;	// test declaration of more than one variables in the same line, with UINT type
+	SumAccum<FLOAT> @float1 = 10.2, @float2 = 1.2;	// test declaration of more than one variables in the same line, with FLOAT type
+	SumAccum<DOUBLE> @double1 = 13.13, @double2 = 1.30;	// test declaration of more than one variables in the same line, with DOUBLE type
+	SumAccum<STRING> @str1 = "my", @str2 = "test";	// test declaration of more than one variables in the same line, with STRING type
+	
+	// test print statement on default initial value of all local variables
+	L0 = {seed};
+	print L0;
+
+	// test = operator in select block
+	L1 = select tgt
+		from L0: s - (member_work_company: e) - company: tgt
+		accum tgt.@uintSum = 1, tgt.@intSum = tgt.nCount,
+			  tgt.@floatSum = e.industryId, tgt.@doubleSum = e.positionId,
+			  tgt.@stringSum = s.id;
+
+	// test print statement on modified value of all local variables
+	print L1;
+
+	// test += operator in select block
+	L2 = select tgt
+		from L0: s - (member_skill: e) - skill: tgt
+		where tgt.nCount == "i2"	// select a certain vertex
+		accum tgt.@uintSum += 1, tgt.@intSum += 2,
+			  tgt.@floatSum += 2.2, tgt.@doubleSum += 3.33,
+			  tgt.@stringSum += s.id;
+
+	// test print statement on modified value of a single vertex
+	print L2;
+
+}

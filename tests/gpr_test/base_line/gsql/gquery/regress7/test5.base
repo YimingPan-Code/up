@@ -1,0 +1,86 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@globalNested": [[[[
+      1,
+      2
+    ]]]]},
+    {"@@globalNested": [
+      [[[
+        1,
+        2
+      ]]],
+      [[
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ]]
+    ]},
+    {"@@globalNested": [
+      [[[
+        1,
+        2
+      ]]],
+      [[
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ]],
+      [[[
+        6,
+        7
+      ]]]
+    ]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@localNested": [[[[
+          -2,
+          -1
+        ]]]],
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@localNested": [
+          [[[
+            -2,
+            -1
+          ]]],
+          [[[
+            0,
+            1
+          ]]]
+        ],
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

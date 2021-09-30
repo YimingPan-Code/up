@@ -1,0 +1,88 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_EIGENVECTOR_CENT_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 0.44832,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 0.39458,
+      "Vertex_ID": "R"
+    },
+    {
+      "score": 0.36158,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 0.29346,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.27489,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 0.22582,
+      "Vertex_ID": "Q"
+    },
+    {
+      "score": 0.21728,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0.21159,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.20036,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.19103,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 0.18197,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 0.16422,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.15045,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 0.14387,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 0.1429,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": 0.06425,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 0.05751,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "M"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

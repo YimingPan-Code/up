@@ -1,0 +1,49 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_CYCLE_DETECTION_C11.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"cycles": [
+    [
+      "K",
+      "C"
+    ],
+    [
+      "K",
+      "A",
+      "E"
+    ],
+    [
+      "K",
+      "D",
+      "C"
+    ],
+    [
+      "K",
+      "A",
+      "E",
+      "C"
+    ],
+    [
+      "K",
+      "D",
+      "J",
+      "E"
+    ],
+    [
+      "K",
+      "D",
+      "J",
+      "E",
+      "C"
+    ]
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

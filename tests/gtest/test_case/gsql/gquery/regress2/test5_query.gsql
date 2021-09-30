@@ -1,0 +1,74 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test static global variable  			#
+# += operator in select block,			#
+# result when run several times of the query,   #
+# deallocate the variables	  		#
+#################################################
+
+DROP QUERY sumac_test5
+create query sumac_test5(VERTEX<company> seed) FOR GRAPH poc_graph{
+	STATIC SumAccum<INT> @@count;
+	STATIC SumAccum<UINT> @@uintSum;	
+	STATIC SumAccum<INT> @@intSum;	
+	STATIC SumAccum<FLOAT> @@floatSum;	
+	STATIC SumAccum<DOUBLE> @@doubleSum;
+	STATIC SumAccum<STRING> @@stringSum;
+	STRING str;
+
+	// count how many times we run this query
+	@@count += 1;
+	print @@count;
+
+	// test print statement on default initial value of all variables
+	IF @@count != 1 THEN
+		str = "Initial Value from last time we ran this query:";
+	ELSE str = "Initial Value:";
+	END;
+	print str;
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+
+	L0 = {seed};
+
+	// test '+=' operator in select block
+	L1 = select tgt
+		from L0: s - (member_work_company: e) - members: tgt
+		accum @@uintSum += 1, @@intSum += s.nCount,
+			  @@floatSum += e.industryId, @@doubleSum += e.positionId,
+			  @@stringSum += "company";
+
+
+	// test print statement on modified value of all variables
+	str = "Modified Value:";
+	print str;
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+
+	// test deallocate when run this query at third times
+	IF @@count == 3 THEN
+		@@count = 0;
+		@@uintSum = 0;
+		@@intSum = 0;
+		@@floatSum = 0;
+		@@doubleSum = 0;
+		@@stringSum = "";
+		str = "This is the third time you call query sumac_test5. @@count will reset to 0";
+		print str;
+		print @@uintSum;
+		print @@intSum;
+		print @@floatSum;
+		print @@doubleSum;
+		print @@stringSum;
+	END;
+}

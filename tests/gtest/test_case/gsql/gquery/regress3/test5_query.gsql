@@ -1,0 +1,84 @@
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# positive test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# test static global MinAccum/MaxAccum as       #
+# the parameter in expression function          #
+# default initial value, nested type            #
+#################################################
+
+create query minmaxac_test5(VERTEX<company> seed) FOR GRAPH poc_graph api("v2") {
+  // test declaration of static global variable with type UINT
+  STATIC MinAccum<UINT> @@uintMin;
+  // test declaration of static global variable with type INT
+  STATIC MinAccum<INT> @@intMin;
+  // test declaration of static global variable with type FLOAT
+  STATIC MinAccum<FLOAT> @@floatMin;
+  // test declaration of static global variable with type DOUBLE
+  STATIC MinAccum<DOUBLE> @@doubleMin;
+  // test declaration of static global variable with type VERTEX
+  STATIC MinAccum<VERTEX> @@vertexMin;
+
+  // test declaration of static global variable with type UINT
+  STATIC MaxAccum<UINT> @@uintMax;
+  // test declaration of static global variable with type INT
+  STATIC MaxAccum<INT> @@intMax;
+  // test declaration of static global variable with type FLOAT
+  STATIC MaxAccum<FLOAT> @@floatMax;
+  // test declaration of static global variable with type DOUBLE
+  STATIC MaxAccum<DOUBLE> @@doubleMax;
+  // test declaration of static global variable with type VERTEX
+  STATIC MaxAccum<VERTEX> @@vertexMax;
+
+  // Init static global variables
+  @@uintMin = 100;
+  @@intMin = 100;
+  @@floatMin = 100;
+  @@doubleMin = 100;
+  @@uintMax = 0;
+  @@intMax = 0;
+  @@floatMax = 0;
+  @@doubleMax = 0;
+
+  // Test default initial value of all global variables
+  print @@uintMin;
+  print @@intMin;
+  print @@floatMin;
+  print @@doubleMin;
+  print @@vertexMin;
+
+  print @@uintMax;
+  print @@intMax;
+  print @@floatMax;
+  print @@doubleMax;
+  print @@vertexMax;
+
+  // Test using global variables as parameters in expression function
+  @@intMin = addIntMinAccum(@@intMin);
+  @@uintMin = addUintMinAccum(@@uintMin);
+  @@floatMin = addFloatMinAccum(@@floatMin);
+  @@doubleMin = addDoubleMinAccum(@@doubleMin);
+  @@vertexMin = addVertexMinAccum(@@vertexMin, seed);
+
+  @@intMax = addIntMaxAccum(@@intMax);
+  @@uintMax = addUintMaxAccum(@@uintMax);
+  @@floatMax = addFloatMaxAccum(@@floatMax);
+  @@doubleMax = addDoubleMaxAccum(@@doubleMax);
+  @@vertexMax = addVertexMaxAccum(@@vertexMax, seed);
+
+  // Test modified values of all global variables
+  print @@uintMin;
+  print @@intMin;
+  print @@floatMin;
+  print @@doubleMin;
+  print @@vertexMin;
+
+  print @@uintMax;
+  print @@intMax;
+  print @@floatMax;
+  print @@doubleMax;
+  print @@vertexMax;
+}
+

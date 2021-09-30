@@ -1,0 +1,69 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test global SumAccum 				#
+# = and += operator in query block              #
+# += operator in select block     		#
+#################################################
+
+DROP QUERY sumac_test2
+create batch query sumac_test2(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<UINT> @@uintSum;
+	SumAccum<INT> @@intSum;	
+	SumAccum<FLOAT> @@floatSum;
+	SumAccum<DOUBLE> @@doubleSum;
+	SumAccum<STRING> @@stringSum;
+	
+	// test print statement on default initial value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+
+	// test = operator in query block
+	@@uintSum = 1;
+	@@intSum = 2;
+	@@floatSum = 1.2;
+	@@doubleSum = 3.33;
+	@@stringSum = "test2";
+
+	// test print statement on modified value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+
+	// test += operator in query block
+	@@uintSum += 11;
+	@@intSum += 12;
+	@@floatSum += 11.2;
+	@@doubleSum += 30.33;
+	@@stringSum += "+=operator";
+
+	// test print statement on modified value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+
+	L0 = {seed};
+	// test += operator in select block
+	L1 = select tgt
+		from L0: s - (member_work_company: e) - company: tgt
+		accum @@uintSum += 1, @@intSum += 7,
+			  @@floatSum += e.industryId, @@doubleSum += e.positionId,
+			  @@stringSum += s.profileIndustryId;
+
+	// test print statement on modified value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+}

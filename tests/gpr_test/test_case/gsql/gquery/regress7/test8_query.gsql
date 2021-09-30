@@ -1,0 +1,50 @@
+#################################################
+# GSQL language ListAccum		        #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# foreach to iterate ListAccum			#
+#################################################
+
+DROP QUERY listac_test8
+#create batch query listac_test8(VERTEX<members> seed) FOR GRAPH poc_graph {
+#	ListAccum<STRING> @@companies;
+#	ListAccum<STRING> @member;
+#	SumAccum<INT> @nums;
+#	MapAccum<STRING, INT> @@followM;
+#	STRING coms;
+#
+#	L0 = {seed};
+#	L1 = select tgt
+#	     from L0: s - (member_follow_company: e) - company: tgt
+#	     accum @@companies += tgt.id;
+#
+#	// test foreach in query block
+#	foreach com in @@companies do
+#		coms += com;
+#	end;
+#	print coms;
+#	
+#        members = {members.*};
+#        L2 = select s
+#             from members: s - (member_follow_company: e) - company: tgt
+#             accum if @@companies.contains(tgt.id) then
+#                        tgt.@member += s.id
+#                   end;
+#
+#	// test foreach in select block
+#	L1 = select tgt
+#	     from L1: tgt
+#	     accum foreach m in tgt.@member do
+#			tgt.@nums += 1
+#		   end
+#	     post-accum @@followM += (tgt.id -> tgt.@nums);
+#	print @@followM;
+#
+#	// test update loop variable to update element value
+#	foreach com in @@companies do
+#		com += "_test";
+#	end;
+#	print @@companies;		
+#}

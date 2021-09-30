@@ -1,0 +1,8 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress5/test2_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query BitwiseAndOrAccum_neg_test2 (SEM-8): line 14, col 17
+The accumulator type BitwiseAndAccum cannot be given an element type.
+The query BitwiseAndOrAccum_neg_test2 cannot be added!
+[GTEST_END]

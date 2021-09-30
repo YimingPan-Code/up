@@ -1,0 +1,17 @@
+use graph poc_graph
+#################################################
+# GSQL language SumAccum 	                #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test SumAccum as seedSet			#
+#################################################
+set exit_on_error = false
+
+create query sumac_neg_test6(VERTEX<company> seed) FOR GRAPH poc_graph {
+	SumAccum<VERTEX> @@sumac;
+	@@sumac = seed;
+	L0 = {@@sumac};
+	print L0;
+}

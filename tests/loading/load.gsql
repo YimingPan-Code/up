@@ -1,0 +1,17 @@
+clear graph store -HARD
+run job load0
+
+clear graph store -HARD
+run job load6000
+
+clear graph store -HARD
+run job load30000
+
+clear graph store -HARD
+run job load60000
+
+clear graph store -HARD
+run job load90000
+
+clear graph store -HARD
+run job load180000

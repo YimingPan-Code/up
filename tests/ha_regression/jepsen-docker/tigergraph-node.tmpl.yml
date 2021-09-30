@@ -1,0 +1,17 @@
+version: "2"
+services:
+  node:
+    container_name: jepsen-node
+    build:
+      context: ./node
+      args:
+        installation_script_dir: tigergraph_installation/
+        pkg_url: "http://service.tigergraph.com/download"
+        pkg_name: "tigergraph-1.0.3-offline.tar.gz"
+    env_file: ./secret/node.env
+    privileged: true
+    ulimits:
+      nofile:
+        soft: 1000000
+        hard: 1000000
+

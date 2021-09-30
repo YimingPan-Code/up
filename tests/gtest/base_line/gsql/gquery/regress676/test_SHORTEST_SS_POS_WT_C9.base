@@ -1,0 +1,101 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_POS_WT_C9.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"total": [
+    {
+      "v_id": "P",
+      "attributes": {"total.@minPath.top().dist": 127},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "Q",
+      "attributes": {"total.@minPath.top().dist": 133},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "L",
+      "attributes": {"total.@minPath.top().dist": 126},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "M",
+      "attributes": {"total.@minPath.top().dist": 152},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "K",
+      "attributes": {"total.@minPath.top().dist": 142},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "N",
+      "attributes": {"total.@minPath.top().dist": 56},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "I",
+      "attributes": {"total.@minPath.top().dist": 222},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "G",
+      "attributes": {"total.@minPath.top().dist": 179},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "H",
+      "attributes": {"total.@minPath.top().dist": 92},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "O",
+      "attributes": {"total.@minPath.top().dist": 132},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "C",
+      "attributes": {"total.@minPath.top().dist": 78},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "F",
+      "attributes": {"total.@minPath.top().dist": 198},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "E",
+      "attributes": {"total.@minPath.top().dist": 103},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "D",
+      "attributes": {"total.@minPath.top().dist": 59},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "R",
+      "attributes": {"total.@minPath.top().dist": 197},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "A",
+      "attributes": {"total.@minPath.top().dist": 0},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    },
+    {
+      "v_id": "B",
+      "attributes": {"total.@minPath.top().dist": 106},
+      "v_type": "SHORTEST_SS_POS_WT_C9"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"total":[{"v_id":"L","attributes":{"total.@minPath.top().dist":99},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"M","attributes":{"total.@minPath.top().dist":90},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"N","attributes":{"total.@minPath.top().dist":116},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"I","attributes":{"total.@minPath.top().dist":95},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"H","attributes":{"total.@minPath.top().dist":117},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"G","attributes":{"total.@minPath.top().dist":161},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"J","attributes":{"total.@minPath.top().dist":164},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"E","attributes":{"total.@minPath.top().dist":114},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"D","attributes":{"total.@minPath.top().dist":36},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"B","attributes":{"total.@minPath.top().dist":81},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"A","attributes":{"total.@minPath.top().dist":0},"v_type":"SHORTEST_SS_POS_WT_C11"},{"v_id":"C","attributes":{"total.@minPath.top().dist":124},"v_type":"SHORTEST_SS_POS_WT_C11"}]}]}
+>>>>>>> base
+

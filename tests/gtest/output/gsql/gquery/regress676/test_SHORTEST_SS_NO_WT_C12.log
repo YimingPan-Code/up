@@ -1,0 +1,96 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_NO_WT_C12.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"ResultSet": [
+    {
+      "v_id": "T",
+      "attributes": {"ResultSet.@dis": 1},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "P",
+      "attributes": {"ResultSet.@dis": 2},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "Q",
+      "attributes": {"ResultSet.@dis": 3},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "L",
+      "attributes": {"ResultSet.@dis": 3},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "N",
+      "attributes": {"ResultSet.@dis": 5},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "K",
+      "attributes": {"ResultSet.@dis": 4},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "M",
+      "attributes": {"ResultSet.@dis": 4},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "E",
+      "attributes": {"ResultSet.@dis": 2},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "R",
+      "attributes": {"ResultSet.@dis": 3},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "A",
+      "attributes": {"ResultSet.@dis": 0},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "B",
+      "attributes": {"ResultSet.@dis": 3},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "I",
+      "attributes": {"ResultSet.@dis": 3},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "G",
+      "attributes": {"ResultSet.@dis": 1},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "H",
+      "attributes": {"ResultSet.@dis": 2},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "J",
+      "attributes": {"ResultSet.@dis": 2},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    },
+    {
+      "v_id": "F",
+      "attributes": {"ResultSet.@dis": 2},
+      "v_type": "SHORTEST_SS_NO_WT_C12"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

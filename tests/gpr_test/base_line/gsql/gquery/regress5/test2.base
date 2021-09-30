@@ -1,0 +1,40 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress5/test2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "c1",
+      "attributes": {
+        "@orAccumVar1": false,
+        "@orAccumVar2": true,
+        "@andAccumVar": true,
+        "company_name": "com1",
+        "@orAccumVar": true,
+        "nCount": 1,
+        "id": "c1",
+        "label": true,
+        "@andAccumVar2": false,
+        "@andAccumVar1": false
+      },
+      "v_type": "company"
+    }]},
+    {"L0": [{
+      "v_id": "c1",
+      "attributes": {
+        "L0.@andAccumVar": true,
+        "L0.@orAccumVar": true
+      },
+      "v_type": "company"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

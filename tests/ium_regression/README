@@ -1,0 +1,42 @@
+1. Usage
+-----------------------------------------------------
+cd bigtest/tests/ium_regression
+./run_all.sh  [-m <SINGLE|MULTI>] [-r]
+E.g.
+"./run_all.sh -r" for first time run
+"./run_all.sh -m SINGLE" same as "./run_all.sh"
+"./run_all.sh -m MULTI"
+
+
+Command-line options
+    -h : show usage
+    -m : run in SINGLE or MULTI mode, SINGLE mode means run locally, MULTI means run in cluster, default=SINGLE
+    -r : refresh the tigergraph.bin and pkg.tar.gz, first time run must with this option
+
+2. Config
+-----------------------------------------------------
+In MultiNode mode, you should change the file /config_sample/MultiNode.cfg, mainly about your cluster information.
+E.g.
+Change "cluster.nodes: m1:192.168.33.81,m2:192.168.33.82" to "cluster.nodes: m1:test_machine_ip1,m2:test_machine_ip2,..."
+Also you may should change "**.servers" related config.
+
+3. redis-server
+-----------------------------------------------------
+Please make sure redis-server is on, or the gadmin check command may fail.
+
+4. ssh
+-----------------------------------------------------
+1. Please make sure you have are ssh free to each other(include itself) in the cluster.nodes(mean the test machines).
+2. Please make sure you have ssh to the IP in "cluster.nodes", or the interact information may block you.
+E.g.
+The authenticity of host '192.168.136.161 (192.168.136.161)' can't be established.
+ECDSA key fingerprint is 3d:9d:79:7b:20:88:fb:4a:9e:0d:96:9a:83:d0:83:e1.
+Are you sure you want to continue connecting (yes/no)?
+
+5. runtime env
+openfiles should be not less than 1000000
+disk should be not less than 5GB
+
+6. tools need to be installed
+-----------------------------------------------------
+pssh

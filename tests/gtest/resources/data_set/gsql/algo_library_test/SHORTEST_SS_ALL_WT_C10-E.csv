@@ -1,0 +1,12 @@
+from,to,weight
+A,G,62
+B,C,76
+C,D,3
+C,E,96
+C,J,94
+E,F,71
+E,G,53
+F,H,62
+G,H,54
+H,I,-6
+H,J,83

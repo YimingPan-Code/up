@@ -1,0 +1,237 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_JACCARD_BATCH_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"Start": [
+    {
+      "v_id": "Anthony",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.2381,
+          "ver": "Amy"
+        },
+        {
+          "val": 0.16667,
+          "ver": "Anton"
+        },
+        {
+          "val": 0.125,
+          "ver": "Levon"
+        },
+        {
+          "val": 0.08333,
+          "ver": "Kendrick"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Anton",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.16667,
+          "ver": "Anthony"
+        },
+        {
+          "val": 0.16667,
+          "ver": "James"
+        },
+        {
+          "val": 0.16667,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.09524,
+          "ver": "Amy"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "John",
+      "attributes": {"Start.@heap": []},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Levon",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.19048,
+          "ver": "Amy"
+        },
+        {
+          "val": 0.125,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.125,
+          "ver": "James"
+        },
+        {
+          "val": 0.125,
+          "ver": "Anthony"
+        },
+        {
+          "val": 0.09091,
+          "ver": "Kendrick"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Amy",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.38095,
+          "ver": "Kendrick"
+        },
+        {
+          "val": 0.2381,
+          "ver": "Anthony"
+        },
+        {
+          "val": 0.2381,
+          "ver": "James"
+        },
+        {
+          "val": 0.2381,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.19048,
+          "ver": "Levon"
+        },
+        {
+          "val": 0.09524,
+          "ver": "Anton"
+        },
+        {
+          "val": 0.04762,
+          "ver": "Andrea"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Andrea",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.2,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.2,
+          "ver": "James"
+        },
+        {
+          "val": 0.125,
+          "ver": "Kendrick"
+        },
+        {
+          "val": 0.04762,
+          "ver": "Amy"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "James",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 1,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.2381,
+          "ver": "Amy"
+        },
+        {
+          "val": 0.2,
+          "ver": "Andrea"
+        },
+        {
+          "val": 0.18182,
+          "ver": "Kendrick"
+        },
+        {
+          "val": 0.16667,
+          "ver": "Anton"
+        },
+        {
+          "val": 0.125,
+          "ver": "Levon"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Kevin",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 1,
+          "ver": "James"
+        },
+        {
+          "val": 0.2381,
+          "ver": "Amy"
+        },
+        {
+          "val": 0.2,
+          "ver": "Andrea"
+        },
+        {
+          "val": 0.18182,
+          "ver": "Kendrick"
+        },
+        {
+          "val": 0.16667,
+          "ver": "Anton"
+        },
+        {
+          "val": 0.125,
+          "ver": "Levon"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    },
+    {
+      "v_id": "Kendrick",
+      "attributes": {"Start.@heap": [
+        {
+          "val": 0.38095,
+          "ver": "Amy"
+        },
+        {
+          "val": 0.18182,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.18182,
+          "ver": "James"
+        },
+        {
+          "val": 0.125,
+          "ver": "Andrea"
+        },
+        {
+          "val": 0.09091,
+          "ver": "Levon"
+        },
+        {
+          "val": 0.08333,
+          "ver": "Anthony"
+        }
+      ]},
+      "v_type": "JACCARD_STUDENT"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

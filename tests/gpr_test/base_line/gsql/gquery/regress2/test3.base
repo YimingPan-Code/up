@@ -1,0 +1,102 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test3.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "m5",
+      "attributes": {
+        "@uint2": 2,
+        "@double2": 1.3,
+        "@intSum": 0,
+        "@double1": 13.13,
+        "@uintSum": 0,
+        "@floatSum": 0,
+        "@uintsum": 10,
+        "@floatsum": 2.2,
+        "@stringSum": "",
+        "profileIndustryId": "i2",
+        "@stringsum": "string",
+        "@uint1": 20,
+        "@int2": 0,
+        "@float2": 1.2,
+        "@doubleSum": 0,
+        "@doublesum": 3.32,
+        "@int1": 10,
+        "@float1": 10.2,
+        "@str2": "test",
+        "id": "m5",
+        "@str1": "my",
+        "@intsum": 1
+      },
+      "v_type": "members"
+    }]},
+    {"L1": [{
+      "v_id": "c2",
+      "attributes": {
+        "@uint2": 2,
+        "@double2": 1.3,
+        "@intSum": 7,
+        "@double1": 13.13,
+        "@uintSum": 1,
+        "@floatSum": 2,
+        "@uintsum": 10,
+        "@floatsum": 2.2,
+        "@stringSum": "m5",
+        "label": false,
+        "@stringsum": "string",
+        "@uint1": 20,
+        "@int2": 0,
+        "@float2": 1.2,
+        "@doubleSum": 3,
+        "@doublesum": 3.32,
+        "@int1": 10,
+        "company_name": "com2",
+        "@float1": 10.2,
+        "nCount": 0,
+        "@str2": "test",
+        "id": "c2",
+        "@str1": "my",
+        "@intsum": 1
+      },
+      "v_type": "company"
+    }]},
+    {"L2": [{
+      "v_id": "s1",
+      "attributes": {
+        "@uint2": 2,
+        "@double2": 1.3,
+        "@intSum": 2,
+        "@double1": 13.13,
+        "@uintSum": 1,
+        "@floatSum": 2.2,
+        "@uintsum": 10,
+        "@floatsum": 2.2,
+        "@stringSum": "m5",
+        "@stringsum": "string",
+        "@uint1": 20,
+        "@int2": 0,
+        "@float2": 1.2,
+        "@doubleSum": 3.33,
+        "@doublesum": 3.32,
+        "@int1": 10,
+        "@float1": 10.2,
+        "nCount": "i2",
+        "@str2": "test",
+        "id": "s1",
+        "@str1": "my",
+        "@intsum": 1
+      },
+      "v_type": "skill"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

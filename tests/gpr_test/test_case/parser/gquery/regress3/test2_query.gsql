@@ -1,0 +1,51 @@
+use graph poc_graph
+#################################################
+# GSQL language SumAccum declaration            #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test declaration with type	 		#
+# = and += operator with wrong type value       #
+#################################################
+set exit_on_error = false
+
+create batch query avgac_neg_test2_1(VERTEX<members> seed) FOR GRAPH poc_graph {
+	// test = operator for global variable in select block 
+	AvgAccum @@avg;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@avg = 3;
+	print @@avg;
+}
+
+create batch query avgac_neg_test2_2() FOR GRAPH poc_graph {
+	// data type of AvgAccum should not be declared
+	AvgAccum<INT> @@avg;
+	print @@avg;
+}
+
+create batch query avgac_neg_test2_3(VERTEX<company> seed) FOR GRAPH poc_graph {
+	// data type of AvgAccum should not be declared
+	AvgAccum<DOUBLE> @avg;
+	L0 = {seed};
+	print L0;
+}
+
+create batch query avgac_neg_test2_4() FOR GRAPH poc_graph {
+	// assign string to AvgAccum
+	AvgAccum @@avg;
+	@@avg += "string";
+	print @@avg;
+}
+
+create batch query avgac_neg_test2_5(VERTEX<members> seed) FOR GRAPH poc_graph {
+	// assign string to AvgAccum
+	AvgAccum @avg;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@avg += tgt.company_name;
+	print L0;
+}

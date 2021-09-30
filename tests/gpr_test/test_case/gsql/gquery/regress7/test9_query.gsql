@@ -1,0 +1,18 @@
+#################################################
+# GSQL language ListAccum		        #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# LoadAccum on ListAccum			#
+#################################################
+
+DROP QUERY listac_test9
+#create batch query listac_test9(STRING file) FOR GRAPH poc_graph {
+#	ListAccum<ListAccum<STRING>> @@companies;
+#	
+#	@@companies = { LOADACCUM (file, $2, ",", false) };
+#
+#	print @@companies;
+#}
+#

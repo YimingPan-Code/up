@@ -1,0 +1,35 @@
+#################################################
+# GSQL language ListAccum		        #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# Although it says that ListAccum is limited	#
+# to a depth of three, actually we don't have	#
+# limitation for depth of ListAccum, here we	#
+# test depth of 4 as an example.		#
+#################################################
+
+DROP QUERY listac_test5
+create query listac_test5(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<ListAccum<ListAccum<ListAccum<INT>>>> @@globalNested;
+	ListAccum<ListAccum<ListAccum<ListAccum<INT>>>> @localNested;
+	
+	@@globalNested = [[[[1, 2]]]];
+	print @@globalNested;
+
+	@@globalNested += [[[[3, 3], [4, 5]]]];
+	print @@globalNested;
+
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@globalNested += [[[[6, 7]]]], s.@localNested = [[[[-2, -1]]]];
+	print @@globalNested;
+	print L0;
+
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@localNested += [[[[0, 1]]]];
+	print L0;
+}

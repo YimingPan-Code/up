@@ -1,0 +1,822 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [],
+        "@double2": [],
+        "@double1": [],
+        "@uintlist": [],
+        "@threelist": [],
+        "@bool2": [],
+        "@bool1": [],
+        "@doublelist": [],
+        "@d1": [],
+        "@intlist": [],
+        "@d2": [],
+        "@uint1": [],
+        "@int2": [],
+        "@float2": [],
+        "@int1": [],
+        "@strcomlist": [],
+        "@twolist": [],
+        "@float1": [],
+        "@tlist": [],
+        "@two1": [],
+        "@str2": [],
+        "@two2": [],
+        "id": "m3",
+        "@str1": [],
+        "@strcom2": [],
+        "@strcom1": [],
+        "@dlist": [],
+        "profileIndustryId": "i1",
+        "@strlist": [],
+        "@e1": [],
+        "@e2": [],
+        "@vlist": [],
+        "@floatlist": [],
+        "@boollist": [],
+        "@elist": [],
+        "@v1": [],
+        "@three2": [],
+        "@v2": [],
+        "@three1": [],
+        "@t1": [],
+        "@t2": []
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [],
+        "@double2": [],
+        "@double1": [],
+        "@uintlist": [0],
+        "@threelist": [[[0]]],
+        "@bool2": [],
+        "@bool1": [],
+        "@doublelist": [1.1],
+        "@d1": [],
+        "@intlist": [-1],
+        "@d2": [],
+        "@uint1": [],
+        "@int2": [],
+        "@float2": [],
+        "@int1": [],
+        "@strcomlist": ["1time"],
+        "@twolist": [[
+          -2,
+          -1
+        ]],
+        "@float1": [],
+        "@tlist": [{
+          "score": 13,
+          "name": "m3"
+        }],
+        "@two1": [],
+        "@str2": [],
+        "@two2": [],
+        "id": "m3",
+        "@str1": [],
+        "@strcom2": [],
+        "@strcom1": [],
+        "@dlist": [1388534399],
+        "profileIndustryId": "i1",
+        "@strlist": ["round1"],
+        "@e1": [],
+        "@e2": [],
+        "@vlist": ["c1"],
+        "@floatlist": [0.1],
+        "@boollist": [false],
+        "@elist": [{
+          "from_type": "members",
+          "to_type": "company",
+          "directed": false,
+          "from_id": "m3",
+          "to_id": "c1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 2
+          },
+          "e_type": "member_work_company"
+        }],
+        "@v1": [],
+        "@three2": [],
+        "@v2": [],
+        "@three1": [],
+        "@t1": [],
+        "@t2": []
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [],
+        "@double2": [],
+        "@double1": [1.1],
+        "@uintlist": [0],
+        "@threelist": [[[0]]],
+        "@bool2": [],
+        "@bool1": [false],
+        "@doublelist": [1.1],
+        "@d1": [1388534399],
+        "@intlist": [-1],
+        "@d2": [],
+        "@uint1": [0],
+        "@int2": [],
+        "@float2": [],
+        "@int1": [-1],
+        "@strcomlist": ["1time"],
+        "@twolist": [[
+          -2,
+          -1
+        ]],
+        "@float1": [0.1],
+        "@tlist": [{
+          "score": 13,
+          "name": "m3"
+        }],
+        "@two1": [[
+          -2,
+          -1
+        ]],
+        "@str2": [],
+        "@two2": [],
+        "id": "m3",
+        "@str1": ["round1"],
+        "@strcom2": [],
+        "@strcom1": ["1time"],
+        "@dlist": [1388534399],
+        "profileIndustryId": "i1",
+        "@strlist": ["round1"],
+        "@e1": [{
+          "from_type": "members",
+          "to_type": "company",
+          "directed": false,
+          "from_id": "m3",
+          "to_id": "c1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 2
+          },
+          "e_type": "member_work_company"
+        }],
+        "@e2": [],
+        "@vlist": ["c1"],
+        "@floatlist": [0.1],
+        "@boollist": [false],
+        "@elist": [{
+          "from_type": "members",
+          "to_type": "company",
+          "directed": false,
+          "from_id": "m3",
+          "to_id": "c1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 2
+          },
+          "e_type": "member_work_company"
+        }],
+        "@v1": ["c1"],
+        "@three2": [],
+        "@v2": [],
+        "@three1": [[[0]]],
+        "@t1": [{
+          "score": 13,
+          "name": "m3"
+        }],
+        "@t2": []
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [],
+        "@double2": [],
+        "@double1": [1.1],
+        "@uintlist": [
+          0,
+          1
+        ],
+        "@threelist": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@bool2": [],
+        "@bool1": [false],
+        "@doublelist": [
+          1.1,
+          2
+        ],
+        "@d1": [1388534399],
+        "@intlist": [
+          -1,
+          17
+        ],
+        "@d2": [],
+        "@uint1": [0],
+        "@int2": [],
+        "@float2": [],
+        "@int1": [-1],
+        "@strcomlist": [
+          "1time",
+          "m3"
+        ],
+        "@twolist": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "@float1": [0.1],
+        "@tlist": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 11,
+            "name": "i1"
+          }
+        ],
+        "@two1": [[
+          -2,
+          -1
+        ]],
+        "@str2": [],
+        "@two2": [],
+        "id": "m3",
+        "@str1": ["round1"],
+        "@strcom2": [],
+        "@strcom1": ["1time"],
+        "@dlist": [
+          1388534399,
+          1388534399
+        ],
+        "profileIndustryId": "i1",
+        "@strlist": [
+          "round1",
+          "m3"
+        ],
+        "@e1": [{
+          "from_type": "members",
+          "to_type": "company",
+          "directed": false,
+          "from_id": "m3",
+          "to_id": "c1",
+          "attributes": {
+            "industryId": 1,
+            "positionId": 2
+          },
+          "e_type": "member_work_company"
+        }],
+        "@e2": [],
+        "@vlist": [
+          "c1",
+          "c1"
+        ],
+        "@floatlist": [
+          0.1,
+          1
+        ],
+        "@boollist": [
+          false,
+          true
+        ],
+        "@elist": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@v1": ["c1"],
+        "@three2": [],
+        "@v2": [],
+        "@three1": [[[0]]],
+        "@t1": [{
+          "score": 13,
+          "name": "m3"
+        }],
+        "@t2": []
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [],
+        "@double2": [],
+        "@double1": [
+          1.1,
+          2.2
+        ],
+        "@uintlist": [
+          0,
+          1
+        ],
+        "@threelist": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@bool2": [],
+        "@bool1": [
+          false,
+          true
+        ],
+        "@doublelist": [
+          1.1,
+          2
+        ],
+        "@d1": [
+          1388534399,
+          1388534399
+        ],
+        "@intlist": [
+          -1,
+          17
+        ],
+        "@d2": [],
+        "@uint1": [
+          0,
+          1
+        ],
+        "@int2": [],
+        "@float2": [],
+        "@int1": [
+          -1,
+          -2
+        ],
+        "@strcomlist": [
+          "1time",
+          "m3"
+        ],
+        "@twolist": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "@float1": [
+          0.1,
+          0.2
+        ],
+        "@tlist": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 11,
+            "name": "i1"
+          }
+        ],
+        "@two1": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "@str2": [],
+        "@two2": [],
+        "id": "m3",
+        "@str1": [
+          "round1",
+          "round2"
+        ],
+        "@strcom2": [],
+        "@strcom1": [
+          "1time",
+          "2time"
+        ],
+        "@dlist": [
+          1388534399,
+          1388534399
+        ],
+        "profileIndustryId": "i1",
+        "@strlist": [
+          "round1",
+          "m3"
+        ],
+        "@e1": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@e2": [],
+        "@vlist": [
+          "c1",
+          "c1"
+        ],
+        "@floatlist": [
+          0.1,
+          1
+        ],
+        "@boollist": [
+          false,
+          true
+        ],
+        "@elist": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@v1": [
+          "c1",
+          "m3"
+        ],
+        "@three2": [],
+        "@v2": [],
+        "@three1": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@t1": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 23,
+            "name": "i1"
+          }
+        ],
+        "@t2": []
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uint2": [
+          0,
+          1
+        ],
+        "@double2": [
+          1.1,
+          2.2
+        ],
+        "@double1": [
+          1.1,
+          2.2
+        ],
+        "@uintlist": [
+          0,
+          1
+        ],
+        "@threelist": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@bool2": [
+          false,
+          true
+        ],
+        "@bool1": [
+          false,
+          true
+        ],
+        "@doublelist": [
+          1.1,
+          2
+        ],
+        "@d1": [
+          1388534399,
+          1388534399
+        ],
+        "@intlist": [
+          -1,
+          17
+        ],
+        "@d2": [
+          1388534399,
+          1388534399
+        ],
+        "@uint1": [
+          0,
+          1
+        ],
+        "@int2": [
+          -1,
+          -2
+        ],
+        "@float2": [
+          0.1,
+          0.2
+        ],
+        "@int1": [
+          -1,
+          -2
+        ],
+        "@strcomlist": [
+          "1time",
+          "m3"
+        ],
+        "@twolist": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "@float1": [
+          0.1,
+          0.2
+        ],
+        "@tlist": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 11,
+            "name": "i1"
+          }
+        ],
+        "@two1": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "@str2": [
+          "round1",
+          "round2"
+        ],
+        "@two2": [
+          [
+            -2,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "id": "m3",
+        "@str1": [
+          "round1",
+          "round2"
+        ],
+        "@strcom2": [
+          "1time",
+          "2time"
+        ],
+        "@strcom1": [
+          "1time",
+          "2time"
+        ],
+        "@dlist": [
+          1388534399,
+          1388534399
+        ],
+        "profileIndustryId": "i1",
+        "@strlist": [
+          "round1",
+          "m3"
+        ],
+        "@e1": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@e2": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@vlist": [
+          "c1",
+          "c1"
+        ],
+        "@floatlist": [
+          0.1,
+          1
+        ],
+        "@boollist": [
+          false,
+          true
+        ],
+        "@elist": [
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          },
+          {
+            "from_type": "members",
+            "to_type": "company",
+            "directed": false,
+            "from_id": "m3",
+            "to_id": "c1",
+            "attributes": {
+              "industryId": 1,
+              "positionId": 2
+            },
+            "e_type": "member_work_company"
+          }
+        ],
+        "@v1": [
+          "c1",
+          "m3"
+        ],
+        "@three2": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@v2": [
+          "c1",
+          "m3"
+        ],
+        "@three1": [
+          [[0]],
+          [
+            [1],
+            [2]
+          ]
+        ],
+        "@t1": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 23,
+            "name": "i1"
+          }
+        ],
+        "@t2": [
+          {
+            "score": 13,
+            "name": "m3"
+          },
+          {
+            "score": 23,
+            "name": "i1"
+          }
+        ]
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

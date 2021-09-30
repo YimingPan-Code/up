@@ -1,0 +1,35 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress6/test1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@bwAndAccumVar": -1},
+    {"@@bwOrAccumVar": 0},
+    {
+      "@@bwAndAccumVar2": 85,
+      "@@bwAndAccumVar1": 170
+    },
+    {
+      "@@bwOrAccumVar2": 15,
+      "@@bwOrAccumVar1": 240
+    },
+    {"@@bwOrAccumVar": 170},
+    {"@@bwOrAccumVar1": 240},
+    {"@@bwAndAccumVar": 5},
+    {"@@bwOrAccumVar": 255},
+    {"@@bwOrAccumVar": 95},
+    {"@@bwAndAccumVar": 5},
+    {"@@bwAndAccumVar1": 0},
+    {"@@bwOrAccumVar": 95},
+    {"@@bwAndAccumVar2": 85}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

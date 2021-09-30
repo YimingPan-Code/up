@@ -1,0 +1,83 @@
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# positive test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# test local MinAccum & MaxAccum declaration,   #
+# default initial value                         #
+#################################################
+
+create query minmaxac_test2(VERTEX<company> seed) FOR GRAPH poc_graph api("v2") {
+  // Test declaration of local variable with type UINT
+  MinAccum<UINT> @uintMin;
+  // Test declaration of local variable with type INT
+  MinAccum<INT> @intMin;
+  // Test declaration of local variable with type FLOAT
+  MinAccum<FLOAT> @floatMin;
+  // Test declaration of local variable with type DOUBLE 
+  MinAccum<DOUBLE> @doubleMin;
+  // Test declaration of local variable with type VERTEX
+  MinAccum<VERTEX> @vertexMin;
+  // Test declaration local variable with assignment with type UINT
+  MinAccum<UINT> @uintMin0 = 10;
+  // Test declaration local variable with assignment with type INT
+  MinAccum<INT> @intMin0 = 1;
+  // Test declaration local variable with assignment with type FLOAT
+  MinAccum<FLOAT> @floatMin0 = 2.2;
+  // Test declaration local variable with assignment with type DOUBLE
+  MinAccum<DOUBLE> @doubleMin0 = 3.32;
+  // Test declaration local variable with assignment with type VERTEX
+  MinAccum<VERTEX> @vertexMin0;
+  // Test declaration of more than one variables in a line, with type INT
+  MinAccum<INT> @intMin1 = 10, @intMin2 = 0;
+  // Test declaration of more than one variables in a line, with type UINT
+  MinAccum<UINT> @uintMin1 = 20, @uintMin2 = 2;
+  // Test declaration of more than one variables in a line, with type FLOAT
+  MinAccum<FLOAT> @floatMin1 = 10.2, @floatMin2 = 1.2;
+  // Test declaration of more than one variables in a line, with type DOUBLE
+  MinAccum<DOUBLE> @doubleMin1 = 13.13, @doubleMin2 = 1.30;
+  // Test declaration of more than one variables in a line, with type VERTEX
+  MinAccum<VERTEX> @vertexMin1, @vertexMin2;
+
+  // Test declaration of local variable with type UINT
+  MaxAccum<UINT> @uintMax;
+  // Test declaration of local variable with type INT
+  MaxAccum<INT> @intMax;
+  // Test declaration of local variable with type FLOAT
+  MaxAccum<FLOAT> @floatMax;
+  // Test declaration of local variable with type DOUBLE 
+  MaxAccum<DOUBLE> @doubleMax;
+  // Test declaration of local variable with type VERTEX
+  MaxAccum<VERTEX> @vertexMax;
+  // Test declaration local variable with assignment with type UINT
+  MaxAccum<UINT> @uintMax0 = 10;
+  // Test declaration local variable with assignment with type INT
+  MaxAccum<INT> @intMax0 = 1;
+  // Test declaration local variable with assignment with type FLOAT
+  MaxAccum<FLOAT> @floatMax0 = 2.2;
+  // Test declaration local variable with assignment with type DOUBLE
+  MaxAccum<DOUBLE> @doubleMax0 = 3.32;
+  // Test declaration local variable with assignment with type VERTEX
+  MaxAccum<VERTEX> @vertexMax0;
+  // Test declaration of more than one variables in a line, with type INT
+  MaxAccum<INT> @intMax1 = 10, @intMax2 = 0;
+  // Test declaration of more than one variables in a line, with type UINT
+  MaxAccum<UINT> @uintMax1 = 20, @uintMax2 = 2;
+  // Test declaration of more than one variables in a line, with type FLOAT
+  MaxAccum<FLOAT> @floatMax1 = 10.2, @floatMax2 = 1.2;
+  // Test declaration of more than one variables in a line, with type DOUBLE
+  MaxAccum<DOUBLE> @doubleMax1 = 13.13, @doubleMax2 = 1.30;
+  // Test declaration of more than one variables in a line, with type VERTEX
+  MaxAccum<VERTEX> @vertexMax1, @vertexMax2;
+
+  // Test += operator in select block
+  L0 = {seed};
+  L0 = SELECT s
+        FROM L0:s
+        ACCUM s.@vertexMin1 += s, s.@vertexMin2 += s, s.@vertexMax1 += s, s.@vertexMax2 += s,
+              s.@intMin1 += 0, s.@intMax1 += 0, s.@uintMin1 += 0, s.@uintMax1 += 0,
+              s.@floatMin1 += 0, s.@floatMax1 += 0, s.@doubleMin1 += 0, s.@doubleMax1 += 0;
+
+  print L0;
+}

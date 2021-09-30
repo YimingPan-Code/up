@@ -1,0 +1,1 @@
+../../../src/gle/regress/gtest.sh

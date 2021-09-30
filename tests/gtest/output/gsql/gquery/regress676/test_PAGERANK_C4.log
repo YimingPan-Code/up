@@ -1,0 +1,44 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_PAGERANK_C4.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 1,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.52278,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.33169,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.21375,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.21375,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.15,
+      "Vertex_ID": "B"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

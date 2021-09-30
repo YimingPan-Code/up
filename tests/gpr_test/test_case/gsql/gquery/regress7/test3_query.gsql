@@ -1,0 +1,132 @@
+#################################################
+# GSQL language STATIC ListAccum declaration    #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test static global variable declaration,	#
+# default initial value, nested type,           #
+# = and += operator in query block		#
+# += operator in select block			#
+# result when run several times of the query    #
+#################################################
+
+DROP QUERY listac_test3
+#create batch query listac_test3(VERTEX<members> seed) FOR GRAPH poc_graph {
+#	// test declaration with different type
+#	TYPEDEF tuple<STRING name, INT score> myTuple; 
+#	STATIC ListAccum<UINT> @@uintList;
+#	STATIC ListAccum<INT> @@intList;
+#	STATIC ListAccum<FLOAT> @@floatList;
+#	STATIC ListAccum<DOUBLE> @@doubleList;
+#	STATIC ListAccum<STRING> @@strList;
+#	STATIC ListAccum<STRING COMPRESS> @@strcomList;
+#	STATIC ListAccum<BOOL> @@boolList;
+#	STATIC ListAccum<VERTEX> @@vList;
+#	STATIC ListAccum<EDGE> @@eList;
+#	STATIC ListAccum<DATETIME> @@dateList;
+#	STATIC ListAccum<myTuple> @@tupleList;
+#	STATIC ListAccum<ListAccum<INT>> @@twoList;  // test declare ListAccum with nested ListAccum, depth is 2
+#	STATIC ListAccum<ListAccum<ListAccum<INT>>> @@threeList;  // test declare ListAccum with nested ListAccum, depth is 3
+#
+#	// test declaration of more than one variables in the same line
+#	STATIC ListAccum<UINT> @@uint1, @@uint2;
+#        STATIC ListAccum<INT> @@int1, @@int2;
+#        STATIC ListAccum<FLOAT> @@float1, @@float2;
+#        STATIC ListAccum<DOUBLE> @@double1, @@double2;
+#        STATIC ListAccum<STRING> @@str1, @@str2;
+#        STATIC ListAccum<STRING COMPRESS> @@strcom1, @@strcom2;
+#        STATIC ListAccum<BOOL> @@bool1, @@bool2;
+#        STATIC ListAccum<VERTEX> @@v1, @@v2;
+#        STATIC ListAccum<EDGE> @@e1, @@e2;
+#        STATIC ListAccum<DATETIME> @@date1, @@date2;
+#        STATIC ListAccum<myTuple> @@tuple1, @@tuple2;
+#        STATIC ListAccum<ListAccum<INT>> @@two1, @@two2;  // test declare ListAccum with nested ListAccum, depth is 2
+#        STATIC ListAccum<ListAccum<ListAccum<INT>>> @@three1, @@three2;  // test declare ListAccum with nested ListAccum, depth is 3
+#	DATETIME dt;
+#	// use a SumAccum to count how many times we run this query
+#	STATIC SumAccum<INT> @@count;
+#	STRING str;
+#	dt = to_datetime("2013-12-31 23:59:59");
+#
+#	@@count +=1;
+#	print @@count;
+#
+#	// test default initial value with print statement
+#	IF @@count != 1 THEN
+#		str = "Initial Value from last time we ran this query:";
+#	ELSE str = "Default Initial Value:";
+#	END;
+#	print str;
+#	print @@uintList, @@intList, @@floatList, @@doubleList, @@strList, @@strcomList, @@boolList,
+#	      @@vList, @@eList, @@dateList, @@tupleList, @@twoList, @@threeList;
+#	IF @@count == 1 THEN
+#		print @@uint1, @@uint2;
+#		print @@int1, @@int2;
+#		print @@float1, @@float2;
+#		print @@double1, @@double2;
+#		print @@str1, @@str2;
+#		print @@strcom1, @@strcom2;
+#		print @@bool1, @@bool2;
+#		print @@v1, @@v2;
+#		print @@e1, @@e2;
+#		print @@date1, @@date2;
+#		print @@tuple1, @@tuple2;
+#		print @@two1, @@two2;
+#		print @@three1, @@three2;
+#	END;
+#
+#	// test += operator in query block
+#	@@uintList += [1];
+#	@@intList += [0];
+#	@@floatList += [0.1];
+#	@@doubleList += [1.1];
+#	@@strList += ["test"];
+#	@@strcomList += ["compress"];
+#	@@boolList += [true];
+#	@@vList += [seed];
+#	@@dateList += [dt];
+#	@@tupleList += [myTuple("Tiger", 10)];
+#	@@twoList += [[1, 2]];
+#	@@threeList += [[[1, 2, 3]]];
+#
+#	// print result after += operation
+#        print @@uintList, @@intList, @@floatList, @@doubleList, @@strList, @@strcomList, @@boolList,
+#              @@vList, @@dateList, @@tupleList, @@twoList, @@threeList;	
+#
+#	L0 = {seed};
+#	// test += operator in select block
+#	L1 = select tgt
+#	     from L0: s - (member_work_company: e) - company: tgt
+#	     accum @@uintList += 0, @@intList += tgt.nCount, @@floatList += e.industryId,
+#		   @@doubleList += e.positionId, @@strList += tgt.company_name,
+#		   @@strcomList += tgt.id, @@boolList += tgt.label, @@vList += tgt,
+#		   @@eList += e, @@dateList += dt, @@tupleList += myTuple(s.id, tgt.nCount),
+#		   @@twoList += [0, 5], @@threeList += [[1, 5], [2, 5]];
+#
+#        // print result after += operation
+#        print @@uintList, @@intList, @@floatList, @@doubleList, @@strList, @@strcomList, @@boolList,
+#              @@vList, @@eList,  @@dateList, @@tupleList, @@twoList, @@threeList;	
+#
+#	// test deallocate when run this query at the third time
+#	IF @@count == 3 THEN
+#		@@count = 0;
+#		@@uintList.clear();
+#		@@intList.clear();
+#		@@floatList.clear();
+#		@@doubleList.clear();
+#		@@strList.clear();
+#		@@strcomList.clear();
+#		@@boolList.clear();
+#		@@vList.clear();
+#		@@eList.clear();
+#		@@dateList.clear();
+#		@@tupleList.clear();
+#		@@twoList.clear();
+#		@@threeList.clear();
+#		str = "This is the third time you call query sumac_test5. @@count will reset to 0";
+#		print str;
+#       		print @@uintList, @@intList, @@floatList, @@doubleList, @@strList, @@strcomList, @@boolList,
+#              		@@vList, @@eList,  @@dateList, @@tupleList, @@twoList, @@threeList;
+#	END;
+#}

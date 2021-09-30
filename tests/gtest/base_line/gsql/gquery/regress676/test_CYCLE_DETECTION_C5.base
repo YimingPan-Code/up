@@ -1,0 +1,15 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_CYCLE_DETECTION_C5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"cycles": []}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,105 @@
+use graph poc_graph
+#################################################
+#                                               #
+# GSQL language SumAccum declaration            #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test local variable                           #
+# declare with unsupported type                 #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create batch query sumac_neg_test4_1(VERTEX<members> seed) FOR GRAPH poc_graph{
+        TYPEDEF TUPLE<STRING str, INT score> testtuple;
+        SumAccum<testtuple> @tupleSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_3(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<VERTEX> @vertexSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_4(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<EDGE> @edgeSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_5(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<MaxAccum<INT>> @maxSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_6(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<MinAccum<INT>> @minSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_7(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<AvgAccum> @avgSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_8(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<BitwiseAndAccum> @bwaSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_9(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<BitwiseOrAccum> @bwoSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_10(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<ListAccum<INT>> @listSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_11(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<SetAccum<VERTEX>> @setSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_12(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<BagAccum<STRING>> @bagSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_13(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<MapAccum<INT, INT>> @mapSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_14(VERTEX<members> seed) FOR GRAPH poc_graph{
+        TYPEDEF TUPLE<STRING str, INT score> testtuple;
+        SumAccum<HeapAccum<testtuple>(2, score ASC)> @heapSum;
+        L0 = {seed};
+        print L0;
+}
+
+create batch query sumac_neg_test4_15(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<ArrayAccum<SetAccum<INT>>> @arraySum;
+	L0 = {seed};
+	print L0;
+}
+
+create batch query sumac_neg_test4_16(VERTEX<members> seed) FOR GRAPH poc_graph{
+        SumAccum<GroupByAccum<INT a, MaxAccum<INT> mymax>> @groupbySum;
+        L0 = {seed};
+        print L0;
+}

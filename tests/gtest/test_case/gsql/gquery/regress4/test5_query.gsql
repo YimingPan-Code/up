@@ -1,0 +1,64 @@
+#################################################
+# GSQL language AvgAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test AvgAccum as value to assign		#
+#################################################
+
+DROP QUERY avgac_test5
+create query avgac_test5() FOR GRAPH poc_graph {
+	TYPEDEF tuple<STRING str, DOUBLE score> mytuple;
+	AvgAccum @@avg;
+	SumAccum<DOUBLE> @@sum;
+	MaxAccum<DOUBLE> @@max;
+	MinAccum<DOUBLE> @@min;
+	ListAccum<DOUBLE> @@list;
+	SetAccum<DOUBLE> @@set;
+	BagAccum<DOUBLE> @@bag;
+	MapAccum<DOUBLE, INT> @@map;
+	HeapAccum<mytuple>(2, score ASC) @@heapac;
+	GroupByAccum<INT a, DOUBLE b, MaxAccum<DOUBLE> maxa, ListAccum<DOUBLE> lists> @@group;
+
+	@@avg += 20.23;
+	@@avg += 10.35;
+	print @@avg;
+
+	@@sum += 2.12;
+	@@sum += @@avg;
+	print @@sum;
+
+	@@max += 2;
+	@@max += @@avg;
+	print @@max;
+
+	@@min += 30;
+	@@min += @@avg;
+	print @@min;
+
+	@@list += 10.3;
+	@@list += @@avg;
+	print @@list;
+
+	@@set += 2.22;
+	@@set += @@avg;
+	print @@set;
+
+	@@bag += 15.29;
+	@@bag += @@avg;
+	print @@bag;
+
+	@@map += (15.29 -> 2);
+	@@map += (@@avg -> 3);
+	print @@map;
+
+	@@heapac += mytuple("Graph", 16.44);
+	@@heapac += mytuple("Tiger", @@avg);
+	@@heapac += mytuple("Wrong", 30.99);	
+	print @@heapac;
+
+	@@group += (1, 15.29 -> 10.22, [2]);
+	@@group += (1, @@avg -> @@avg, [@@avg]);
+	print @@group;
+}

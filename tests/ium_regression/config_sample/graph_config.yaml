@@ -1,0 +1,88 @@
+EdgeTypes: 
+- Attributes: []
+  EdgeId: 0
+  FromVertexTypeName: user
+  InitVersionAttributes: []
+  Name: user_post
+  ToVertexTypeName: post
+- Attributes: []
+  EdgeId: 1
+  FromVertexTypeName: post
+  InitVersionAttributes: []
+  Name: post_pic
+  ToVertexTypeName: pic
+GraphConfigVersion: 0
+GraphId: 0
+GraphName: cip
+InitVersionEdgeTypes: 
+- Attributes: []
+  EdgeId: 0
+  FromVertexTypeName: user
+  InitVersionAttributes: []
+  Name: user_post
+  ToVertexTypeName: post
+- Attributes: []
+  EdgeId: 1
+  FromVertexTypeName: post
+  InitVersionAttributes: []
+  Name: post_pic
+  ToVertexTypeName: pic
+InitVersionVertexTypes: 
+- Attributes: []
+  InitVersionAttributes: []
+  Name: user
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 0
+  VertexStatisticsType: 1
+- Attributes: []
+  InitVersionAttributes: []
+  Name: pic
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 1
+  VertexStatisticsType: 1
+- Attributes: []
+  InitVersionAttributes: []
+  Name: post
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 2
+  VertexStatisticsType: 1
+LatestEdgeId: 2
+LatestVertexId: 3
+SegSizeInBits: 20
+VertexTypes: 
+- Attributes: []
+  InitVersionAttributes: []
+  Name: user
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 0
+  VertexStatisticsType: 1
+- Attributes: []
+  InitVersionAttributes: []
+  Name: pic
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 1
+  VertexStatisticsType: 1
+- Attributes: []
+  InitVersionAttributes: []
+  Name: post
+  PrimaryId: 
+    AttributeName: id
+    AttributeType: STRING
+    Nullable: false
+  VertexId: 2
+  VertexStatisticsType: 1

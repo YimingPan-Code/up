@@ -1,0 +1,96 @@
+use graph poc_graph
+#################################################
+# GSQL language ListAccum declaration           #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# local variable                                #
+# nested with other accumulator than ListAccum  #
+#################################################
+set exit_on_error = false
+
+create query listac_neg_test3_1(VERTEX<company> seed) FOR GRAPH poc_graph {
+        ListAccum<SumAccum<INT>> @list;
+        L0 = {seed};
+        print L0;
+}
+
+create query listac_neg_test3_2(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<MaxAccum<INT>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_3(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<MinAccum<INT>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_4(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<AvgAccum> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_5(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<BitwiseOrAccum> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_6(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<BitwiseAndAccum> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_7(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<SetAccum<INT>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_8(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<BagAccum<INT>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_9(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<MapAccum<STRING, INT>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_10(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<ArrayAccum<SumAccum<INT>>> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_11(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<AndAccum> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_12(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<OrAccum> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_13(VERTEX<company> seed) FOR GRAPH poc_graph {
+	TYPEDEF TUPLE<STRING name, INT score> mytuple;
+	ListAccum<HeapAccum<mytuple>(2, score ASC)> @list;
+	L0 = {seed};
+	print L0;
+}
+
+create query listac_neg_test3_14(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<GroupByAccum<INT a, STRING b, MaxAccum<INT> maxa, SumAccum<INT> suma>> @list;
+	L0 = {seed};
+	print L0;
+}

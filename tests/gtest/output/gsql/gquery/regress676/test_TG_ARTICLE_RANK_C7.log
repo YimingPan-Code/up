@@ -1,0 +1,80 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_ARTICLE_RANK_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@topScores": [
+    {
+      "score": 7236491,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 5324554.5,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 4919634,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 4710820.5,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 3821279,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 3127618.25,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 2907992.75,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 2833255.5,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 2530917.25,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": 2101931.5,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 2024978.125,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 1974912.125,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 1810553.125,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 1789122.125,
+      "Vertex_ID": "M"
+    },
+    {
+      "score": 727609.3125,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.15,
+      "Vertex_ID": "C"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

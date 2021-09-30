@@ -1,0 +1,52 @@
+version: "2"
+services:
+  control:
+    container_name: jepsen-control
+    hostname: control
+    build: ./control
+    env_file: ./secret/control.env
+    privileged: true
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.11
+    links:
+      - m1
+      - m2
+      - m3
+  m3:
+    extends:
+      file: ./tigergraph-node.tmpl.yml
+      service: node
+    container_name: jepsen-m3
+    hostname: m3
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+  m2:
+    extends:
+      file: ./tigergraph-node.tmpl.yml
+      service: node
+    container_name: jepsen-m2
+    hostname: m2
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.9
+  m1:
+    volumes:
+      - "/home/graphsql/product:/home/graphsql/product"
+    extends:
+      file: ./tigergraph-node.tmpl.yml
+      service: node
+    container_name: jepsen-m1
+    hostname: m1
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.8
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+          gateway: 172.16.238.1

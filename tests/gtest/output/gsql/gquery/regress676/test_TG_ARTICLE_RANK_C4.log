@@ -1,0 +1,44 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_ARTICLE_RANK_C4.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@topScores": [
+    {
+      "score": 1718.78723,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 38.47121,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 8.15545,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 1.30909,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 1.30909,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.15,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.15,
+      "Vertex_ID": "B"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":1.90151,"Vertex_ID":"J"},{"score":1.84571,"Vertex_ID":"Q"},{"score":1.83377,"Vertex_ID":"P"},{"score":1.62621,"Vertex_ID":"B"},{"score":1.48126,"Vertex_ID":"S"},{"score":1.30121,"Vertex_ID":"M"},{"score":1.2752,"Vertex_ID":"H"},{"score":1.25664,"Vertex_ID":"E"},{"score":1.11834,"Vertex_ID":"A"},{"score":0.98453,"Vertex_ID":"F"},{"score":0.66002,"Vertex_ID":"D"},{"score":0.58635,"Vertex_ID":"O"},{"score":0.54706,"Vertex_ID":"R"},{"score":0.51226,"Vertex_ID":"C"},{"score":0.51221,"Vertex_ID":"L"},{"score":0.42653,"Vertex_ID":"K"},{"score":0.42625,"Vertex_ID":"N"},{"score":0.38758,"Vertex_ID":"G"},{"score":0.31734,"Vertex_ID":"I"}]}]}
+>>>>>>> base
+

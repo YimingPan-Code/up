@@ -1,0 +1,103 @@
+#################################################
+# GSQL language AvgAcuum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test with mathematical operators,		#
+# mathenmatical functions,			#
+# expresstion functions				#
+#################################################
+
+DROP QUERY avgac_test3
+create query avgac_test3(VERTEX<members> seed) FOR GRAPH poc_graph {
+	AvgAccum @@myAvg;
+	AvgAccum @myavg;
+	
+	// test + - * / % for global variable
+	@@myAvg += @@myAvg + 4;
+	print @@myAvg;
+	@@myAvg += @@myAvg - 2;
+	print @@myAvg;
+	@@myAvg += @@myAvg * 6;
+	print @@myAvg;
+	@@myAvg += @@myAvg / 2;
+	print @@myAvg;
+	
+	// test mathematical functions
+	@@myAvg = -10;
+	@@myAvg = abs(@@myAvg);
+	print @@myAvg;
+	@@myAvg = pow(@@myAvg, 4);
+	print @@myAvg;
+	@@myAvg = sqrt(@@myAvg);
+	print @@myAvg;
+	@@myAvg = cos(@@myAvg);
+	print @@myAvg;
+	@@myAvg = acos(@@myAvg);
+	print @@myAvg;
+	@@myAvg = atan(@@myAvg);
+	print @@myAvg;
+	@@myAvg = atan2(@@myAvg, 2);
+	print @@myAvg;
+	@@myAvg = ceil(@@myAvg);
+	print @@myAvg;
+	@@myAvg = sin(@@myAvg);
+	print @@myAvg;
+	@@myAvg = asin(@@myAvg);
+	@@myAvg = cosh(@@myAvg);
+	print @@myAvg;
+	@@myAvg = ldexp(@@myAvg, 5);
+	@@myAvg = exp(@@myAvg);
+	print @@myAvg;
+	@@myAvg = floor(@@myAvg);
+	print @@myAvg;
+	@@myAvg = log(@@myAvg);
+	print @@myAvg;
+	@@myAvg = 100;
+	@@myAvg = log10(@@myAvg);
+	print @@myAvg;	
+	@@myAvg = fmod(@@myAvg, 0.2);
+	print @@myAvg;
+	@@myAvg = sinh(@@myAvg);
+	print @@myAvg;
+	@@myAvg = tan(@@myAvg);
+	print @@myAvg;
+	@@myAvg = tanh(@@myAvg);
+	print @@myAvg;
+
+	// test expression function
+	@@myAvg = assignNewValueToAvgAccum(@@myAvg, 20);
+	print @@myAvg; 	
+
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg += s.@myavg + 4;
+	print L0;
+
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg += s.@myavg - 2;
+	print L0;
+	
+	L3 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg += s.@myavg * 6;
+	print L0;
+	
+	L4 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg += s.@myavg / 2;
+	print L0;
+
+	L5 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg = ceil(s.@myavg);
+	print L0;
+
+	L6 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@myavg = assignNewValueToAvgAccum(s.@myavg, 10);
+	print L0;
+}

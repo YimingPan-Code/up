@@ -1,0 +1,6 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_ANY_WT_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+There is a loop with negative length. Shortest path is undefined.
+[GTEST_JSON_END]
+[GTEST_END]

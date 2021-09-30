@@ -1,0 +1,121 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test6.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@uintSum3": 2,
+      "@@uintSum2": 1,
+      "@@uintSum1": "18446744073709551615"
+    },
+    {
+      "@@intSum1": 1,
+      "@@intSum2": 2
+    },
+    {
+      "@@floatSum1": 1,
+      "@@floatSum2": 2
+    },
+    {
+      "@@doubleSum1": 1,
+      "@@doubleSum2": 2
+    },
+    {
+      "@@uintSum3": 4,
+      "@@uintSum2": 2,
+      "@@uintSum1": "18446744073709551615"
+    },
+    {
+      "@@intSum1": 2,
+      "@@intSum2": 4
+    },
+    {
+      "@@floatSum1": 2,
+      "@@floatSum2": 4
+    },
+    {
+      "@@doubleSum1": 2,
+      "@@doubleSum2": 4
+    },
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uintsum2": 0,
+        "@uintsum1": 0,
+        "@intsum2": 0,
+        "@uintsum4": "18446744073709551615",
+        "@intsum1": 0,
+        "@floatsum2": 0,
+        "@doublesum1": 0,
+        "@uintsum3": 0,
+        "@floatsum1": 0,
+        "id": "m3",
+        "profileIndustryId": "i1",
+        "@doublesum2": 0
+      },
+      "v_type": "members"
+    }]},
+    {
+      "@@uintSum3": 4,
+      "@@uintSum2": 2,
+      "@@uintSum1": 2
+    },
+    {
+      "@@intSum1": 3,
+      "@@intSum2": 6
+    },
+    {
+      "@@floatSum1": 3,
+      "@@floatSum2": 5
+    },
+    {
+      "@@doubleSum1": 3,
+      "@@doubleSum2": 5
+    },
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uintsum2": 1,
+        "@uintsum1": "18446744073709551615",
+        "@intsum2": 2,
+        "@uintsum4": 0,
+        "@intsum1": 1,
+        "@floatsum2": 1,
+        "@doublesum1": 1,
+        "@uintsum3": 2,
+        "@floatsum1": 1,
+        "id": "m3",
+        "profileIndustryId": "i1",
+        "@doublesum2": 1
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uintsum2": 2,
+        "@uintsum1": "18446744073709551615",
+        "@intsum2": 4,
+        "@uintsum4": "18446744073709551615",
+        "@intsum1": 2,
+        "@floatsum2": 2,
+        "@doublesum1": 2,
+        "@uintsum3": 4,
+        "@floatsum1": 2,
+        "id": "m3",
+        "profileIndustryId": "i1",
+        "@doublesum2": 2
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,101 @@
+#################################################
+# GSQL language ListAccum declaration           #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test local ListAccum declaration,		#
+# default initial value, nested type,           #
+# = and += operator		                #
+#################################################
+
+DROP QUERY listac_test2
+create query listac_test2(VERTEX<members> seed) FOR GRAPH poc_graph {
+	// test declaration with different nested type
+	TYPEDEF TUPLE<STRING name, INT score> mytuple;
+	ListAccum<UINT> @uintlist;
+	ListAccum<INT> @intlist;
+	ListAccum<FLOAT> @floatlist;
+	ListAccum<DOUBLE> @doublelist;
+	ListAccum<STRING> @strlist;
+	ListAccum<STRING COMPRESS> @strcomlist;
+	ListAccum<BOOL> @boollist;
+	ListAccum<VERTEX> @vlist;
+	ListAccum<EDGE> @elist;
+	ListAccum<DATETIME> @dlist;
+	ListAccum<mytuple> @tlist;
+	ListAccum<ListAccum<INT>> @twolist; // nested ListAccum, depth is 2
+	ListAccum<ListAccum<ListAccum<INT>>> @threelist;  // nested ListAccum, depth is 3	
+	// test more than one variables declared in the same line
+	ListAccum<UINT> @uint1, @uint2;
+	ListAccum<INT> @int1, @int2;
+	ListAccum<FLOAT> @float1, @float2;
+	ListAccum<DOUBLE> @double1, @double2;
+	ListAccum<STRING> @str1, @str2;
+	ListAccum<STRING COMPRESS> @strcom1, @strcom2;
+	ListAccum<BOOL> @bool1, @bool2;
+	ListAccum<VERTEX> @v1, @v2;
+	ListAccum<EDGE> @e1, @e2;
+	ListAccum<DATETIME> @d1, @d2;
+	ListAccum<mytuple> @t1, @t2;
+	ListAccum<ListAccum<INT>> @two1, @two2;
+	ListAccum<ListAccum<ListAccum<INT>>> @three1, @three2;
+	DATETIME dt;
+	dt = to_datetime("2013-12-31 23:59:59");
+
+	L0 = {seed};
+	// print seed to test default initial value
+	print L0;
+
+	// test = operator, the right-hand is an expression
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@uintlist = [0], s.@intlist = [-1], s.@floatlist = [0.1],
+		   s.@doublelist = [1.1], s.@strlist = ["round1"], s.@strcomlist = ["1time"],
+		   s.@boollist = [false], s.@vlist = [tgt], s.@elist = [e], s.@dlist = [dt],
+		   s.@tlist = [mytuple(s.id, tgt.nCount)], s.@twolist = [-2, -1], s.@threelist = [[[0]]];
+	// print result after = operation
+	print L0;
+
+	// test = operator, the right-hand is ListAccum
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@uint1 = s.@uintlist, s.@int1 = s.@intlist, s.@float1 = s.@floatlist,
+		   s.@double1 = s.@doublelist, s.@str1 = s.@strlist, s.@strcom1 = s.@strcomlist,
+		   s.@bool1 = s.@boollist, s.@v1 = s.@vlist, s.@e1 = s.@elist, s.@d1 = s.@dlist,
+		   s.@t1 = s.@tlist, s.@two1 = s.@twolist, s.@three1 = s.@threelist;
+	// print result after =  operation
+	print L0;
+
+	// test += operator, the right-hand is en element
+	L3 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@uintlist += 1, s.@intlist += tgt.nCount, s.@floatlist += e.industryId,
+		   s.@doublelist += e.positionId, s.@strlist += s.id, s.@strcomlist += tgt.id,
+		   s.@boollist += tgt.label, s.@vlist += tgt, s.@elist += e, s.@dlist += dt,
+		   s.@tlist += mytuple(s.profileIndustryId, tgt.nCount),
+		   s.@twolist += [0, 1], s.@threelist += [[1], [2]];
+	// print result after += operation
+	print L0;
+	
+	// test += operator, the right-hand is an expression
+	L4 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@uint1 += [1], s.@int1 += [-2], s.@float1 += [0.2],
+		   s.@double1 += [2.2], s.@str1 += ["round2"], s.@strcom1 += ["2time"],
+		   s.@bool1 += [true], s.@v1 += [s], s.@e1 += [e], s.@d1 += [dt],
+		   s.@t1 += [mytuple(s.profileIndustryId, tgt.nCount)],
+		   s.@two1 += [[0, 1]], s.@three1 += [[[1], [2]]];
+	// print result after += operation
+	print L0;
+
+	// test += operator, the right-hand is ListAccum
+	L5 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@uint2 += s.@uint1, s.@int2 += s.@int1, s.@float2 += s.@float1,
+		   s.@double2 += s.@double1, s.@str2 += s.@str1, s.@strcom2 += s.@strcom1,
+		   s.@bool2 += s.@bool1, s.@v2 += s.@v1, s.@e2 += s.@e1,
+		   s.@d2 += s.@d1, s.@t2 += s.@t1, s.@two2 += s.@two1, s.@three2 += s.@three1;
+	// print result after += operation
+	print L0;
+}

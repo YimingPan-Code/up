@@ -1,0 +1,52 @@
+use graph poc_graph
+#################################################
+# GSQL language ListAccum		        #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# clear() and update() 				#
+# in select block with global ListAccum,	#
+# in ACCUM with local ListAccum			#
+#################################################
+set exit_on_error = false
+
+create batch query listac_neg_4_1(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @@list;
+	@@list = [1, 2, 3, 5];
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     post-accum @@list.update(0, 0);
+}
+
+create batch query listac_neg_4_2(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @@list;
+	@@list = [1, 2, 3, 5];
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     post-accum @@list.clear();
+}
+
+create batch query listac_neg_4_3(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = [1, 2];
+	L2 = select tgt
+	     from L0: tgt
+	     accum tgt.@list.update(0, 0);
+}
+
+create batch query listac_neg_4_4(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = [1, 2];
+	L2 = select tgt
+	     from L0: tgt
+	     accum tgt.@list.clear();
+}

@@ -1,0 +1,51 @@
+DROP ALL
+CREATE VERTEX company(PRIMARY_ID companyId string, id string compress, label bool, company_name string default "unknown", nCount int)
+CREATE VERTEX members(PRIMARY_ID memberId string, id string, profileIndustryId string default "0")
+CREATE VERTEX skill(PRIMARY_ID skillId string, id string, nCount string)
+CREATE UNDIRECTED EDGE member_work_company(FROM members, TO company, positionId double, industryId float)
+CREATE DIRECTED EDGE member_follow_company(FROM members, TO company, createTime int)
+CREATE UNDIRECTED EDGE member_member(FROM members, TO members, create_time int)
+CREATE DIRECTED EDGE member_skill (FROM members, TO skill)
+CREATE GRAPH poc_graph(*)
+
+//EXPORT SCHEMA poc_graph
+
+CREATE LOADING JOB load_c FOR GRAPH poc_graph {
+	DEFINE FILENAME f1;
+  LOAD f1
+		TO VERTEX company VALUES($0, $0, $1, $2, $1);
+}
+
+CREATE LOADING JOB load_m FOR GRAPH poc_graph {
+	DEFINE FILENAME f1;
+	LOAD f1
+    	TO VERTEX members VALUES($0, $0, $1),
+    	TO TEMP_TABLE member_skill_table (memberID, skillID, nCount) VALUES($0, flatten($3, "|", 1) , $1) USING QUOTE="double";
+  	LOAD TEMP_TABLE member_skill_table
+    	TO VERTEX skill VALUES($"skillID", $"skillID", $"nCount"),
+    	TO EDGE member_skill VALUES($"memberID", $"skillID");
+}
+
+CREATE LOADING  JOB load_e1 FOR GRAPH poc_graph {
+	DEFINE FILENAME f1;
+	LOAD f1
+		TO EDGE member_work_company VALUES($0, $1, $2, $3);
+}
+
+CREATE LOADING JOB load_e2 FOR GRAPH poc_graph {
+	DEFINE FILENAME f1;
+	LOAD f1
+		TO EDGE member_follow_company VALUES($0, $1, $2) where to_int($2) >= 0;
+}
+
+CREATE LOADING JOB load_e3 FOR GRAPH poc_graph {
+	DEFINE FILENAME f1;
+	LOAD f1
+		TO EDGE member_member VALUES($0, $1, $2) where to_int($2) >= 0;
+}
+
+run loading job load_c USING f1="../../../../resources/data_set/gsql/sc_companies.csv"
+run loading job load_m USING f1="../../../../resources/data_set/gsql/sc_member_skill.csv"
+run loading job load_e1 USING f1="../../../../resources/data_set/gsql/sc_member_company.csv"
+run loading job load_e2 USING f1="../../../../resources/data_set/gsql/sc_member_company_follow.csv"
+run loading job load_e3 USING f1="../../../../resources/data_set/gsql/sc_member_member.csv"

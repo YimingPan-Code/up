@@ -1,0 +1,33 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress6/test1_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+line 16:17 no viable alternative at input 'ListAccum<uint> uintList'
+line 17:16 no viable alternative at input 'ListAccum<int> intList'
+line 18:18 no viable alternative at input 'ListAccum<float> floatList'
+line 19:19 no viable alternative at input 'ListAccum<double> doubleList'
+line 20:19 no viable alternative at input 'ListAccum<string> strList'
+line 21:28 no viable alternative at input 'ListAccum<string compress> strcomList'
+line 22:17 no viable alternative at input 'ListAccum<bool> boolList'
+line 23:19 no viable alternative at input 'ListAccum<vertex> vList'
+line 24:17 no viable alternative at input 'ListAccum<edge> eList'
+line 25:21 no viable alternative at input 'ListAccum<datetime> dateList'
+line 26:20 no viable alternative at input 'ListAccum<myTuple> tupleList'
+line 27:27 no viable alternative at input 'ListAccum<ListAccum<int>> twoList'
+line 28:38 no viable alternative at input 'ListAccum<ListAccum<ListAccum<int>>> threeList'
+line 31:17 no viable alternative at input 'ListAccum<uint> @'
+line 32:16 no viable alternative at input 'ListAccum<int> @'
+line 33:18 no viable alternative at input 'ListAccum<float> @'
+line 34:19 no viable alternative at input 'ListAccum<double> @'
+line 35:19 no viable alternative at input 'ListAccum<string> @'
+line 36:28 no viable alternative at input 'ListAccum<string compress> @'
+line 37:17 no viable alternative at input 'ListAccum<bool> @'
+line 38:19 no viable alternative at input 'ListAccum<vertex> @'
+line 39:17 no viable alternative at input 'ListAccum<edge> @'
+line 40:21 no viable alternative at input 'ListAccum<datetime> @'
+line 41:20 no viable alternative at input 'ListAccum<myTuple> @'
+line 42:27 no viable alternative at input 'ListAccum<ListAccum<int>> @'
+line 43:38 no viable alternative at input 'ListAccum<ListAccum<ListAccum<int>>> @'
+Parsing encountered 26 syntax error(s)
+
+The query listac_neg_test1 cannot be added!
+[GTEST_END]

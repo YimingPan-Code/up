@@ -1,0 +1,46 @@
+use graph poc_graph
+#################################################
+# GSQL language ListAccum declaration           #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# variable definition with no '@' 		#
+# or more than two '@'          		#
+#################################################
+set exit_on_error = false
+
+create query listac_neg_test1() FOR GRAPH poc_graph {
+	// test declare with no @
+	TYPEDEF tuple<STRING name, INT score> myTuple; 
+	ListAccum<UINT> uintList;
+	ListAccum<INT> intList;
+	ListAccum<FLOAT> floatList;
+	ListAccum<DOUBLE> doubleList;
+	ListAccum<STRING> strList;
+	ListAccum<STRING COMPRESS> strcomList;
+	ListAccum<BOOL> boolList;
+	ListAccum<VERTEX> vList;
+	ListAccum<EDGE> eList;
+	ListAccum<DATETIME> dateList;
+	ListAccum<myTuple> tupleList;
+	ListAccum<ListAccum<INT>> twoList; 
+	ListAccum<ListAccum<ListAccum<INT>>> threeList;
+	
+	// test declare with more than two @
+	ListAccum<UINT> @@@uintList;
+	ListAccum<INT> @@@intList;
+	ListAccum<FLOAT> @@@floatList;
+	ListAccum<DOUBLE> @@@doubleList;
+	ListAccum<STRING> @@@strList;
+	ListAccum<STRING COMPRESS> @@@strcomList;
+	ListAccum<BOOL> @@@boolList;
+	ListAccum<VERTEX> @@@vList;
+	ListAccum<EDGE> @@@eList;
+	ListAccum<DATETIME> @@@dateList;
+	ListAccum<myTuple> @@@tupleList;
+	ListAccum<ListAccum<INT>> @@@twoList; 
+	ListAccum<ListAccum<ListAccum<INT>>> @@@threeList;
+
+	print "It's a negative case.";
+}

@@ -1,0 +1,95 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test9.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@doubleMap": {"4": 4.4},
+      "@@uintMap": {"1": 1},
+      "@@intMap": {"2": 2},
+      "@@floatMap": {"3": 3.3},
+      "@@stringMap": {"5": "testsumaccum"}
+    },
+    {
+      "@@group3": [{
+        "stringsum": "SumAccum",
+        "e": 3,
+        "f": "c",
+        "strsum": "test"
+      }],
+      "@@group2": [{
+        "c": 2,
+        "d": "b",
+        "doublesum": 3.3,
+        "floatsum": 2.2
+      }],
+      "@@group1": [{
+        "a": 1,
+        "b": "a",
+        "uintsum": 1,
+        "intsum": -1
+      }]
+    },
+    {
+      "@@floatarr": [3.33],
+      "@@uintarr": [1],
+      "@@intarr": [2],
+      "@@doublearr": [4.44],
+      "@@strarr": ["ArrayAccum"]
+    }
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"L0": [{
+    "v_id": "m3",
+    "attributes": {
+      "@doubleMap": {"m3": 4.4},
+      "@floatMap": {"m3": 3.3},
+      "profileIndustryId": "i1",
+      "@intarr": [2],
+      "@floatarr": [3.333],
+      "@intMap": {"m3": 2},
+      "@uintarr": [1],
+      "@strarr": ["testArrayAccum"],
+      "@uintMap": {"m3": 1},
+      "@stringMap": {"m3": "testmap"},
+      "@group3": [{
+        "stringsum": "group",
+        "e": 3,
+        "f": "c",
+        "strsum": "test"
+      }],
+      "id": "m3",
+      "@group1": [{
+        "a": 1,
+        "b": "a",
+        "uintsum": 1,
+        "intsum": 2
+      }],
+      "@group2": [{
+        "c": 2,
+        "d": "b",
+        "doublesum": 4.44,
+        "floatsum": 3.33
+      }],
+      "@doublearr": [4.444]
+    },
+    "v_type": "members"
+  }]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,65 @@
+#################################################
+# GSQL language SumAccum declaration            #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:					#
+# test global SumAccum declaration,		#
+# default initial value, nested type            #
+#################################################
+
+DROP QUERY sumac_test1
+create batch query sumac_test1() FOR GRAPH poc_graph{
+	SumAccum<UINT> @@uintSum;	// test declaration of global variable with type UINT 
+	SumAccum<INT> @@intSum;	// test declaration of global variable with type INT 
+	SumAccum<FLOAT> @@floatSum;	// test declaration of global variable with type FLOAT 
+	SumAccum<DOUBLE> @@doubleSum;	// test declaration of global variable with type DOUBLE 
+	SumAccum<STRING> @@stringSum;	// test declaration of global variable with type STRING
+	SumAccum<INT> @@int1, @@int2 = 1;	// test declaration of more than one variables in the same line, with INT type
+	SumAccum<UINT> @@uint1, @@uint2 = 2;	// test declaration of more than one variables in the same line, with UINT type
+	SumAccum<FLOAT> @@float1, @@float2 = 1.2;	// test declaration of more than one variables in the same line, with FLOAT type
+	SumAccum<DOUBLE> @@double1, @@double2 = 1.30;	// test declaration of more than one variables in the same line, with DOUBLE type
+	SumAccum<STRING> @@str1, @@str2 = "test";	// test declaration of more than one variables in the same line, with STRING type
+	
+	// test default initial value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+	print @@int1, @@int2;
+	print @@uint1, @@uint2;
+	print @@float1, @@float2;
+	print @@double1, @@double2;
+	print @@str1, @@str2;
+
+	@@uintSum = 11;
+	@@intSum = 1;
+	@@floatSum = 2.0;
+	@@doubleSum = 3.33;
+	@@stringSum = "test1";
+	@@int1 = 1 + @@int2;
+	@@int2 = 0;
+	@@uint1 = 20 + @@uint2;
+	@@float1 = 2.0 + @@float2;
+	@@double1 = 3.33 + @@double2;
+	@@str1 = "test_1_" + @@str2;
+	@@str2 = "";
+
+	// test modified value of all global variables
+	print @@uintSum;
+	print @@intSum;
+	print @@floatSum;
+	print @@doubleSum;
+	print @@stringSum;
+	print @@int1, @@int2;
+	print @@uint1, @@uint2;
+	print @@float1, @@float2;
+	print @@double1, @@double2;
+	print @@str1, @@str2;
+}
+
+# don't install query here
+#INSTALL QUERY sumac_test1  # pass message by pointer
+
+#RUN QUERY sumac_test1()

@@ -1,0 +1,7 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress3/test3.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+Semantic Check Fails: the query minmaxac_test3 doesn't exist!
+Semantic Check Fails: the query minmaxac_test3 doesn't exist!
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"start":[{"v_id":"Kat","attributes":{"start.@result":{"Kevin":0.3526,"James":0.61574,"Neil":0.67509}},"v_type":"Person"},{"v_id":"Jing","attributes":{"start.@result":{"Alex":0.42173,"James":0.30256,"Marvin":0.42173,"Neil":0.46377}},"v_type":"Person"},{"v_id":"Marvin","attributes":{"start.@result":{"Kevin":0.14248,"Alex":1,"James":0.4147,"Jing":0.42173}},"v_type":"Person"},{"v_id":"James","attributes":{"start.@result":{"Kevin":0.49692,"Alex":0.4147,"Jing":0.30256,"Marvin":0.4147,"Neil":0.36103,"Kat":0.61574}},"v_type":"Person"},{"v_id":"Elena","attributes":{"start.@result":{}},"v_type":"Person"},{"v_id":"Kevin","attributes":{"start.@result":{"Alex":0.14248,"James":0.49692,"Marvin":0.14248,"Neil":0.42436,"Kat":0.3526}},"v_type":"Person"},{"v_id":"Alex","attributes":{"start.@result":{"Kevin":0.14248,"James":0.4147,"Jing":0.42173,"Marvin":1}},"v_type":"Person"},{"v_id":"Neil","attributes":{"start.@result":{"Kevin":0.42436,"James":0.36103,"Jing":0.46377,"Kat":0.67509}},"v_type":"Person"}]}]}
+>>>>>>> base
+

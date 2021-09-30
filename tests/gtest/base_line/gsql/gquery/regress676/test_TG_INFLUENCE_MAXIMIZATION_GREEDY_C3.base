@@ -1,0 +1,28 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_INFLUENCE_MAXIMIZATION_GREEDY_C3.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@res": [
+    {
+      "score": 204,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 143,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 81,
+      "Vertex_ID": "C"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

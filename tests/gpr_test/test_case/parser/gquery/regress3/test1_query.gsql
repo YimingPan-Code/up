@@ -1,0 +1,20 @@
+use graph poc_graph
+#################################################
+# GSQL language AvgAccum declaration            #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# variable definition with no '@' 		#
+# or more than two '@'          		#
+#################################################
+set exit_on_error = false
+
+create batch query avgac_neg_test1() FOR GRAPH poc_graph {
+	AvgAccum avgAcum;  // test no @ when declare
+	AvgAccum @@@avgacum; // test more than two @ when declare
+
+	print avgAcum;
+	print @@@avgAcum;
+}
+

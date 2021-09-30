@@ -1,0 +1,92 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_KCORE_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{
+    "max_core": [
+      {
+        "v_id": "L",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "K",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "F",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "J",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "E",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "D",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "A",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "G",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      },
+      {
+        "v_id": "H",
+        "attributes": {
+          "@deg": 0,
+          "@core": 2
+        },
+        "v_type": "KCORE_C7"
+      }
+    ],
+    "core_size": 9,
+    "k": 2
+  }]
+}
+[GTEST_JSON_END]
+[GTEST_END]

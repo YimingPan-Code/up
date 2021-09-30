@@ -1,0 +1,111 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_JACCARD_NBOR_AP_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"start": [
+    {
+      "v_id": "Anthony",
+      "attributes": {"start.@result": {
+        "Anton": 0.16667,
+        "Levon": 0.125,
+        "Kendrick": 0.08333,
+        "Amy": 0.2381
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "John",
+      "attributes": {"start.@result": {}},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Andrea",
+      "attributes": {"start.@result": {
+        "Kevin": 0.2,
+        "James": 0.2,
+        "Kendrick": 0.125,
+        "Amy": 0.04762
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "James",
+      "attributes": {"start.@result": {
+        "Anton": 0.16667,
+        "Kevin": 1,
+        "Levon": 0.125,
+        "Kendrick": 0.18182,
+        "Amy": 0.2381,
+        "Andrea": 0.2
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Amy",
+      "attributes": {"start.@result": {
+        "Anton": 0.09524,
+        "Kevin": 0.2381,
+        "Levon": 0.19048,
+        "Anthony": 0.2381,
+        "James": 0.2381,
+        "Kendrick": 0.38095,
+        "Andrea": 0.04762
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Kevin",
+      "attributes": {"start.@result": {
+        "Anton": 0.16667,
+        "Levon": 0.125,
+        "James": 1,
+        "Kendrick": 0.18182,
+        "Amy": 0.2381,
+        "Andrea": 0.2
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Kendrick",
+      "attributes": {"start.@result": {
+        "Kevin": 0.18182,
+        "Levon": 0.09091,
+        "James": 0.18182,
+        "Anthony": 0.08333,
+        "Amy": 0.38095,
+        "Andrea": 0.125
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Anton",
+      "attributes": {"start.@result": {
+        "Kevin": 0.16667,
+        "Anthony": 0.16667,
+        "James": 0.16667,
+        "Amy": 0.09524
+      }},
+      "v_type": "Student"
+    },
+    {
+      "v_id": "Levon",
+      "attributes": {"start.@result": {
+        "Kevin": 0.125,
+        "Anthony": 0.125,
+        "James": 0.125,
+        "Kendrick": 0.09091,
+        "Amy": 0.19048
+      }},
+      "v_type": "Student"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

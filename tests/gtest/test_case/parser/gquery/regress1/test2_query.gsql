@@ -1,0 +1,38 @@
+use graph poc_graph
+#################################################
+#                                               #
+# GSQL language SumAccum declaration            #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# variable definition with no '@' 		#
+# or more than two '@'           		#
+#                                               #
+#################################################
+
+set exit_on_error = false
+
+create query sumac_neg_test2() FOR GRAPH poc_graph{ 
+        SumAccum<UINT> uintSum;      // test no @ when declaring with type UINT
+        SumAccum<INT> intSum; // test no @ when declaring with type INT 
+        SumAccum<FLOAT> floatSum;     // test no @ when declaring with type FLOAT 
+        SumAccum<DOUBLE> doubleSum;   // test no @ when declaring with type DOUBLE
+        SumAccum<STRING> stringSum;   // test no @ when declaring with type STRING
+        SumAccum<UINT> @@@uintsum;      // test using @@@ when declaring with type UINT
+        SumAccum<INT> @@@intsum; // test using @@@ when declaring with type INT 
+        SumAccum<FLOAT> @@@floatsum;     // test using @@@ when declaring with type FLOAT 
+        SumAccum<DOUBLE> @@@doublesum;   // test using @@@ when declaring with type DOUBLE
+        SumAccum<STRING> @@@stringsum;   // test using @@@ when declaring with type STRING
+
+        print unitSum;
+        print intSum;
+        print floatSum;
+        print doubleSum;
+        print stringSum;
+        print @@@uintsum;
+        print @@@intsum;
+        print @@@floatsum;
+        print @@@doublesum;
+        print @@@stringsum;
+}

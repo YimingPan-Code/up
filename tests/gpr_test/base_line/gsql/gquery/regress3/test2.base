@@ -1,0 +1,64 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress3/test2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"L0": [{
+    "v_id": "c1",
+    "attributes": {
+      "@floatMax": -3.4028234663852886E38,
+      "@doubleMin1": 0,
+      "@doubleMin2": 1.3,
+      "@floatMax0": 2.2,
+      "@floatMax1": 10.2,
+      "@intMax": -9223372036854775808,
+      "@floatMax2": 1.2,
+      "@doubleMin": 1.7976931348623157E308,
+      "nCount": 1,
+      "@intMin0": 1,
+      "@floatMin0": 2.2,
+      "@vertexMin0": "Unknown",
+      "@intMin2": 0,
+      "id": "c1",
+      "@doubleMin0": 3.32,
+      "@intMin1": 0,
+      "@floatMin1": 0,
+      "@vertexMin1": "c1",
+      "@intMin": 9223372036854775807,
+      "@floatMin2": 1.2,
+      "@vertexMin2": "c1",
+      "@doubleMax": -1.7976931348623157E308,
+      "@vertexMax": "Unknown",
+      "@uintMax": 0,
+      "@uintMax2": 2,
+      "@vertexMax0": "Unknown",
+      "@intMax2": 0,
+      "@uintMax1": 20,
+      "@uintMax0": 10,
+      "@doubleMax0": 3.32,
+      "@intMax1": 10,
+      "@vertexMax1": "c1",
+      "@doubleMax1": 13.13,
+      "@vertexMax2": "c1",
+      "label": true,
+      "@doubleMax2": 1.3,
+      "@uintMin": "18446744073709551615",
+      "@intMax0": 1,
+      "@vertexMin": "Unknown",
+      "@uintMin2": 2,
+      "@uintMin1": 0,
+      "company_name": "com1",
+      "@uintMin0": 10,
+      "@floatMin": 3.4028234663852886E38
+    },
+    "v_type": "company"
+  }]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

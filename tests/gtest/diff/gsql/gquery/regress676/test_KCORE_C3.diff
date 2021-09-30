@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"max_core":[{"v_id":"T","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"P","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"Q","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"L","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"K","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"M","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"N","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"I","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"G","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"J","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"F","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"D","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"B","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"R","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"A","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"},{"v_id":"C","attributes":{"@deg":0,"@core":2},"v_type":"KCORE_C3"}],"core_size":16,"k":2}]}
+>>>>>>> base
+

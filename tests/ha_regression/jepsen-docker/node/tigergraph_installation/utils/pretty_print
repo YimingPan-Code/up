@@ -1,0 +1,33 @@
+#!/bin/bash
+
+bldred=${txtbld}$(tput setaf 1) # red
+bldgre=${txtbld}$(tput setaf 2) # green
+bldblu=${txtbld}$(tput setaf 4) # blue
+bldmag=${txtbld}$(tput setaf 5) # magenta
+txtrst=$(tput sgr0)             # Reset
+
+warn(){
+  echo "${bldred}[Warning]: $* $txtrst"
+}
+
+note(){
+  echo "${bldblu}[Notice]: $* $txtrst"
+}
+
+prog(){
+  echo "${bldgre}[Progress]: $* $txtrst"
+}
+
+mesg(){
+  echo "${bldmag}$* $txtrst"
+}
+
+check_fail(){
+  code=$1
+  exit_code=$2
+  message=$3
+  if [ $code != 0 ]; then
+    echo "${bldred}$message $txtrst"
+    exit $exit_code
+  fi
+}

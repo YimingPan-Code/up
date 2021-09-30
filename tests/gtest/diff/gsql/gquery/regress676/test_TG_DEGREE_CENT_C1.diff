@@ -1,0 +1,6 @@
+<<<<<<< log
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":4,"Vertex_ID":"A"},{"score":1,"Vertex_ID":"B"},{"score":1,"Vertex_ID":"C"},{"score":1,"Vertex_ID":"D"},{"score":1,"Vertex_ID":"E"}]}]}
+========
+{"__GTEST__PARSED":"Semantic Check Fails: the query tg_degree_cent doesn't exist!"}
+>>>>>>> base
+

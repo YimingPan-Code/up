@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"@@cluster_dist_heap":[{"num":1,"csize":11},{"num":5,"csize":1}]}]}
+>>>>>>> base
+

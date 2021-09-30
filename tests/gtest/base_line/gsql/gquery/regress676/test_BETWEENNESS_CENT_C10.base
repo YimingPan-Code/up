@@ -1,0 +1,59 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_BETWEENNESS_CENT_C10.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 4.34286,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 2.11429,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 1.11667,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 0,
+      "Vertex_ID": "F"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

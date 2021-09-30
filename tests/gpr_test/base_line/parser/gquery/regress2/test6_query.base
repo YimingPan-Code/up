@@ -1,0 +1,8 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress2/test6_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query minmaxac_neg_test2 (SEM-1301): line 14, col 11
+MinAccum cannot be nested within a MinAccum accumulator!
+The query minmaxac_neg_test2 cannot be added!
+[GTEST_END]

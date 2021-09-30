@@ -1,0 +1,76 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_ANY_WT_C5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"VSET": [
+    {
+      "v_id": "L",
+      "attributes": {"VSET.@dist": 345},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "K",
+      "attributes": {"VSET.@dist": 183},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "M",
+      "attributes": {"VSET.@dist": 95},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "I",
+      "attributes": {"VSET.@dist": 262},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "H",
+      "attributes": {"VSET.@dist": 91},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "G",
+      "attributes": {"VSET.@dist": 115},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "J",
+      "attributes": {"VSET.@dist": 242},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "F",
+      "attributes": {"VSET.@dist": 256},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "D",
+      "attributes": {"VSET.@dist": 169},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "E",
+      "attributes": {"VSET.@dist": 84},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "A",
+      "attributes": {"VSET.@dist": 0},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    },
+    {
+      "v_id": "B",
+      "attributes": {"VSET.@dist": 93},
+      "v_type": "SHORTEST_SS_ALL_WT_C5"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

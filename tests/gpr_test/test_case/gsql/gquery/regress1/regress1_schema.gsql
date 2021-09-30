@@ -1,0 +1,32 @@
+# The schema runs only at setup stage
+# all regress1 test cases share the same schema
+DROP ALL
+CREATE VERTEX account (PRIMARY_ID account_id string, id uint)  # id is the same as PRIMARY_ID for query use
+CREATE VERTEX visitor (PRIMARY_ID visitor_id string, id uint)  # id is the same as PRIMARY_ID for query use
+CREATE VERTEX actorIP (PRIMARY_ID actorIP_id string, id uint)  # id is the same as PRIMARY_ID for query use
+CREATE UNDIRECTED EDGE event_property (FROM *, TO *) 
+
+CREATE GRAPH test_graph (*)
+
+CREATE LOADING JOB load_ip FOR GRAPH test_graph {
+  DEFINE FILENAME f1;
+  LOAD f1
+    TO VERTEX account VALUES ($0, $0),      # field0 ACCOUNT_NUMBER
+    TO VERTEX actorIP VALUES ($1, $1),
+    TO EDGE event_property VALUES ($0 account, $1 actorIP)
+    ;
+}
+
+CREATE LOADING JOB load_id FOR GRAPH test_graph {
+  DEFINE FILENAME f1;
+  LOAD f1
+    TO VERTEX account VALUES ($0, $0),      # field0 ACCOUNT_NUMBER
+    TO VERTEX visitor VALUES ($1, $1),
+    TO EDGE event_property VALUES ($0 account, $1 visitor)
+    ;
+}
+
+EXPORT JOB load_ip
+EXPORT JOB load_id
+
+run loading job load_ip USING f1="../../../../resources/data_set/gsql/k_step_neighber.csv"

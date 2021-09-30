@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Runtime Error: '' is not allowed by the file output policy."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":0.00112,"Vertex_ID":"G"},{"score":0.00112,"Vertex_ID":"E"},{"score":0.00107,"Vertex_ID":"T"},{"score":9.6E-4,"Vertex_ID":"I"},{"score":9.4E-4,"Vertex_ID":"R"},{"score":9.2E-4,"Vertex_ID":"K"},{"score":9.2E-4,"Vertex_ID":"P"},{"score":9.2E-4,"Vertex_ID":"B"},{"score":8.5E-4,"Vertex_ID":"N"},{"score":8.5E-4,"Vertex_ID":"A"},{"score":8.4E-4,"Vertex_ID":"M"},{"score":8.1E-4,"Vertex_ID":"O"},{"score":7.9E-4,"Vertex_ID":"D"},{"score":7.6E-4,"Vertex_ID":"H"},{"score":7.6E-4,"Vertex_ID":"C"},{"score":7.3E-4,"Vertex_ID":"J"},{"score":7.0E-4,"Vertex_ID":"Q"},{"score":6.3E-4,"Vertex_ID":"F"},{"score":5.3E-4,"Vertex_ID":"S"},{"score":4.5E-4,"Vertex_ID":"L"}]}]}
+>>>>>>> base
+

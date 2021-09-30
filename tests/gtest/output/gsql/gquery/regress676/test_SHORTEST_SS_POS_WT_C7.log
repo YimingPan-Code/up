@@ -1,0 +1,91 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_POS_WT_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"total": [
+    {
+      "v_id": "P",
+      "attributes": {"total.@minPath.top().dist": 181},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "Q",
+      "attributes": {"total.@minPath.top().dist": 103},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "L",
+      "attributes": {"total.@minPath.top().dist": 154},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "N",
+      "attributes": {"total.@minPath.top().dist": 309},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "M",
+      "attributes": {"total.@minPath.top().dist": 217},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "K",
+      "attributes": {"total.@minPath.top().dist": 30},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "G",
+      "attributes": {"total.@minPath.top().dist": 277},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "J",
+      "attributes": {"total.@minPath.top().dist": 223},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "F",
+      "attributes": {"total.@minPath.top().dist": 76},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "E",
+      "attributes": {"total.@minPath.top().dist": 147},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "D",
+      "attributes": {"total.@minPath.top().dist": 117},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "A",
+      "attributes": {"total.@minPath.top().dist": 0},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "B",
+      "attributes": {"total.@minPath.top().dist": 272},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "O",
+      "attributes": {"total.@minPath.top().dist": 351},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    },
+    {
+      "v_id": "C",
+      "attributes": {"total.@minPath.top().dist": 174},
+      "v_type": "SHORTEST_SS_POS_WT_C7"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

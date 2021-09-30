@@ -1,0 +1,51 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_LOCAL_CLUSTERING_COEFFICIENT_C5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 1,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.66667,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.66667,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0.5,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.5,
+      "Vertex_ID": "C"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

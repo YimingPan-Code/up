@@ -1,0 +1,61 @@
+#################################################
+# GSQL language AvgAccum declaration            #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test static global AvgAccum declaration,	#
+# default initial value,		        #
+# = and += operator				# 
+#################################################
+
+DROP QUERY avgac_test2
+#create batch query avgac_test2(VERTEX<company> seed) FOR GRAPH poc_graph {
+#	STATIC SumAccum<INT> @@count;
+#	STATIC AvgAccum @@staticAvg1;
+#	STATIC AvgAccum @@staticAvg2, @@staticAvg3;
+#	STRING str;	
+#
+#	// print to see if defined successfully
+#	print @@staticAvg1, @@staticAvg2, @@staticAvg3;
+#
+#	// count how many times we run this query
+#	@@count += 1;
+#	print @@count;
+#
+#	// test print statement on default initial value
+#	// for the second and third time, test if last result could be seen as the initial value
+#	IF @@count != 1 THEN
+#	    str = "Initial Value from last time we ran this query:";
+#	ELSE str = "Initial Value:";
+#	END;
+#	print @@staticAvg1;
+#
+#	// when run this query for the second time, assign new value then test +=
+#	IF @@count == 2 THEN
+#	    @@staticAvg1 = 2;
+#	    str = "Assign new value for the second run: ";
+#	    print str, @@staticAvg1;
+#	END;
+#
+#	// test += in query block
+#	@@staticAvg1 += 1;
+#	@@staticAvg1 += 3;
+#	print @@staticAvg1;
+#
+#	// test += in select block
+#	L0 = {seed};
+#	L1 = select tgt
+#	     from L0:s - (member_work_company: e) - members: tgt
+#	     accum @@staticAvg1 += e.positionId;
+#	print @@staticAvg1;
+#
+#	// test deallocate when run this query third times
+#	IF @@count == 3 THEN
+#		@@count = 0;
+#		@@staticAvg1 = 0;
+#		str = "This is the third time you call query avgac_test2. @@count will reset to 0";
+#		print str;
+#		print @@staticAvg1;
+#	END;
+#}

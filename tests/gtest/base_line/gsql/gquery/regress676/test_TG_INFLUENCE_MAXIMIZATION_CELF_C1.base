@@ -1,0 +1,28 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_INFLUENCE_MAXIMIZATION_CELF_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@res": [
+    {
+      "score": 294,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 245,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 41,
+      "Vertex_ID": "E"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

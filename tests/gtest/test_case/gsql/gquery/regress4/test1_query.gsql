@@ -1,0 +1,63 @@
+#################################################
+# GSQL language AvgAccum declaration            #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test AvgAccum declaration,                    #
+# default initial value                         #
+#################################################
+
+DROP QUERY avgac_test1
+create query avgac_test1(VERTEX<company> seed) FOR GRAPH poc_graph{
+        AvgAccum @@myAvg1;
+        AvgAccum @@myAvg2, @@myAvg3;    // test declare more than one global variables in the same line
+        AvgAccum @@myAvg4 = 1; // test declare global variable with assigned initial value
+        AvgAccum @myavg1;
+        AvgAccum @myavg2, @myavg3; // test decalre more than one local variables in the same line
+        AvgAccum @myavg4 = 2; // test declare local variable with assigned initial value
+
+        // print initial value of global variable without assigning initial value
+        print @@myAvg1, @@myAvg2, @@myAvg3;
+        // print initial value of local variable with assigning initial value
+        print @@myAvg4;
+
+        // print vertex to test initial values of local variables
+        L0 = {seed};
+        print L0;
+
+        // test += in query block
+        @@myAvg1 += 3;
+        @@myAvg1 += 5;
+        print @@myAvg1;
+
+        // test += in query block
+        L1 = select tgt
+            from L0: s - (member_work_company: e) - members: tgt
+            accum @@myAvg1 += e.positionId, s.@myavg1 += e.industryId;
+        print @@myAvg1;
+        print L0;
+
+        // test = in query block to assign new value then test += for global variable
+        @@myAvg1 = 2;
+        print @@myAvg1;
+        @@myAvg1 += 3;
+        print @@myAvg1;
+	M = {members.*};
+        L2 = select s
+            from M: s - (member_follow_company: e) - company: tgt
+            accum @@myAvg1 += e.createTime;
+        print @@myAvg1;
+
+        // test = to assign new value then test += for local variable
+        L3 = select tgt
+            from L0: s - (member_work_company: e) - members: tgt
+            where tgt.id == "m4"
+            accum s.@myavg1 = e.positionId;
+        print L0;
+        L4 = select tgt
+            from L0: s - (member_work_company: e) - members: tgt
+            where tgt.id != "m4"
+            accum s.@myavg1 += e.positionId;
+        print L0;
+}

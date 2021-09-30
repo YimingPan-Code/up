@@ -1,0 +1,404 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@twoList": [],
+      "@@dateList": [],
+      "@@threeList": [],
+      "@@tupleList": [],
+      "@@doubleList": [],
+      "@@uintList": [],
+      "@@vList": [],
+      "@@floatList": [],
+      "@@boolList": [],
+      "@@eList": [],
+      "@@intList": [],
+      "@@strcomList": [],
+      "@@strList": []
+    },
+    {
+      "@@uint1": [],
+      "@@uint2": []
+    },
+    {
+      "@@int2": [],
+      "@@int1": []
+    },
+    {
+      "@@float2": [],
+      "@@float1": []
+    },
+    {
+      "@@double1": [],
+      "@@double2": []
+    },
+    {
+      "@@str1": [],
+      "@@str2": []
+    },
+    {
+      "@@strcom2": [],
+      "@@strcom1": []
+    },
+    {
+      "@@bool2": [],
+      "@@bool1": []
+    },
+    {
+      "@@v2": [],
+      "@@v1": []
+    },
+    {
+      "@@e1": [],
+      "@@e2": []
+    },
+    {
+      "@@date1": [],
+      "@@date2": []
+    },
+    {
+      "@@tuple1": [],
+      "@@tuple2": []
+    },
+    {
+      "@@two2": [],
+      "@@two1": []
+    },
+    {
+      "@@three1": [],
+      "@@three2": []
+    },
+    {
+      "@@twoList": [[
+        1,
+        2
+      ]],
+      "@@doubleList": [1.1],
+      "@@uintList": [1],
+      "@@vList": ["m3"],
+      "@@dateList": [1388534399],
+      "@@threeList": [[[
+        1,
+        2,
+        3
+      ]]],
+      "@@floatList": [0.1],
+      "@@boolList": [true],
+      "@@tupleList": [{
+        "score": 10,
+        "name": "Tiger"
+      }],
+      "@@intList": [0],
+      "@@strcomList": ["compress"],
+      "@@strList": ["test"]
+    },
+    {
+      "@@uint1": [1],
+      "@@date1": [1388534399],
+      "@@str1": ["test"],
+      "@@v1": ["m3"],
+      "@@two1": [[
+        1,
+        2
+      ]],
+      "@@tuple1": [{
+        "score": 10,
+        "name": "Tiger"
+      }],
+      "@@three1": [[[
+        1,
+        2,
+        3
+      ]]],
+      "@@bool1": [true],
+      "@@float1": [0.1],
+      "@@strcom1": ["compress"],
+      "@@double1": [1.1],
+      "@@int1": [0]
+    },
+    {
+      "@@twoList": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "@@doubleList": [
+        1.1,
+        1.1
+      ],
+      "@@uintList": [
+        1,
+        1
+      ],
+      "@@vList": [
+        "m3",
+        "m3"
+      ],
+      "@@dateList": [
+        1388534399,
+        1388534399
+      ],
+      "@@threeList": [
+        [[
+          1,
+          2,
+          3
+        ]],
+        [[
+          2,
+          3,
+          4
+        ]]
+      ],
+      "@@floatList": [
+        0.1,
+        0.1
+      ],
+      "@@boolList": [
+        true,
+        true
+      ],
+      "@@tupleList": [
+        {
+          "score": 10,
+          "name": "Tiger"
+        },
+        {
+          "score": 20,
+          "name": "Graph"
+        }
+      ],
+      "@@intList": [
+        0,
+        0
+      ],
+      "@@strcomList": [
+        "compress",
+        "compress"
+      ],
+      "@@strList": [
+        "test",
+        "test"
+      ]
+    },
+    {
+      "@@v2": ["m3"],
+      "@@str2": ["test2"],
+      "@@two2": [[
+        6,
+        7
+      ]],
+      "@@bool2": [false],
+      "@@date2": [1388534399],
+      "@@float2": [0.2],
+      "@@strcom2": ["compress2"],
+      "@@tuple2": [{
+        "score": 6,
+        "name": "SQL"
+      }],
+      "@@int2": [-1],
+      "@@uint2": [0],
+      "@@double2": [2.2],
+      "@@three2": [[[
+        5,
+        6,
+        7
+      ]]]
+    },
+    {
+      "@@v2": [
+        "m3",
+        "m3"
+      ],
+      "@@str2": [
+        "test2",
+        "test"
+      ],
+      "@@two2": [
+        [
+          6,
+          7
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "@@bool2": [
+        false,
+        true
+      ],
+      "@@date2": [
+        1388534399,
+        1388534399
+      ],
+      "@@float2": [
+        0.2,
+        0.1
+      ],
+      "@@strcom2": [
+        "compress2",
+        "compress"
+      ],
+      "@@tuple2": [
+        {
+          "score": 6,
+          "name": "SQL"
+        },
+        {
+          "score": 10,
+          "name": "Tiger"
+        }
+      ],
+      "@@int2": [
+        -1,
+        0
+      ],
+      "@@uint2": [
+        0,
+        1
+      ],
+      "@@double2": [
+        2.2,
+        1.1
+      ],
+      "@@three2": [
+        [[
+          5,
+          6,
+          7
+        ]],
+        [[
+          1,
+          2,
+          3
+        ]]
+      ]
+    },
+    {
+      "@@twoList": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "@@dateList": [
+        1388534399,
+        1388534399,
+        1388534399
+      ],
+      "@@threeList": [
+        [[
+          1,
+          2,
+          3
+        ]],
+        [[
+          2,
+          3,
+          4
+        ]],
+        [
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "@@tupleList": [
+        {
+          "score": 10,
+          "name": "Tiger"
+        },
+        {
+          "score": 20,
+          "name": "Graph"
+        },
+        {
+          "score": 1,
+          "name": "m3"
+        }
+      ],
+      "@@doubleList": [
+        1.1,
+        1.1,
+        2
+      ],
+      "@@uintList": [
+        1,
+        1,
+        0
+      ],
+      "@@vList": [
+        "m3",
+        "m3",
+        "c1"
+      ],
+      "@@floatList": [
+        0.1,
+        0.1,
+        1
+      ],
+      "@@boolList": [
+        true,
+        true,
+        true
+      ],
+      "@@eList": [{
+        "from_type": "members",
+        "to_type": "company",
+        "directed": false,
+        "from_id": "m3",
+        "to_id": "c1",
+        "attributes": {
+          "industryId": 1,
+          "positionId": 2
+        },
+        "e_type": "member_work_company"
+      }],
+      "@@intList": [
+        0,
+        0,
+        1
+      ],
+      "@@strcomList": [
+        "compress",
+        "compress",
+        "c1"
+      ],
+      "@@strList": [
+        "test",
+        "test",
+        "com1"
+      ]
+    }
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

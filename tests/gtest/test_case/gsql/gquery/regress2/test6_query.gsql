@@ -1,0 +1,100 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test global and local variable		#
+# assign or += with other compatible type       #
+#################################################
+
+DROP QUERY sumac_test6
+create query sumac_test6(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<UINT> @@uintSum1;
+	SumAccum<UINT> @@uintSum2;
+	SumAccum<UINT> @@uintSum3;
+	SumAccum<INT> @@intSum1;
+	SumAccum<INT> @@intSum2;
+	SumAccum<FLOAT> @@floatSum1;
+	SumAccum<FLOAT> @@floatSum2;
+	SumAccum<DOUBLE> @@doubleSum1;
+	SumAccum<DOUBLE> @@doubleSum2;
+	SumAccum<UINT> @uintsum1;
+	SumAccum<UINT> @uintsum2;
+	SumAccum<UINT> @uintsum3;
+	SumAccum<UINT> @uintsum4 = -1;	// this will be assigned as max value
+	SumAccum<INT> @intsum1;
+	SumAccum<INT> @intsum2;
+	SumAccum<FLOAT> @floatsum1;
+	SumAccum<FLOAT> @floatsum2;
+	SumAccum<DOUBLE> @doublesum1;
+	SumAccum<DOUBLE> @doublesum2;
+	UINT myuint = 1;
+	INT myint = 2;
+	FLOAT myfloat = 1.2;
+	DOUBLE mydouble = 2.2;
+
+	// test in query block
+	@@uintSum1 = -1;	// will be assigned as max value
+	@@uintSum2 = myfloat;	// will be 1
+	@@uintSum3 = mydouble;	// will be 2
+	@@intSum1 = myfloat;	// will be 1
+	@@intSum2 = mydouble;	// will be 2
+	@@floatSum1 = myuint;	// will be 1
+	@@floatSum2 = myint;	// will be 2
+	@@doubleSum1 = myuint;	// will be 1
+	@@doubleSum2 = myint;	// will be 2
+	
+	// check all modified values
+	print @@uintSum1, @@uintSum2, @@uintSum3;
+	print @@intSum1, @@intSum2;
+	print @@floatSum1, @@floatSum2;
+	print @@doubleSum1, @@doubleSum2;
+	
+	@@uintSum1 = 0;
+	// test in query block
+        @@uintSum1 += -1;        // will be max value
+        @@uintSum2 += myfloat;   // will be 2
+        @@uintSum3 += mydouble;  // will be 3
+        @@intSum1 += myfloat;    // will be 2
+        @@intSum2 += mydouble;   // will be 3
+        @@floatSum1 += myuint;   // will be 2
+        @@floatSum2 += myint;    // will be 3
+        @@doubleSum1 += myuint;  // will be 2
+        @@doubleSum2 += myint;   // will be 3
+
+        // check all modified values
+        print @@uintSum1, @@uintSum2, @@uintSum3;
+        print @@intSum1, @@intSum2;
+        print @@floatSum1, @@floatSum2;
+        print @@doubleSum1, @@doubleSum2;
+
+	@@uintSum1 = 0;
+	L0 = {seed};
+	print L0;
+	// test in select block	
+	L1 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum @@uintSum1 += -1, @@uintSum1 += e.industryId, @@uintSum1 += e.positionId,
+		  @@intSum1 += e.industryId, @@intSum2 += e.positionId,
+		  @@floatSum1 += myuint, @@floatSum2 += tgt.nCount,
+		  @@doubleSum1 += myuint, @@doubleSum2 += tgt.nCount,
+		  s.@uintsum1 = -1, s.@uintsum2 = e.industryId, s.@uintsum3 = e.positionId,
+		  s.@uintsum4 = 0, s.@intsum1 = e.industryId, s.@intsum2 = e.positionId,
+		  s.@floatsum1 = myuint, s.@floatsum2 = tgt.nCount,
+		  s.@doublesum1 = myuint, s.@doublesum2 = tgt.nCount;
+        // check all modified values
+        print @@uintSum1, @@uintSum2, @@uintSum3;
+        print @@intSum1, @@intSum2;
+        print @@floatSum1, @@floatSum2;
+        print @@doubleSum1, @@doubleSum2; 
+	print L0;
+
+        L2 = select tgt
+            from L0: s - (member_work_company: e) - company: tgt
+            accum s.@uintsum2 += e.industryId, s.@uintsum3 += e.positionId, s.@uintsum4 += -1,
+                  s.@intsum1 += e.industryId, s.@intsum2 += e.positionId,
+                  s.@floatsum1 += myuint, s.@floatsum2 += tgt.nCount,
+                  s.@doublesum1 += myuint, s.@doublesum2 += tgt.nCount;
+	print L0;
+}

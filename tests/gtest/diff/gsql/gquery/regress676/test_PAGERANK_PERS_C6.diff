@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":0.21375,"vertex_id":"A"},{"score":0.20794,"vertex_id":"P"},{"score":0.17677,"vertex_id":"E"},{"score":0.17626,"vertex_id":"C"},{"score":0.15,"vertex_id":"B"},{"score":0.10404,"vertex_id":"H"},{"score":0.10151,"vertex_id":"I"},{"score":0.09254,"vertex_id":"J"},{"score":0.02879,"vertex_id":"N"},{"score":0.02458,"vertex_id":"M"}]}]}
+>>>>>>> base
+

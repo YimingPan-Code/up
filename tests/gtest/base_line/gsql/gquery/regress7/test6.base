@@ -1,0 +1,170 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test6.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@vList.size()": 1,
+      "@@twoList.size()": 1,
+      "@@floatList.size()": 1,
+      "@@boolList.size()": 1,
+      "@@threeList.size()": 1,
+      "@@strcomList.size()": 1,
+      "@@dateList.size()": 1,
+      "@@strList.size()": 1,
+      "@@tupleList.size()": 1,
+      "@@uintList.size()": 1,
+      "@@doubleList.size()": 1,
+      "@@eList.size()": 1,
+      "@@intList.size()": 1
+    },
+    {
+      "@@floatList.get(0)": 1,
+      "@@vList.get(0)": "c1",
+      "@@strList.get(0)": "com1",
+      "@@tupleList.get(0)": {
+        "score": 1,
+        "name": "m3"
+      },
+      "@@threeList.get(0)": [[
+        1,
+        5
+      ]],
+      "@@dateList.get(0)": "2016-12-31 23:59:59",
+      "@@uintList.get(0)": 0,
+      "@@intList.get(0)": 1,
+      "@@doubleList.get(0)": 2,
+      "@@strcomList.get(0)": "c1",
+      "@@eList.get(0)": {
+        "from_type": "members",
+        "to_type": "company",
+        "directed": false,
+        "from_id": "m3",
+        "to_id": "c1",
+        "attributes": {
+          "industryId": 1,
+          "positionId": 2
+        },
+        "e_type": "member_work_company"
+      },
+      "@@twoList.get(0)": [
+        0,
+        5
+      ]
+    },
+    {
+      "@@floatList.get(1)": 0,
+      "@@vList.get(1)": "Unknown",
+      "@@uintList.get(1)": 0,
+      "@@intList.get(1)": 0,
+      "@@doubleList.get(1)": 0,
+      "@@eList.get(1)": {},
+      "@@tupleList.get(1)": {
+        "score": 0,
+        "name": ""
+      },
+      "@@threeList.get(1)": [],
+      "@@strList.get(1)": "",
+      "@@dateList.get(1)": "1970-01-01 00:00:00",
+      "@@boolList.get(1)": false,
+      "@@strcomList.get(1)": "",
+      "@@twoList.get(1)": []
+    },
+    {
+      "@@vList.contains(vertex2)": false,
+      "@@strcomList.contains(c1)": true,
+      "@@tupleList.contains(myTuple(m2,2))": false,
+      "@@dateList.contains(dt)": true,
+      "@@intList.contains(2)": false,
+      "@@uintList.contains(0)": true,
+      "@@floatList.contains(2)": false,
+      "@@strList.contains(com2)": false,
+      "@@strcomList.contains(google)": false,
+      "@@eList.contains(edge1)": true,
+      "@@doubleList.contains(1)": false,
+      "@@intList.contains(1)": true,
+      "@@twoList.contains([0,5])": true,
+      "@@uintList.contains(1)": false,
+      "@@vList.contains(vertex1)": true,
+      "@@floatList.contains(1)": true,
+      "@@boolList.contains(true)": true,
+      "@@boolList.contains(false)": false,
+      "@@strList.contains(com1)": true,
+      "@@eList.contains(edge2)": false,
+      "@@tupleList.contains(myTuple(m3,1))": true,
+      "@@twoList.contains([1])": false,
+      "@@dateList.contains(dd)": false,
+      "@@threeList.contains([[1,5]])": true,
+      "@@doubleList.contains(2)": true,
+      "@@threeList.contains([[2]])": false
+    },
+    {
+      "@@floatList.get(0)": 0,
+      "@@vList.get(0)": "m3",
+      "@@uintList.get(0)": 1,
+      "@@intList.get(0)": 0,
+      "@@doubleList.get(0)": 3,
+      "@@eList.get(0)": {
+        "from_type": "company",
+        "to_type": "members",
+        "directed": false,
+        "from_id": "c1",
+        "to_id": "m1",
+        "attributes": {
+          "industryId": 1,
+          "positionId": 1
+        },
+        "e_type": "member_work_company"
+      },
+      "@@strList.get(0)": "changed",
+      "@@tupleList.get(0)": {
+        "score": 1,
+        "name": "changed"
+      },
+      "@@threeList.get(0)": [[
+        1,
+        1
+      ]],
+      "@@dateList.get(0)": "2011-12-12 23:11:11",
+      "@@boolList.get(0)": false,
+      "@@strcomList.get(0)": "changed",
+      "@@twoList.get(0)": [
+        0,
+        0
+      ]
+    },
+    {"vertexSet": [{
+      "v_id": "m3",
+      "attributes": {
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {
+      "@@vList.size()": 0,
+      "@@twoList.size()": 0,
+      "@@floatList.size()": 0,
+      "@@boolList.size()": 0,
+      "@@threeList.size()": 0,
+      "@@strcomList.size()": 0,
+      "@@dateList.size()": 0,
+      "@@strList.size()": 0,
+      "@@tupleList.size()": 0,
+      "@@uintList.size()": 0,
+      "@@doubleList.size()": 0,
+      "@@eList.size()": 0,
+      "@@intList.size()": 0
+    },
+    {"findMaxOfListAccum(@@doubleList)": 200}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

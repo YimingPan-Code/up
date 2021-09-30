@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"VSET":[{"v_id":"K","attributes":{"VSET.@dist":42},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"I","attributes":{"VSET.@dist":9},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"G","attributes":{"VSET.@dist":67},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"H","attributes":{"VSET.@dist":141},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"F","attributes":{"VSET.@dist":133},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"D","attributes":{"VSET.@dist":213},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"E","attributes":{"VSET.@dist":33},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"B","attributes":{"VSET.@dist":77},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"A","attributes":{"VSET.@dist":0},"v_type":"SHORTEST_SS_ALL_WT_C9"},{"v_id":"C","attributes":{"VSET.@dist":152},"v_type":"SHORTEST_SS_ALL_WT_C9"}]}]}
+>>>>>>> base
+

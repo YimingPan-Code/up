@@ -1,0 +1,14 @@
+from,to,weight
+A,L,80
+B,D,73
+B,G,61
+B,J,30
+B,L,4
+C,G,30
+C,H,-1
+D,J,78
+E,F,-1
+F,I,9
+F,L,69
+I,J,15
+J,L,88

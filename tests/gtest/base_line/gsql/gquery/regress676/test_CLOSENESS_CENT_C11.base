@@ -1,0 +1,95 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_CLOSENESS_CENT_C11.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 0.32895,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 0.25789,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.23684,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 0.18797,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.11842,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 0.07895,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.07018,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 0.07018,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.07018,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "S"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "R"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 0.05263,
+      "Vertex_ID": "M"
+    },
+    {
+      "score": -1,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": -1,
+      "Vertex_ID": "Q"
+    },
+    {
+      "score": -1,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": -1,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": -1,
+      "Vertex_ID": "T"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

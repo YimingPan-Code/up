@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Runtime Error: '' is not allowed by the file output policy."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"@@kMap":{"3":[27.49542,10.13237,4],"4":[33.35081,12.08421,4],"5":[33.17112,12.03461,3]}}]}
+>>>>>>> base
+

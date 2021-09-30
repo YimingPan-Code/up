@@ -1,0 +1,6 @@
+<<<<<<< log
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":0,"Vertex_ID":"C"},{"score":0,"Vertex_ID":"E"},{"score":0,"Vertex_ID":"F"},{"score":0,"Vertex_ID":"D"},{"score":0,"Vertex_ID":"B"}]}]}
+========
+{"__GTEST__PARSED":"Runtime Error: '' is not allowed by the file output policy."}
+>>>>>>> base
+

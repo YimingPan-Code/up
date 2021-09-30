@@ -1,0 +1,25 @@
+use graph poc_graph
+##################################################
+# GSQL language BitwiseAndAccum & BitwiseOrAccum #
+# negative test cases                            #
+# Tester: Yong Tan                               #
+#                                                #
+# Details:                                       #
+# variables definition with no '@'               #
+# or more than two '@'                           #
+##################################################
+set exit_on_error = false
+
+create query BitwiseAndOrAccum_neg_test1() FOR GRAPH poc_graph api("v2") {
+  // test declaration
+  BitwiseAndAccum bwAndAccumVar;
+  BitwiseOrAccum  bwOrAccumVar;
+  BitwiseAndAccum @@@bwAndAccumVar1;
+  BitwiseOrAccum  @@@bwOrAccumVar1;
+
+  print bwAndAccumVar;
+  print bwOrAccumVar;
+  print @@@bwAndAccumVar1andAccumVar1;
+  print @@@bwOrAccumVar1;
+}
+

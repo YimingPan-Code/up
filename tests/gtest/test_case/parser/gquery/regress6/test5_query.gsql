@@ -1,0 +1,101 @@
+use graph poc_graph
+#################################################
+# GSQL language ListAccum		        #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# the right-hand of an operator 		#
+# is some other type				#
+#################################################
+set exit_on_error = false
+
+create query listac_neg_test5_1() FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<UINT> @@list;
+	@@list = ["a", "b", "c"];
+}
+
+create query listac_neg_test5_2() FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<UINT> @@list;
+	ListAccum<STRING> @@str;
+	@@str = ["a", "b", "c"];
+	@@list = @@str;	
+}
+
+create query listac_neg_test5_3() FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<UINT> @@list;
+	ListAccum<ListAccum<UINT>> @@nested;
+	@@list = @@nested;
+}
+
+create query listac_neg_test5_4() FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<UINT> @@list;
+	@@list = @@list + "test";
+}
+
+create query listac_neg_test5_5(VERTEX<company> seed) FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<UINT> @@list;
+	@@list += seed;
+}
+
+create query listac_neg_test5_6() FOR GRAPH poc_graph {
+	// type check error should return
+	ListAccum<ListAccum<UINT>> @@nested;
+	@@nested += 1;
+}
+
+create query listac_neg_test5_7(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = ["string"];
+}
+
+create query listac_neg_test5_8(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	ListAccum<STRING> @@str;
+	@@str = ["test"];
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = @@str;
+}
+
+create query listac_neg_test5_9(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	ListAccum<ListAccum<INT>> @@nested;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = @@nested;
+}
+
+create query listac_neg_test5_10(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list = tgt.@list + "test";
+}
+
+create query listac_neg_test5_11(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list += tgt;
+}
+
+create query listac_neg_test5_12(VERTEX<company> seed) FOR GRAPH poc_graph {
+	ListAccum<ListAccum<INT>> @list;
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: tgt
+	     accum tgt.@list += 1;
+}

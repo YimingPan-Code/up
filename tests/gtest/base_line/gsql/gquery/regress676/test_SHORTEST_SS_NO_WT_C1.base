@@ -1,0 +1,19 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SHORTEST_SS_NO_WT_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"ResultSet": [{
+    "v_id": "A",
+    "attributes": {"ResultSet.@dis": 0},
+    "v_type": "SHORTEST_SS_NO_WT_C1"
+  }]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

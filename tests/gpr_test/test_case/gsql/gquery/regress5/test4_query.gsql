@@ -1,0 +1,28 @@
+#################################################
+# GSQL language AndAccum & OrAccum declaration  #
+# positive test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# test global AndAccum/OrAccum as               #
+# the parameter in expression function          #
+#################################################
+
+create batch query AndOrAccum_test4() FOR GRAPH poc_graph api("v2") {
+  // test declaration of static global variables
+  AndAccum @@andAccumVar; # (default value = T)
+  OrAccum  @@orAccumVar;  # (default value = F)
+
+  // test default values
+  print @@andAccumVar;
+  print @@orAccumVar;
+
+  // Test using global variables as parameters in expression function
+  @@andAccumVar = addAndAccum(@@andAccumVar);
+  @@orAccumVar = addOrAccum(@@orAccumVar);
+
+  // Test modified values of all global variables
+  print @@andAccumVar;
+  print @@orAccumVar;
+}
+

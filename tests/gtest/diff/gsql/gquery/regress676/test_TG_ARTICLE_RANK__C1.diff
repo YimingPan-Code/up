@@ -1,0 +1,6 @@
+<<<<<<< log
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"@@topScores":[{"score":3.04773,"Vertex_ID":"C"},{"score":0.15,"Vertex_ID":"F"},{"score":0.15,"Vertex_ID":"D"},{"score":0.15,"Vertex_ID":"E"},{"score":0.15,"Vertex_ID":"B"},{"score":0.15,"Vertex_ID":"A"}]}]}
+========
+{"__GTEST__PARSED":"Semantic Check Fails: the query tg_article_rank doesn't exist!"}
+>>>>>>> base
+

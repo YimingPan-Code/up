@@ -1,0 +1,27 @@
+DROP QUERY ip_batch
+CREATE QUERY ip_batch (int step, string output) FOR GRAPH test_graph {
+  # find the k steps neighbors of a set of actorIP vertices
+  SetAccum<int> @set;
+  File ff (output);
+  int j = 0;
+  all (_) = {actorIP.*};
+
+  WHILE j < step DO
+    all = SELECT tgt
+          FROM all:src -(:e)- (account|actorIP):tgt
+            ACCUM
+               CASE WHEN src.type == "actorIP" THEN
+                 tgt.@set += src.id
+               END,
+               tgt.@set += src.@set
+             ;
+    j = j + 1;
+  END;
+
+  PRINT all.id, all.@set TO_CSV ff;
+}
+
+# don't install query here
+#INSTALL QUERY -o1 ip_batch  # pass message by pointer
+
+#RUN QUERY ip_batch(2, "/tmp/ip")

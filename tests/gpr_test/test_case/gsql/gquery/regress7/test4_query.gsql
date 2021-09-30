@@ -1,0 +1,95 @@
+#################################################
+# GSQL language ListAccum		        #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# test + and * operator		                #
+#################################################
+
+DROP QUERY listac_test4
+create batch query listac_test4(VERTEX<members> seed) FOR GRAPH poc_graph {
+	ListAccum<INT> @@intList1;
+	ListAccum<INT> @@intList2;
+	ListAccum<FLOAT> @@floatList1;
+	ListAccum<FLOAT> @@floatList2;
+	ListAccum<DOUBLE> @@doubleList1;
+	ListAccum<DOUBLE> @@doubleList2;
+	ListAccum<STRING> @@strList1;
+	ListAccum<STRING> @@strList2;
+	ListAccum<STRING> @@strList3;
+	ListAccum<INT> @int1;
+	ListAccum<INT> @int2;
+	ListAccum<FLOAT> @float1;
+	ListAccum<FLOAT> @float2;
+	ListAccum<DOUBLE> @double1;
+	ListAccum<DOUBLE> @double2;
+	ListAccum<STRING> @str1;
+	ListAccum<STRING> @str2;
+	ListAccum<STRING> @str3;
+
+	@@intList1 = [1, 2];
+	@@intList2 = [3, 4];
+	@@floatList1 = [0.1, 0.2];
+	@@floatList2 = [0.3, 0.4];
+	@@doubleList1 = [1.1, 1.2];
+	@@doubleList2 = [1.3, 1.4];
+	@@strList1 = ["test1", "test2"];
+	@@strList2 = ["test3", "test4"];
+	print @@intList1, @@intList2, @@floatList1, @@floatList2, @@doubleList1,
+		@@doubleList2, @@strList1, @@strList2;
+	L0 = {seed};
+	L0 = select s
+	     from L0: s
+	     accum s.@int1 = [1, 2], s.@int2 = [3, 4], s.@float1 = [0.1, 0.2],
+		   s.@float2 = [0.3, 0.4], s.@double1 = [1.1, 1.2], s.@double2 = [1.3, 1.4],
+		   s.@str1  = ["test1", "test2"], s.@str2 = ["test3", "test4"];
+	print L0;
+	
+	// test + operator, the right-hand is an element
+	// global variables 
+  // this feature is prohibited now, use * instead of it.
+	// @@intList1 = @@intList1 + 1;
+	// @@floatList1 = @@floatList1 + 0.1;
+	// @@doubleList1 = @@doubleList1 + 1.1;
+	// @@strList1 = @@strList1 + "_1";
+	@@intList1 = @@intList1 * [1];
+	@@floatList1 = @@floatList1 * [0.1];
+	@@doubleList1 = @@doubleList1 * [1.1];
+	@@strList1 = @@strList1 * ["_1"];
+	// print result
+	print @@intList1, @@floatList1, @@doubleList1, @@strList1;
+	// local variables
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@int1 = s.@int1 * [29], s.@float1 = s.@float1 * [e.industryId],
+		   s.@double1 = s.@double1 * [e.positionId], s.@str1 = s.@str1 * [s.id];
+	// print result
+	print L0;
+
+	// test + operator, the right-hand is ListAccum
+	// global variables
+	@@intList2 = @@intList2 + @@intList1;
+	@@floatList2 = @@floatList2 + @@floatList1;
+	@@doubleList2 = @@doubleList2 + @@doubleList1;
+	@@strList2 = @@strList2 + @@strList1;
+	// print result
+	print @@intList2, @@floatList2, @@doubleList2, @@strList2;
+	// local variables
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@int2 = s.@int2 + s.@int1, s.@float2 = s.@float2 + s.@float1,
+		   s.@double2 = s.@double2 + s.@double1, s.@str2 = s.@str2 + s.@str1;
+	// print result
+	print L0;
+
+	// test * operator
+	// global variable
+	@@strList3 = @@strList1 * @@strList2;
+	print @@strList3;
+	// local variable
+	L3 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum s.@str3 = s.@str1 * s.@str2;
+	print L0;	
+}

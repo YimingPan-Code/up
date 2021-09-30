@@ -1,0 +1,116 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress3/test1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintMin": "18446744073709551615"},
+    {"@@intMin": 9223372036854775807},
+    {"@@floatMin": 3.4028234663852886E38},
+    {"@@doubleMin": 1.7976931348623157E308},
+    {"@@vertexMin": "Unknown"},
+    {
+      "@@intMin2": 1,
+      "@@intMin1": 9223372036854775807
+    },
+    {
+      "@@uintMin1": "18446744073709551615",
+      "@@uintMin2": 2
+    },
+    {
+      "@@floatMin2": 1.2,
+      "@@floatMin1": 3.4028234663852886E38
+    },
+    {
+      "@@doubleMin2": 1.3,
+      "@@doubleMin1": 1.7976931348623157E308
+    },
+    {
+      "@@vertexMin1": "Unknown",
+      "@@vertexMin2": "Unknown"
+    },
+    {"@@uintMax": 0},
+    {"@@intMax": -9223372036854775808},
+    {"@@floatMax": -3.4028234663852886E38},
+    {"@@doubleMax": -1.7976931348623157E308},
+    {"@@vertexMax": "Unknown"},
+    {
+      "@@intMax2": 1,
+      "@@intMax1": -9223372036854775808
+    },
+    {
+      "@@uintMax2": 2,
+      "@@uintMax1": 0
+    },
+    {
+      "@@floatMax1": -3.4028234663852886E38,
+      "@@floatMax2": 1.2
+    },
+    {
+      "@@doubleMax2": 1.3,
+      "@@doubleMax1": -1.7976931348623157E308
+    },
+    {
+      "@@vertexMax1": "Unknown",
+      "@@vertexMax2": "Unknown"
+    },
+    {"@@uintMin": 11},
+    {"@@intMin": 1},
+    {"@@floatMin": 2},
+    {"@@doubleMin": 3.33},
+    {"@@vertexMin": "c1"},
+    {
+      "@@intMin2": 0,
+      "@@intMin1": 1
+    },
+    {
+      "@@uintMin1": 18,
+      "@@uintMin2": 2
+    },
+    {
+      "@@floatMin2": 1.2,
+      "@@floatMin1": 2.4
+    },
+    {
+      "@@doubleMin2": 1.3,
+      "@@doubleMin1": 100
+    },
+    {
+      "@@vertexMin1": "Unknown",
+      "@@vertexMin2": "Unknown"
+    },
+    {"@@uintMax": 11},
+    {"@@intMax": 1},
+    {"@@floatMax": 2},
+    {"@@doubleMax": 3.33},
+    {"@@vertexMax": "c1"},
+    {
+      "@@intMax2": 0,
+      "@@intMax1": 2
+    },
+    {
+      "@@uintMax2": 2,
+      "@@uintMax1": 18
+    },
+    {
+      "@@floatMax1": 2.4,
+      "@@floatMax2": 1.2
+    },
+    {
+      "@@doubleMax2": 1.3,
+      "@@doubleMax1": 100
+    },
+    {
+      "@@vertexMax1": "Unknown",
+      "@@vertexMax2": "Unknown"
+    }
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

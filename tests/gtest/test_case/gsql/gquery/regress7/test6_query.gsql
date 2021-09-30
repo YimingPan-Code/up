@@ -1,0 +1,120 @@
+#################################################
+# GSQL language ListAccum		        #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details: 					#
+# global ListAccum functions			#
+# as parameter of expression function		# 
+#################################################
+
+DROP QUERY listac_test6
+create query listac_test6(VERTEX<members> seed) FOR GRAPH poc_graph {
+	TYPEDEF tuple<STRING name, INT score> myTuple; 
+	ListAccum<UINT> @@uintList;
+	ListAccum<INT> @@intList;
+	ListAccum<FLOAT> @@floatList;
+	ListAccum<DOUBLE> @@doubleList;
+	ListAccum<STRING> @@strList;
+	ListAccum<STRING COMPRESS> @@strcomList;
+	ListAccum<BOOL> @@boolList;
+	ListAccum<VERTEX> @@vList;
+	ListAccum<EDGE> @@eList;
+	ListAccum<DATETIME> @@dateList;
+	ListAccum<myTuple> @@tupleList;
+	ListAccum<ListAccum<INT>> @@twoList;
+	ListAccum<ListAccum<ListAccum<INT>>> @@threeList;
+	DATETIME dt;
+	DATETIME dd;
+	EDGE edge1;
+	EDGE edge2;
+	VERTEX vertex1;
+	VERTEX vertex2;
+	dt = to_datetime("2016-12-31 23:59:59");
+	dd = to_datetime("2011-12-12 23:11:11");
+
+	L0 = {seed};
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@uintList += 0, @@intList += tgt.nCount, @@floatList += e.industryId,
+		   @@doubleList += e.positionId, @@strList += tgt.company_name,
+		   @@strcomList += tgt.id, @@boolList += tgt.label, @@vList += tgt,
+		   @@eList += e, @@dateList += dt, @@tupleList += myTuple(s.id, tgt.nCount),
+		   @@twoList += [0, 5], @@threeList += [[1, 5]], edge1 = e, vertex1 = tgt, vertex2 = s;
+
+	L2 = select tgt
+	     from L1: s - (member_work_company: e) - members: tgt
+	     where tgt.id == "m1"
+	     accum edge2 = e;
+	
+	// print size of each ListAccum with size() function
+	print @@uintList.size(), @@intList.size(), @@floatList.size(), @@doubleList.size(), @@strList.size(),
+		@@strcomList.size(), @@boolList.size(), @@vList.size(), @@eList.size(), @@dateList.size(),
+		@@tupleList.size(), @@twoList.size(), @@threeList.size();
+
+	// print the first element (valid) of each ListAccum with get() function
+	print @@uintList.get(0), @@intList.get(0), @@floatList.get(0), @@doubleList.get(0), @@strList.get(0),
+		@@strcomList.get(0), @@vList.get(0), @@eList.get(0), @@dateList.get(0),
+		@@tupleList.get(0), @@twoList.get(0), @@threeList.get(0)/*, @@boolList.get(0)*/;
+
+	// get() function with index out of bound, should return default value
+	print @@uintList.get(1), @@intList.get(1), @@floatList.get(1), @@doubleList.get(1), @@strList.get(1),
+                @@strcomList.get(1), @@boolList.get(1), @@vList.get(1), @@eList.get(1), @@dateList.get(1),
+                @@tupleList.get(1), @@twoList.get(1), @@threeList.get(1);
+
+	// print the return value of contains() function of each ListAccum
+	print @@uintList.contains(0), @@uintList.contains(1), @@intList.contains(1), @@intList.contains(2),
+		@@floatList.contains(1), @@floatList.contains(2), @@doubleList.contains(2), @@doubleList.contains(1),
+		@@strList.contains("com1"), @@strList.contains("com2"), @@strcomList.contains("c1"), @@strcomList.contains("google"),
+		@@boolList.contains(true), @@boolList.contains(false), @@vList.contains(vertex1), @@vList.contains(vertex2),
+		@@eList.contains(edge1), @@eList.contains(edge2), @@dateList.contains(dt), @@dateList.contains(dd),
+		@@tupleList.contains(myTuple("m3", 1)), @@tupleList.contains(myTuple("m2", 2)),
+		@@twoList.contains([0, 5]), @@twoList.contains([1]), @@threeList.contains([[1, 5]]), @@threeList.contains([[2]]);
+
+	// test update() function
+	@@uintList.update(0, 1);
+	@@intList.update(0, 0);
+	@@floatList.update(0, 0);
+	@@doubleList.update(0, 3);
+	@@strList.update(0, "changed");
+	@@strcomList.update(0, "changed");
+	@@boolList.update(0, false);
+	@@vList.update(0, vertex2);
+	@@eList.update(0, edge2);
+	@@dateList.update(0, dd);
+	@@tupleList.update(0, myTuple("changed", 1));
+	@@twoList.update(0, [0, 0]);
+	@@threeList.update(0, [[1, 1]]);
+	// print the first element of each ListAccum after update() function
+	print @@uintList.get(0), @@intList.get(0), @@floatList.get(0), @@doubleList.get(0), @@strList.get(0),
+		@@strcomList.get(0), @@boolList.get(0), @@vList.get(0), @@eList.get(0), @@dateList.get(0),
+		@@tupleList.get(0), @@twoList.get(0), @@threeList.get(0);
+
+	// test ListAccum<VERTEX> as a seedSet
+	vertexSet = {@@vList};
+	print vertexSet;
+
+	// test clear() function
+	@@uintList.clear();
+	@@intList.clear();
+	@@floatList.clear();
+	@@doubleList.clear();
+	@@strList.clear();
+	@@strcomList.clear();
+	@@boolList.clear();
+	@@vList.clear();
+	@@eList.clear();
+	@@dateList.clear();
+	@@tupleList.clear();
+	@@twoList.clear();
+	@@threeList.clear();
+	// print the size of each ListAccum after clear() funtion to see if ListAccum has already be cleared
+	print @@uintList.size(), @@intList.size(), @@floatList.size(), @@doubleList.size(), @@strList.size(),
+		@@strcomList.size(), @@boolList.size(), @@vList.size(), @@eList.size(), @@dateList.size(),
+		@@tupleList.size(), @@twoList.size(), @@threeList.size();
+
+	// test ListAccum as the parameter of expression function
+	// here ListAccum<DOUBLE> is used
+	@@doubleList = [3, 4, 1, 5, 11, 200, -1, 0];
+	print findMaxOfListAccum(@@doubleList);
+}

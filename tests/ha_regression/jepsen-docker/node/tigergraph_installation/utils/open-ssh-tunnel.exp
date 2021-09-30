@@ -1,0 +1,90 @@
+#! /usr/bin/expect
+
+if {[llength $argv] != 3} {
+  #send_user "Usage: ./open_ssh_tunnel.exp <src_host> <target_host> <user> <password>"
+  send_user "Usage: ./open_ssh_tunnel.exp <target_host> <user> <password>"
+  exit 1
+}
+
+#set srcHost        [lindex $argv 0]
+#set targetHost     [lindex $argv 1]
+#set user     [lindex $argv 2]
+#set password [lindex $argv 3]
+set targetHost     [lindex $argv 0]
+set user     [lindex $argv 1]
+set password [lindex $argv 2]
+set tigergraphPubkeyFile "/home/$user/.ssh/id_rsa"
+
+spawn ssh $user@$targetHost " ls $tigergraphPubkeyFile || ssh-keygen -b 2048 -t rsa -f $tigergraphPubkeyFile -q -N ''"
+log_user 0
+expect {
+  "yes/no" {
+    send "yes\r"
+    exp_continue
+  }
+  "assword" {
+    send "$password\r"
+    expect {
+      "denied" {
+        send "password wrong!"
+        exit 1
+      }
+    }
+  }
+  eof
+}
+log_user 1
+
+spawn ssh-copy-id -i $tigergraphPubkeyFile.pub $user@$targetHost
+expect {
+  "yes/no" {
+    send "yes\r"
+    exp_continue
+  }
+  "assword" {
+    send "$password\r"
+    expect {
+      "denied" {
+        send "password wrong!"
+        exit 1
+      }
+    }
+  }
+  eof
+}
+
+#spawn scp ./ssh-copy-id.exp $user@$srcHost:/tmp/
+#expect {
+#  "yes/no" {
+#    send "yes\r"
+#    exp_continue
+#  }
+#  "assword" {
+#    send "$password\r"
+#    expect {
+#      "denied" {
+#        send "password wrong!"
+#        exit 1
+#      }
+#    }
+#  }
+#  eof
+#}
+
+#spawn ssh $user@$srcHost "ls /tmp/ssh-copy-id.exp && expect -f /tmp/ssh-copy-id.exp $targetHost $user $password $tigergraphPubkeyFile"
+#expect {
+#  "yes/no" {
+#    send "yes\r"
+#    exp_continue
+#  }
+#  "assword" {
+#    send "$password\r"
+#    expect {
+#      "denied" {
+#        send "password wrong!"
+#        exit 1
+#      }
+#    }
+#  }
+#  eof
+#}

@@ -1,0 +1,59 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress6/test5_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Type Check Error in query listac_neg_test5_1 (TYP-500): line 16, col 8
+Incompatible operand types ListAccum<uint> and List<string> for the operator =
+The query listac_neg_test5_1 cannot be added!
+
+Type Check Error in query listac_neg_test5_2 (TYP-500): line 24, col 8
+Incompatible operand types ListAccum<uint> and ListAccum<string> for the
+operator =
+The query listac_neg_test5_2 cannot be added!
+
+Type Check Error in query listac_neg_test5_3 (TYP-500): line 31, col 8
+Incompatible operand types ListAccum<uint> and ListAccum<ListAccum<uint>> for
+the operator =
+The query listac_neg_test5_3 cannot be added!
+
+Type Check Error in query listac_neg_test5_4 (TYP-500): line 37, col 17
+Incompatible operand types ListAccum<uint> and string for the operator +
+The query listac_neg_test5_4 cannot be added!
+
+Type Check Error in query listac_neg_test5_5 (TYP-500): line 43, col 8
+Incompatible operand types ListAccum<uint> and vertex<company> for the operator
++=
+The query listac_neg_test5_5 cannot be added!
+
+Type Check Error in query listac_neg_test5_6 (TYP-500): line 49, col 10
+Incompatible operand types ListAccum<ListAccum<uint>> and int for the operator
++=
+The query listac_neg_test5_6 cannot be added!
+
+Type Check Error in query listac_neg_test5_7 (TYP-500): line 57, col 22
+Incompatible operand types ListAccum<int> and List<string> for the operator =
+The query listac_neg_test5_7 cannot be added!
+
+Type Check Error in query listac_neg_test5_8 (TYP-500): line 67, col 22
+Incompatible operand types ListAccum<int> and ListAccum<string> for the operator
+=
+The query listac_neg_test5_8 cannot be added!
+
+Type Check Error in query listac_neg_test5_9 (TYP-500): line 76, col 22
+Incompatible operand types ListAccum<int> and ListAccum<ListAccum<int>> for the
+operator =
+The query listac_neg_test5_9 cannot be added!
+
+Type Check Error in query listac_neg_test5_10 (TYP-500): line 84, col 34
+Incompatible operand types ListAccum<int> and string for the operator +
+The query listac_neg_test5_10 cannot be added!
+
+Type Check Error in query listac_neg_test5_11 (TYP-500): line 92, col 22
+Incompatible operand types ListAccum<int> and vertex<company> for the operator
++=
+The query listac_neg_test5_11 cannot be added!
+
+Type Check Error in query listac_neg_test5_12 (TYP-500): line 100, col 22
+Incompatible operand types ListAccum<ListAccum<int>> and int for the operator +=
+The query listac_neg_test5_12 cannot be added!
+[GTEST_END]

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Semantic Check Fails: the query closeness_cent doesn't exist!"}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":0.52778,"Vertex_ID":"S"},{"score":0.52778,"Vertex_ID":"O"},{"score":0.52778,"Vertex_ID":"G"},{"score":0.48718,"Vertex_ID":"A"},{"score":0.48718,"Vertex_ID":"P"},{"score":0.475,"Vertex_ID":"M"},{"score":0.475,"Vertex_ID":"N"},{"score":0.45238,"Vertex_ID":"F"},{"score":0.44186,"Vertex_ID":"H"},{"score":0.44186,"Vertex_ID":"R"},{"score":0.42222,"Vertex_ID":"T"},{"score":0.41304,"Vertex_ID":"L"},{"score":0.41304,"Vertex_ID":"B"},{"score":0.40426,"Vertex_ID":"D"},{"score":0.39583,"Vertex_ID":"Q"},{"score":0.39583,"Vertex_ID":"K"},{"score":0.38776,"Vertex_ID":"J"},{"score":0.38,"Vertex_ID":"E"},{"score":0.33333,"Vertex_ID":"I"},{"score":0.29688,"Vertex_ID":"C"}]}]}
+>>>>>>> base
+

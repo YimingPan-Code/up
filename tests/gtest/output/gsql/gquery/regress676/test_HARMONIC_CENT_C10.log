@@ -1,0 +1,95 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_HARMONIC_CENT_C10.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 0.00146,
+      "Vertex_ID": "S"
+    },
+    {
+      "score": 0.00146,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.00146,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 0.00135,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": 0.00135,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 0.00132,
+      "Vertex_ID": "M"
+    },
+    {
+      "score": 0.00132,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 0.00125,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 0.00122,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0.00122,
+      "Vertex_ID": "R"
+    },
+    {
+      "score": 0.00117,
+      "Vertex_ID": "T"
+    },
+    {
+      "score": 0.00114,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 0.00114,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 0.00112,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 0.0011,
+      "Vertex_ID": "Q"
+    },
+    {
+      "score": 0.0011,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 0.00107,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 0.00105,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 9.2E-4,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 8.2E-4,
+      "Vertex_ID": "C"
+    }
+  ]}]
+}
+[GTEST_JSON_END]

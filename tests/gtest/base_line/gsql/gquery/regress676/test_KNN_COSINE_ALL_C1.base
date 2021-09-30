@@ -1,0 +1,56 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_KNN_COSINE_ALL_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"source": [
+    {
+      "v_id": "Marvin",
+      "attributes": {
+        "name": "Marvin",
+        "@predicted_label": "a",
+        "predicted_label": "",
+        "known_label": ""
+      },
+      "v_type": "Person"
+    },
+    {
+      "v_id": "Jing",
+      "attributes": {
+        "name": "Jing",
+        "@predicted_label": "a",
+        "predicted_label": "",
+        "known_label": ""
+      },
+      "v_type": "Person"
+    },
+    {
+      "v_id": "Neil",
+      "attributes": {
+        "name": "Neil",
+        "@predicted_label": "a",
+        "predicted_label": "",
+        "known_label": ""
+      },
+      "v_type": "Person"
+    },
+    {
+      "v_id": "Elena",
+      "attributes": {
+        "name": "Elena",
+        "@predicted_label": "",
+        "predicted_label": "",
+        "known_label": ""
+      },
+      "v_type": "Person"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

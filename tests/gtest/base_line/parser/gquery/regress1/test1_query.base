@@ -1,0 +1,64 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress1/test1_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query sumac_neg_test1_1 (SEM-9): line 18, col 17
+The accumulator type SumAccum is not supported with data type testtuple!
+The query sumac_neg_test1_1 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_3 (SEM-9): line 23, col 17
+The accumulator type SumAccum is not supported with data type vertex!
+The query sumac_neg_test1_3 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_4 (SEM-9): line 28, col 17
+The accumulator type SumAccum is not supported with data type edge!
+The query sumac_neg_test1_4 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_5 (SEM-1301): line 33, col 17
+MaxAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_5 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_6 (SEM-1301): line 38, col 17
+MinAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_6 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_7 (SEM-1301): line 43, col 17
+AvgAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_7 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_8 (SEM-1301): line 48, col 17
+BitwiseAndAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_8 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_9 (SEM-1301): line 53, col 17
+BitwiseOrAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_9 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_10 (SEM-1301): line 58, col 17
+ListAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_10 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_11 (SEM-1301): line 63, col 17
+SetAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_11 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_12 (SEM-1301): line 68, col 17
+BagAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_12 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_13 (SEM-1301): line 73, col 17
+MapAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_13 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_14 (SEM-1301): line 79, col 17
+HeapAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_14 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_15 (SEM-1301): line 84, col 17
+ArrayAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_15 cannot be added!
+
+Semantic Check Error in query sumac_neg_test1_16 (SEM-1301): line 89, col 17
+GroupByAccum cannot be nested within a SumAccum accumulator!
+The query sumac_neg_test1_16 cannot be added!
+[GTEST_END]

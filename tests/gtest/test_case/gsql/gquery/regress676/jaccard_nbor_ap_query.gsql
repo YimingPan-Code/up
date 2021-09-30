@@ -1,0 +1,62 @@
+CREATE QUERY jaccard_nbor_ap_sub(VERTEX source, STRING e_type, STRING re_type, INT top_k, BOOL return_accum, STRING file_path, FILE f, STRING similarity_edge) RETURNS (MapAccum<VERTEX, FLOAT>){
+/* This subquery calculates the Jaccard Similarity between a given vertex and every other vertex.
+Jaccard similarity = intersection_size / (size_A + size_B - intersection_size)
+*/
+    
+        MapAccum<VERTEX, FLOAT> @@topK_result;
+        SumAccum<INT> @intersection_size, @@set_size_A, @set_size_B;
+        SumAccum<FLOAT> @similarity;
+
+        Start (ANY) = {source};
+        Start = SELECT s
+                FROM Start:s
+                ACCUM @@set_size_A += s.outdegree(e_type);
+
+        Subjects = SELECT t
+                   FROM Start:s-(e_type:e)-:t;
+
+        Others = SELECT t
+                 FROM Subjects:s -(re_type:e)- :t
+                 WHERE t != source 
+                 ACCUM t.@intersection_size += 1, 
+                       t.@set_size_B = t.outdegree(e_type)
+                 POST-ACCUM t.@similarity = t.@intersection_size*1.0/(@@set_size_A + t.@set_size_B - t.@intersection_size)
+                 ORDER BY t.@similarity DESC
+                 LIMIT top_k;
+        
+        Others =  SELECT s
+                  FROM Others: s
+                  POST-ACCUM 
+                      IF similarity_edge != "" THEN INSERT INTO EDGE similarity_edge VALUES(source, s, s.@similarity) END,
+                      IF file_path != "" THEN f.println(source, s, s.@similarity) END,
+                      IF return_accum THEN @@topK_result += (s -> s.@similarity) END;
+      return @@topK_result;
+}
+
+
+
+CREATE QUERY jaccard_nbor_ap(STRING v_type, STRING e_type, STRING re_type, INT top_k, BOOL print_accum = TRUE, STRING similarity_edge = "", STRING file_path = ""){
+/* This query calls the subquery jaccard_nbor_ap_sub to get the similarity score of every pair of vertices.
+
+  This query supports only taking in a single edge for the time being (8/13/2020).
+*/
+        MapAccum<VERTEX, FLOAT> @result;
+        FILE f("/tmp/fake");
+  
+        start = {v_type};
+        IF file_path != "" THEN
+          f.println("Vertex1", "Vertex2", "Similarity");
+        END;
+        start = SELECT s
+                FROM start:s
+                POST-ACCUM 
+                IF print_accum THEN
+                  s.@result = jaccard_nbor_ap_sub(s, e_type, re_type, top_k, TRUE, file_path,f, similarity_edge)
+                ELSE
+                  jaccard_nbor_ap_sub(s, e_type, re_type, top_k, TRUE, file_path,f, similarity_edge)
+                END;
+  
+        IF print_accum THEN
+          PRINT start[start.@result];
+        END;
+}

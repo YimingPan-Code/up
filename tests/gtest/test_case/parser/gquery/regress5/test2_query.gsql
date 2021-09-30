@@ -1,0 +1,18 @@
+use graph poc_graph
+##################################################
+# GSQL language BitwiseAndAccum & BitwiseOrAccum #
+# negative test cases                            #
+# Tester: Yong Tan                               #
+#                                                #
+# Details:                                       #
+# Test unsupported types.                        #
+##################################################
+set exit_on_error = false
+
+create query BitwiseAndOrAccum_neg_test2() FOR GRAPH poc_graph api("v2") {
+  # Test unsupported types
+  BitwiseAndAccum<float> @@bwAndAccumVar;
+
+  PRINT @@bwAndAccumVar;
+}
+

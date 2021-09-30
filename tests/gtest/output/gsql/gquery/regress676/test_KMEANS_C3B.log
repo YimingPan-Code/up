@@ -1,0 +1,6 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_KMEANS_C3B.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+Runtime Error: '' is not allowed by the file output policy.
+[GTEST_JSON_END]
+[GTEST_END]

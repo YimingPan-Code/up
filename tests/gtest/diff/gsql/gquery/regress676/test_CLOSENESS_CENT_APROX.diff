@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Semantic Check Fails: the query closeness_cent_aprox doesn't exist!"}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"Start":[{"v_id":"G","attributes":{"Start.@closeness":0.36842},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"H","attributes":{"Start.@closeness":0.5},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"F","attributes":{"Start.@closeness":0.38889},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"B","attributes":{"Start.@closeness":0.58333},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"A","attributes":{"Start.@closeness":0.7},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"C","attributes":{"Start.@closeness":0.53846},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"E","attributes":{"Start.@closeness":0.38889},"v_type":"CLOSENESS_CENT_C1"},{"v_id":"D","attributes":{"Start.@closeness":0.4375},"v_type":"CLOSENESS_CENT_C1"}]}]}
+>>>>>>> base
+

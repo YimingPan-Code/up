@@ -1,0 +1,76 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test SumAccum as nested type			#
+#################################################
+
+DROP QUERY sumac_test9_1
+#create batch query sumac_test9_1() FOR GRAPH poc_graph {
+#	MapAccum<INT, SumAccum<UINT>> @@uintMap;
+#	MapAccum<INT, SumAccum<INT>> @@intMap;
+#	MapAccum<INT, SumAccum<FLOAT>> @@floatMap;
+#	MapAccum<INT, SumAccum<DOUBLE>> @@doubleMap;
+#	MapAccum<INT, SumAccum<STRING>> @@stringMap;
+#	GroupByAccum<INT a, STRING b, SumAccum<UINT> uintsum, SumAccum<INT> intsum> @@group1;
+#	GroupByAccum<INT c, STRING d, SumAccum<FLOAT> floatsum, SumAccum<DOUBLE> doublesum> @@group2;
+#	GroupByAccum<INT e, STRING f, SumAccum<STRING> strsum, SumAccum<STRING> stringsum> @@group3;
+#	ArrayAccum<SumAccum<UINT>> @@uintarr[1];
+#	ArrayAccum<SumAccum<INT>> @@intarr[1];
+#	ArrayAccum<SumAccum<FLOAT>> @@floatarr[1];
+#	ArrayAccum<SumAccum<DOUBLE>> @@doublearr[1];
+#	ArrayAccum<SumAccum<STRING>> @@strarr[1];
+#
+#	// test SumAccum as nested type of MapAccum
+#	@@uintMap += (1 -> 1);
+#	@@intMap += (2 -> 2);
+#	@@floatMap += (3 -> 3.3);
+#	@@doubleMap += (4 -> 4.4);
+#	@@stringMap += (5 -> "testsumaccum");
+#	print @@uintMap, @@intMap, @@floatMap, @@doubleMap, @@stringMap;
+#
+#	// test SumAccum as nested type of GroupByAccum
+#	@@group1 += (1, "a" -> 1, -1);
+#	@@group2 += (2, "b" -> 2.2, 3.3);
+#	@@group3 += (3, "c" -> "test", "SumAccum");
+#	print @@group1, @@group2, @@group3;
+#	
+#	// test SumAccum as nested type of ArrayAccum
+#	@@uintarr[0] = 1;
+#	@@intarr[0] = 2;
+#	@@floatarr[0] = 3.33;
+#	@@doublearr[0] = 4.44;
+#	@@strarr[0] = "ArrayAccum";
+#	print @@uintarr, @@intarr, @@floatarr, @@doublearr, @@strarr;
+#}
+
+DROP QUERY sumac_test9_2
+#create batch query sumac_test9_2(VERTEX<members> seed) FOR GRAPH poc_graph {
+#        MapAccum<VERTEX, SumAccum<UINT>> @uintMap;
+#        MapAccum<VERTEX, SumAccum<INT>> @intMap;
+#        MapAccum<VERTEX, SumAccum<FLOAT>> @floatMap;
+#        MapAccum<VERTEX, SumAccum<DOUBLE>> @doubleMap;
+#        MapAccum<VERTEX, SumAccum<STRING>> @stringMap;
+#        GroupByAccum<INT a, STRING b, SumAccum<UINT> uintsum, SumAccum<INT> intsum> @group1;
+#        GroupByAccum<INT c, STRING d, SumAccum<FLOAT> floatsum, SumAccum<DOUBLE> doublesum> @group2;
+#        GroupByAccum<INT e, STRING f, SumAccum<STRING> strsum, SumAccum<STRING> stringsum> @group3;
+#        ArrayAccum<SumAccum<UINT>> @uintarr[1];
+#        ArrayAccum<SumAccum<INT>> @intarr[1];
+#        ArrayAccum<SumAccum<FLOAT>> @floatarr[1];
+#        ArrayAccum<SumAccum<DOUBLE>> @doublearr[1];
+#        ArrayAccum<SumAccum<STRING>> @strarr[1];
+#	
+#	L0 = {seed};
+#	L1 = select tgt
+#	    from L0:s - (member_work_company: e) - company: tgt
+#	    accum s.@uintMap += (s -> 1), s.@intMap += (s -> 2),
+#		s.@floatMap += (s -> 3.3), s.@doubleMap += (s -> 4.4),
+#		s.@stringMap += (s -> "testmap"), //test SumAccum as nested type of MapAccum
+#		s.@group1 += (1, "a" -> 1, 2), s.@group2 += (2, "b" -> 3.33, 4.44),
+#		s.@group3 += (3, "c" -> "test", "group"), //test SumAccum as nested type of GroupByAccum
+#		s.@uintarr[0] += 1, s.@intarr[0] += 2, s.@floatarr[0] += 3.333,
+#		s.@doublearr[0] += 4.444, s.@strarr[0] += "testArrayAccum"; //teset SumAccum as nested type of ArrayAccum
+#	print L0;
+#}

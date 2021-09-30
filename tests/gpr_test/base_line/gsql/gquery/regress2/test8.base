@@ -1,0 +1,394 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test8.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@intSum": 20},
+    {"@@intSum": 80},
+    {"@@intSum": 90},
+    {"@@intSum": 2},
+    {"@@intSum": 18},
+    {"@@intSum": 22},
+    {"@@intSum": 45},
+    {"@@intSum": 49},
+    {"@@intSum": 49},
+    {"@@intSum": 2},
+    {"@@intSum": 4},
+    {"@@intSum": 2},
+    {"@@intSum": 1},
+    {"@@intSum": 1},
+    {"@@intSum": 1},
+    {"@@intSum": 1},
+    {"@@intSum": 45},
+    {"@@floatSum": 0.52532},
+    {"@@floatSum": 1.14118},
+    {"@@floatSum": 3.13047},
+    {"@@floatSum": 3},
+    {"@@intSum": 5},
+    {"@@intSum": 160},
+    {"@@intSum": 5},
+    {"@@floatSum": 0.69897},
+    {"@@floatSum": 0.894},
+    {"@@floatSum": 1.01793},
+    {"@@intSum": 1},
+    {"@@floatSum": 6.76159},
+    {"@@stringSum": "1"},
+    {"@@intSum": 6},
+    {"@@intSum": 12}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 20,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 80,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 90,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": -2,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 2,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 4,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 2,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 45,
+        "@floatSum": 0,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 45,
+        "@floatSum": 0.52532,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 45,
+        "@floatSum": 1.14118,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 45,
+        "@floatSum": 3.13047,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 45,
+        "@floatSum": 3,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 5,
+        "@floatSum": 3,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 160,
+        "@floatSum": 3,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 5,
+        "@floatSum": 3,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 5,
+        "@floatSum": 0.69897,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 5,
+        "@floatSum": 0.894,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 5,
+        "@floatSum": 1.01793,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 1.01793,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 6.76159,
+        "@stringSum": "",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 1,
+        "@floatSum": 6.76159,
+        "@stringSum": "1",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 6,
+        "@floatSum": 6.76159,
+        "@stringSum": "1",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@intSum": 12,
+        "@floatSum": 6.76159,
+        "@stringSum": "1",
+        "id": "m3",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@uintSum": 1,
+      "@@doubleSum": 1,
+      "@@intSum": 1,
+      "@@floatSum": 1,
+      "@@stringSum": "labolg"
+    },
+    {
+      "@@uintSum": 3,
+      "@@doubleSum": 3,
+      "@@intSum": 3,
+      "@@floatSum": 3,
+      "@@stringSum": "labolgglobal"
+    },
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@uintsum": 1,
+        "@floatsum": 1,
+        "@doublesum": 1,
+        "id": "m3",
+        "profileIndustryId": "i1",
+        "@intsum": 1,
+        "@stringsum": "lacol"
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

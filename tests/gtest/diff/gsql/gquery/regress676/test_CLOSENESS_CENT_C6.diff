@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Semantic Check Fails: the query closeness_cent doesn't exist!"}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"top_scores":[{"score":1,"Vertex_ID":"A"},{"score":0.57143,"Vertex_ID":"E"},{"score":0.57143,"Vertex_ID":"D"},{"score":0.57143,"Vertex_ID":"C"},{"score":0.57143,"Vertex_ID":"B"}]}]}
+>>>>>>> base
+

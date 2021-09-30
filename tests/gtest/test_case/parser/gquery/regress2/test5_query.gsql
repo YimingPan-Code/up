@@ -1,0 +1,18 @@
+use graph poc_graph
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# Test unsupported types.                       #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create query minmaxac_neg_test2() FOR GRAPH poc_graph api("v2") {
+  SumAccum<MinAccum<int>> @@sumMinAccum;
+
+  PRINT @@sumMinAccum;
+}
+

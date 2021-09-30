@@ -1,0 +1,15 @@
+from,to,weight
+A,D,36
+B,C,43
+B,D,45
+B,G,91
+B,I,14
+C,G,97
+D,L,63
+D,M,54
+E,I,19
+E,M,38
+G,H,44
+H,I,22
+I,J,69
+I,N,21

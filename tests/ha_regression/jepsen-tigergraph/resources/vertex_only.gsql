@@ -1,0 +1,3 @@
+CREATE VERTEX User (PRIMARY_ID id string, score uint)
+CREATE DIRECTED EDGE Liked (FROM User, TO User, score uint) WITH REVERSE_EDGE = "Liked_By"
+CREATE GRAPH UserLike(User, Liked)

@@ -1,0 +1,8 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress4/test3_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query AndOrAccum_neg_test3 (SEM-9): line 15, col 10
+The accumulator type OrAccum is not supported with data type string!
+The query AndOrAccum_neg_test3 cannot be added!
+[GTEST_END]

@@ -1,0 +1,6 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test8.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+Semantic Check Fails: the query listac_test8 doesn't exist!
+[GTEST_JSON_END]
+[GTEST_END]

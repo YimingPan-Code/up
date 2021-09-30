@@ -1,0 +1,183 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_COSINE_BATCH_C1.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"start": [
+    {
+      "v_id": "Kat",
+      "attributes": {"start.@heap": [
+        {
+          "val": 0.67509,
+          "ver": "Neil"
+        },
+        {
+          "val": 0.61574,
+          "ver": "James"
+        },
+        {
+          "val": 0.3526,
+          "ver": "Kevin"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Marvin",
+      "attributes": {"start.@heap": [
+        {
+          "val": 1,
+          "ver": "Alex"
+        },
+        {
+          "val": 0.42173,
+          "ver": "Jing"
+        },
+        {
+          "val": 0.4147,
+          "ver": "James"
+        },
+        {
+          "val": 0.14248,
+          "ver": "Kevin"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Jing",
+      "attributes": {"start.@heap": [
+        {
+          "val": 0.46377,
+          "ver": "Neil"
+        },
+        {
+          "val": 0.42173,
+          "ver": "Marvin"
+        },
+        {
+          "val": 0.42173,
+          "ver": "Alex"
+        },
+        {
+          "val": 0.30256,
+          "ver": "James"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Elena",
+      "attributes": {"start.@heap": []},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "James",
+      "attributes": {"start.@heap": [
+        {
+          "val": 0.61574,
+          "ver": "Kat"
+        },
+        {
+          "val": 0.49692,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.4147,
+          "ver": "Alex"
+        },
+        {
+          "val": 0.4147,
+          "ver": "Marvin"
+        },
+        {
+          "val": 0.36103,
+          "ver": "Neil"
+        },
+        {
+          "val": 0.30256,
+          "ver": "Jing"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Kevin",
+      "attributes": {"start.@heap": [
+        {
+          "val": 0.49692,
+          "ver": "James"
+        },
+        {
+          "val": 0.42436,
+          "ver": "Neil"
+        },
+        {
+          "val": 0.3526,
+          "ver": "Kat"
+        },
+        {
+          "val": 0.14248,
+          "ver": "Marvin"
+        },
+        {
+          "val": 0.14248,
+          "ver": "Alex"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Alex",
+      "attributes": {"start.@heap": [
+        {
+          "val": 1,
+          "ver": "Marvin"
+        },
+        {
+          "val": 0.42173,
+          "ver": "Jing"
+        },
+        {
+          "val": 0.4147,
+          "ver": "James"
+        },
+        {
+          "val": 0.14248,
+          "ver": "Kevin"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    },
+    {
+      "v_id": "Neil",
+      "attributes": {"start.@heap": [
+        {
+          "val": 0.67509,
+          "ver": "Kat"
+        },
+        {
+          "val": 0.46377,
+          "ver": "Jing"
+        },
+        {
+          "val": 0.42436,
+          "ver": "Kevin"
+        },
+        {
+          "val": 0.36103,
+          "ver": "James"
+        }
+      ]},
+      "v_type": "COSINEBATCH_PERSON"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

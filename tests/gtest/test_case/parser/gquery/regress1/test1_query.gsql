@@ -1,0 +1,92 @@
+use graph poc_graph
+#################################################
+#                                               #
+# GSQL language SumAccum declaration            #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test global variable                          #
+# declare with unsupported type                 #
+#                                               #
+#################################################
+
+set exit_on_error = false
+
+create query sumac_neg_test1_1() FOR GRAPH poc_graph{
+        TYPEDEF TUPLE<STRING str, INT score> testtuple;
+        SumAccum<testtuple> @@tupleSum;
+        print @@tupleSum;
+}
+
+create query sumac_neg_test1_3() FOR GRAPH poc_graph{
+        SumAccum<VERTEX> @@vertexSum;
+        print @@vertexSum;
+}
+
+create query sumac_neg_test1_4() FOR GRAPH poc_graph{
+        SumAccum<EDGE> @@edgeSum;
+        print @@edgeSum;
+}
+
+create query sumac_neg_test1_5() FOR GRAPH poc_graph{
+        SumAccum<MaxAccum<INT>> @@maxSum;
+        print @@maxSum;
+}
+
+create query sumac_neg_test1_6() FOR GRAPH poc_graph{
+        SumAccum<MinAccum<INT>> @@minSum;
+        print @@minSum;
+}
+
+create query sumac_neg_test1_7() FOR GRAPH poc_graph{
+        SumAccum<AvgAccum> @@avgSum;
+        print @@avgSum;
+}
+
+create query sumac_neg_test1_8() FOR GRAPH poc_graph{
+        SumAccum<BitwiseAndAccum> @@bwaSum;
+        print @@bwaSum;
+}
+
+create query sumac_neg_test1_9() FOR GRAPH poc_graph{
+        SumAccum<BitwiseOrAccum> @@bwoSum;
+        print @@bwoSum;
+}
+
+create query sumac_neg_test1_10() FOR GRAPH poc_graph{
+        SumAccum<ListAccum<INT>> @@listSum;
+        print @@listSum;
+}
+
+create query sumac_neg_test1_11() FOR GRAPH poc_graph{
+        SumAccum<SetAccum<VERTEX>> @@setSum;
+        print @@setSum;
+}
+
+create query sumac_neg_test1_12() FOR GRAPH poc_graph{
+        SumAccum<BagAccum<STRING>> @@bagSum;
+        print @@bagSum;
+}
+
+create query sumac_neg_test1_13() FOR GRAPH poc_graph{
+        SumAccum<MapAccum<INT, INT>> @@mapSum;
+        print @@mapSum;
+}
+
+create query sumac_neg_test1_14() FOR GRAPH poc_graph{
+        TYPEDEF TUPLE<STRING str, INT score> testtuple;
+        SumAccum<HeapAccum<testtuple>(2, score ASC)> @@heapSum;
+        print @@heapSum;
+}
+
+create query sumac_neg_test1_15() FOR GRAPH poc_graph{
+        SumAccum<ArrayAccum<SetAccum<INT>>> @@arraySum;
+        print @@arraySum;
+}
+
+create query sumac_neg_test1_16() FOR GRAPH poc_graph{
+        SumAccum<GroupByAccum<INT a, MaxAccum<INT> mymax>> @@groupbySum;
+        print @@groupbySum;
+}
+

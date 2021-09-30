@@ -1,0 +1,11 @@
+DROP ALL
+
+CREATE VERTEX company(PRIMARY_ID companyId string, id string compress, label bool, company_name string default "unknown", nCount int)
+CREATE VERTEX members(PRIMARY_ID memberId string, id string, profileIndustryId string default "0")
+CREATE VERTEX skill(PRIMARY_ID skillId string, id string, nCount string)
+CREATE UNDIRECTED EDGE member_work_company(FROM members, TO company, positionId double, industryId float)
+CREATE DIRECTED EDGE member_follow_company(FROM members, TO company, createTime int)
+CREATE UNDIRECTED EDGE member_member(FROM members, TO members, create_time int)
+CREATE DIRECTED EDGE member_skill (FROM members, TO skill)
+CREATE GRAPH poc_graph(*)
+

@@ -1,0 +1,20 @@
+use graph poc_graph
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# Test unsupported types.                       #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create batch query minmaxac_neg_test2(VERTEX<company> seed) FOR GRAPH poc_graph api("v2") {
+  MaxAccum<VERTEX> @@vertexMax;
+  @@vertexMax = seed;
+
+  L1 = {@@vertexMax};
+  print L1;
+}
+

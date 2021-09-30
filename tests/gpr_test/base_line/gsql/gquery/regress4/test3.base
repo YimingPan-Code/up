@@ -1,0 +1,93 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress4/test3.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@myAvg": 4},
+    {"@@myAvg": 3},
+    {"@@myAvg": 8},
+    {"@@myAvg": 7},
+    {"@@myAvg": 10},
+    {"@@myAvg": 10000},
+    {"@@myAvg": 100},
+    {"@@myAvg": 0.86232},
+    {"@@myAvg": 0.53096},
+    {"@@myAvg": 0.48811},
+    {"@@myAvg": 0.23938},
+    {"@@myAvg": 1},
+    {"@@myAvg": 0.84147},
+    {"@@myAvg": 1.54308},
+    {"@@myAvg": 2.785126686497879E21},
+    {"@@myAvg": 2.785126686497879E21},
+    {"@@myAvg": 49.37858},
+    {"@@myAvg": 2},
+    {"@@myAvg": 0.2},
+    {"@@myAvg": 0.20134},
+    {"@@myAvg": 0.2041},
+    {"@@myAvg": 0.20131},
+    {"@@myAvg": 20},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 4,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 3,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 8,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 7,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 7,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]},
+    {"L0": [{
+      "v_id": "m2",
+      "attributes": {
+        "@myavg": 10,
+        "id": "m2",
+        "profileIndustryId": "i1"
+      },
+      "v_type": "members"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

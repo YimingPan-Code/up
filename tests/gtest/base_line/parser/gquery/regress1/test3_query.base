@@ -1,0 +1,64 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress1/test3_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Semantic Check Error in query sumac_neg_test3_1 (SEM-424): line 25, col 7
+The assignment operator '=' cannot be used on a global accumulator in a DML
+block!
+Only '+=' is allowed for global accumulators inside a DML block.
+The query sumac_neg_test3_1 cannot be added!
+
+Semantic Check Error in query sumac_neg_test3_2 (SEM-424): line 45, col 12
+The assignment operator '=' cannot be used on a global accumulator in a DML
+block!
+Only '+=' is allowed for global accumulators inside a DML block.
+The query sumac_neg_test3_2 cannot be added!
+
+Type Check Error in query sumac_neg_test3_3 (TYP-500): line 55, col 12
+Incompatible operand types SumAccum<uint> and string for the operator =
+The query sumac_neg_test3_3 cannot be added!
+
+Type Check Error in query sumac_neg_test3_4 (TYP-500): line 65, col 23
+Incompatible operand types SumAccum<uint> and string for the operator +=
+The query sumac_neg_test3_4 cannot be added!
+
+Type Check Error in query sumac_neg_test3_5 (TYP-500): line 72, col 11
+Incompatible operand types SumAccum<int> and string for the operator =
+The query sumac_neg_test3_5 cannot be added!
+
+Type Check Error in query sumac_neg_test3_6 (TYP-500): line 82, col 22
+Incompatible operand types SumAccum<int> and string for the operator +=
+The query sumac_neg_test3_6 cannot be added!
+
+Type Check Error in query sumac_neg_test3_7 (TYP-500): line 89, col 13
+Incompatible operand types SumAccum<float> and string for the operator =
+The query sumac_neg_test3_7 cannot be added!
+
+Type Check Error in query sumac_neg_test3_8 (TYP-500): line 99, col 24
+Incompatible operand types SumAccum<float> and string for the operator +=
+The query sumac_neg_test3_8 cannot be added!
+
+Type Check Error in query sumac_neg_test3_9 (TYP-500): line 106, col 14
+Incompatible operand types SumAccum<double> and string for the operator =
+The query sumac_neg_test3_9 cannot be added!
+
+Type Check Error in query sumac_neg_test3_10 (TYP-500): line 116, col 25
+Incompatible operand types SumAccum<double> and string for the operator +=
+The query sumac_neg_test3_10 cannot be added!
+
+Type Check Error in query sumac_neg_test3_11 (TYP-500): line 123, col 14
+Incompatible operand types SumAccum<string> and int for the operator =
+The query sumac_neg_test3_11 cannot be added!
+
+Type Check Error in query sumac_neg_test3_12 (TYP-500): line 130, col 17
+Incompatible operand types SumAccum<string> and double for the operator =
+The query sumac_neg_test3_12 cannot be added!
+
+Type Check Error in query sumac_neg_test3_13 (TYP-500): line 140, col 25
+Incompatible operand types SumAccum<string> and int for the operator +=
+The query sumac_neg_test3_13 cannot be added!
+
+Type Check Error in query sumac_neg_test3_14 (TYP-500): line 150, col 25
+Incompatible operand types SumAccum<string> and double for the operator +=
+The query sumac_neg_test3_14 cannot be added!
+[GTEST_END]

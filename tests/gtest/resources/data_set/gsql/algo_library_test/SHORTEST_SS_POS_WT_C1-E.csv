@@ -1,0 +1,6 @@
+from,to,weight
+A,B,6.0
+B,C,2.0
+C,D,4.0
+D,E,7.0
+E,F,8.9

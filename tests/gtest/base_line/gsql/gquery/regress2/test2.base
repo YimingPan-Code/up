@@ -1,0 +1,36 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintSum": 0},
+    {"@@intSum": 0},
+    {"@@floatSum": 0},
+    {"@@doubleSum": 0},
+    {"@@stringSum": ""},
+    {"@@uintSum": 1},
+    {"@@intSum": 2},
+    {"@@floatSum": 1.2},
+    {"@@doubleSum": 3.33},
+    {"@@stringSum": "test2"},
+    {"@@uintSum": 12},
+    {"@@intSum": 14},
+    {"@@floatSum": 12.4},
+    {"@@doubleSum": 33.66},
+    {"@@stringSum": "test2+=operator"},
+    {"@@uintSum": 13},
+    {"@@intSum": 15},
+    {"@@floatSum": 13.4},
+    {"@@doubleSum": 35.66},
+    {"@@stringSum": "test2+=operatorcom1"}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

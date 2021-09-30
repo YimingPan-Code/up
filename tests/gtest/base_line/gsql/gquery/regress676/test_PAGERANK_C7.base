@@ -1,0 +1,80 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_PAGERANK_C7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 1.24377,
+      "Vertex_ID": "I"
+    },
+    {
+      "score": 1.23494,
+      "Vertex_ID": "L"
+    },
+    {
+      "score": 1.07544,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 1.06471,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 0.96301,
+      "Vertex_ID": "G"
+    },
+    {
+      "score": 0.83083,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 0.79493,
+      "Vertex_ID": "K"
+    },
+    {
+      "score": 0.57337,
+      "Vertex_ID": "M"
+    },
+    {
+      "score": 0.50262,
+      "Vertex_ID": "N"
+    },
+    {
+      "score": 0.50041,
+      "Vertex_ID": "O"
+    },
+    {
+      "score": 0.49787,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 0.4708,
+      "Vertex_ID": "P"
+    },
+    {
+      "score": 0.45801,
+      "Vertex_ID": "H"
+    },
+    {
+      "score": 0.41261,
+      "Vertex_ID": "J"
+    },
+    {
+      "score": 0.26697,
+      "Vertex_ID": "D"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

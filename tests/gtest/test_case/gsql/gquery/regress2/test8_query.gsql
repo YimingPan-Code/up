@@ -1,0 +1,263 @@
+#################################################
+# GSQL language SumAccum	                #
+# positive test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test SumAccum with bit operators		#
+# test SumAccum with mathematical function	#
+#################################################
+
+DROP QUERY sumac_test8_1
+// global accumulator with bit operators and mathematical functions
+create query sumac_test8_1(VERTEX<members> seed) FOR GRAPH poc_graph {
+	SumAccum<INT> @@intSum;
+	SumAccum<FLOAT> @@floatSum;
+	SumAccum<STRING> @@stringSum;
+	@@intSum = 80;
+	@@intSum = @@intSum >> 2;
+	print @@intSum;
+	@@intSum = @@intSum << 2;
+	print @@intSum;
+	@@intSum = @@intSum | 90;
+	print @@intSum;
+	@@intSum = @@intSum & 2;
+	print @@intSum; 
+	@@intSum += @@intSum << 3;
+	print @@intSum;
+	@@intSum += @@intSum >> 2;
+	print @@intSum;
+	@@intSum += @@intSum | 3;
+	print @@intSum;
+	@@intSum += @@intSum & 4;
+	print @@intSum;
+	@@intSum = 2;
+	L0 = {seed};
+	L1 = select tgt
+	    from L0 - (member_work_company: e) - company: tgt
+	    accum @@intSum += @@intSum << 3;
+	L1 = select tgt
+	    from L0 - (member_work_company: e) - company: tgt
+	    accum @@intSum += @@intSum >> 2;
+	L1 = select tgt
+	    from L0 - (member_work_company: e) - company: tgt
+	    accum @@intSum += @@intSum | 3;
+	L1 = select tgt
+	    from L0 - (member_work_company: e) - company: tgt
+	    accum @@intSum += @@intSum & 4;
+	print @@intSum;
+	@@intSum = -2;
+	@@intSum = abs(@@intSum);
+	print @@intSum;
+	@@intSum = pow(@@intSum, 2);
+	print @@intSum;
+	@@intSum = sqrt(@@intSum);
+	print @@intSum;
+	@@intSum = 0;
+	@@intSum = acos(@@intSum);
+	print @@intSum;
+	@@intSum = asin(@@intSum);
+	print @@intSum;	
+	@@intSum = 90;
+	@@intSum = atan(@@intSum);
+	print @@intSum;
+	@@intSum = atan2(90, @@intSum);
+	print @@intSum;
+	@@floatSum = 44.44;
+	@@intSum = ceil(@@floatSum);
+	print @@intSum;
+	@@floatSum = cos(@@intSum);
+	print @@floatSum;
+	@@floatSum = cosh(@@floatSum);
+	print @@floatSum;
+	@@floatSum = exp(@@floatSum);
+	print @@floatSum;	
+	@@floatSum = floor(@@floatSum);
+	print @@floatSum;
+	@@intSum = fmod(@@intSum, 8);
+	print @@intSum;
+	@@intSum = ldexp(@@intSum, 5);
+	print @@intSum;
+	@@intSum = log(@@intSum);
+	print @@intSum;
+	@@floatSum = log10(@@intSum);
+	print @@floatSum;
+	@@intSum = 90;
+	@@floatSum = sin(@@intSum);
+	print @@floatSum;
+	@@floatSum = sinh(@@floatSum);
+	print @@floatSum;
+	@@intSum = 45;
+	@@intSum = tan(@@intSum);
+	print @@intSum;
+	@@floatSum = tanh(@@intSum) + 6;
+	print @@floatSum;
+	@@stringSum = to_string(@@intSum);
+	print @@stringSum;
+	@@intSum = float_to_int(@@floatSum);
+	print @@intSum;
+	@@stringSum += "2";
+	@@intSum = str_to_int(@@stringSum);
+	print @@intSum;
+}
+
+DROP QUERY sumac_test8_2
+// local accumulator with bit operators and mathematical functions
+create query sumac_test8_2(VERTEX<members> seed) FOR GRAPH poc_graph {
+	SumAccum<INT> @intSum = 80;
+	SumAccum<FLOAT> @floatSum;
+	SumAccum<STRING> @stringSum;
+	L0 = {seed};
+	L1 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = s.@intSum >> 2;
+	print L0;	
+	L2 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = s.@intSum << 2;	
+	print L0;
+	L3 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = s.@intSum | 90;
+	print L0;	
+	L4 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = (s.@intSum & 2) * -1;
+	print L0;	
+	L5 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = abs(s.@intSum);
+	print L0;
+	L6 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = pow(s.@intSum, 2);
+	print L0;
+	L7 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = sqrt(s.@intSum); 
+	print L0;
+	L8 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = acos(s.@intSum * 0);
+	print L0; 	
+	L9 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = asin(s.@intSum);
+	print L0;
+	L10 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = atan(s.@intSum + 89); 
+	print L0;
+	L11 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = atan2(90, s.@intSum);
+	print L0; 
+	L12 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = ceil(s.@floatSum + 44.44); 
+	print L0;
+	L13 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = cos(s.@intSum);
+	print L0;
+	L14 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = cosh(s.@floatSum);
+	print L0;
+	L15 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = exp(s.@floatSum);
+	print L0;
+	L16 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = floor(s.@floatSum);
+	print L0;
+	L17 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = fmod(s.@intSum, 8);
+	print L0;
+	L18 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = ldexp(s.@intSum, 5);
+	print L0;
+	L19 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = log(s.@intSum);
+	print L0;
+	L20 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = log10(s.@intSum);
+	print L0;
+	L21 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = sin(s.@intSum + 85);
+	print L0;
+	L22 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = sinh(s.@floatSum);
+	print L0;
+	L23 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = tan(s.@intSum - 45);
+	print L0;	
+	L24 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@floatSum = tanh(s.@intSum) + 6;
+	print L0;
+	L25 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@stringSum = to_string(s.@intSum);
+	print L0;
+	L26 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = float_to_int(s.@floatSum);
+	print L0;
+	L27 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@intSum = str_to_int(s.@stringSum + "2");
+	print L0;
+}
+
+DROP QUERY sumac_test8_3
+// global and local accumulator with expression function
+create query sumac_test8_3(VERTEX<members> seed) FOR GRAPH poc_graph {
+	SumAccum<UINT> @@uintSum;
+	SumAccum<INT> @@intSum;
+	SumAccum<FLOAT> @@floatSum;
+	SumAccum<DOUBLE> @@doubleSum;
+	SumAccum<STRING> @@stringSum = "global";
+	SumAccum<UINT> @uintsum;
+	SumAccum<INT> @intsum;
+	SumAccum<FLOAT> @floatsum;
+	SumAccum<DOUBLE> @doublesum;
+	SumAccum<STRING> @stringsum = "local";
+
+	// test global accum as expression function parameter in query block
+	@@uintSum = addOneToUintSumAccum(@@uintSum);
+	@@intSum = addOneToIntSumAccum(@@intSum);
+	@@floatSum = addOneToFloatSumAccum(@@floatSum);
+	@@doubleSum = addOneToDoubleSumAccum(@@doubleSum);
+	@@stringSum = reverseStringSumAccum(@@stringSum);
+	print @@uintSum, @@intSum, @@floatSum, @@doubleSum, @@stringSum;	
+	
+	L0 = {seed};
+	// test global accum as expression function parameter in select block
+	L1 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum @@uintSum += addOneToUintSumAccum(@@uintSum), 
+		@@intSum += addOneToIntSumAccum(@@intSum),
+		@@floatSum += addOneToFloatSumAccum(@@floatSum),
+		@@doubleSum += addOneToDoubleSumAccum(@@doubleSum),
+		@@stringSum += reverseStringSumAccum(@@stringSum);
+	print @@uintSum, @@intSum, @@floatSum, @@doubleSum, @@stringSum;	
+
+	// test local accum as expression funtion parameter in select block
+	L2 = select tgt
+	    from L0: s - (member_work_company: e) - company: tgt
+	    accum s.@uintsum = addOneToUintSumAccum(s.@uintsum),
+		s.@intsum = addOneToIntSumAccum(s.@intsum),
+		s.@floatsum = addOneToFloatSumAccum(s.@floatsum),
+		s.@doublesum = addOneToDoubleSumAccum(s.@doublesum),
+		s.@stringsum = reverseStringSumAccum(s.@stringsum);
+	print L0;
+}	

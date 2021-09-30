@@ -1,0 +1,152 @@
+use graph poc_graph
+#################################################
+# GSQL language SumAccum	                #
+# negative test cases                           #
+# Tester: Jing Qin                              #
+#                                               #
+# Details:                                      #
+# test global variable				#
+# = and += operator with wrong type value       #
+#################################################
+set exit_on_error = false
+
+create batch query sumac_neg_test3_1(VERTEX<members> seed) FOR GRAPH poc_graph{
+    //test = operator in select block, should return semantic check error
+    SumAccum<UINT> @@uintSum;
+    SumAccum<INT> @@intSum;  
+    SumAccum<FLOAT> @@floatSum;
+    SumAccum<DOUBLE> @@doubleSum;
+    SumAccum<STRING> @@stringSum;
+
+    L0 = {seed};
+    // test = operator in select block
+    L1 = select tgt
+	from L0: s - (member_work_company: e) - company: tgt
+	accum @@uintSum = 2, @@intSum = 6, @@floatSum = 1.5,
+        @@doubleSum = 1.55, @@stringSum = "test";
+}
+
+create batch query sumac_neg_test3_2(VERTEX<members> seed) FOR GRAPH poc_graph{
+    //test = operator with wrong type value in select block, should return semantic check error
+    
+    SumAccum<UINT> @@uintSum1;
+    SumAccum<INT> @@intSum1; 
+    SumAccum<FLOAT> @@floatSum1;
+    SumAccum<DOUBLE> @@doubleSum1;
+    SumAccum<STRING> @@stringSum1;
+    SumAccum<STRING> @@stringSum2;
+    SumAccum<STRING> @@stringSum3;
+    SumAccum<STRING> @@stringSum4;
+
+	L0 = {seed};
+	// test = operator with wrong type in select block
+	L1 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@uintSum1 = s.id, @@intSum1 = e.industryId, 
+	     	   @@intSum2 = s.id, @@floatSum = s.id,
+	           @@floatSum1 = tgt.nCount, @@doubleSum1 = s.id,
+	           @@stringSum1 = 0, @@stringSum2 = -2, 
+	           @@stringSum3 = e.industryId, @@stringSum4 = e.positionId;
+}
+
+create batch query sumac_neg_test3_3() FOR GRAPH poc_graph{
+	SumAccum<UINT> @@uintSum1;
+	// test assigning string type value to UINT SumAccum
+	@@uintSum1 = "test";
+	print @@uintSum1;
+}
+
+create batch query sumac_neg_test3_4(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<UINT> @@uintSum1;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@uintSum1 += s.id;
+	print @@uintSum1;
+}
+
+create batch query sumac_neg_test3_5() FOR GRAPH poc_graph{
+	SumAccum<INT> @@intSum1;
+	// test assigning string type value to INT SumAccum
+	@@intSum1 = "test";
+	print @@intSum1;
+}
+
+create batch query sumac_neg_test3_6(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<INT> @@intSum1;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@intSum1 += s.id;
+	print @@intSum1;
+}
+
+create batch query sumac_neg_test3_7() FOR GRAPH poc_graph{
+	SumAccum<FLOAT> @@floatSum1;
+	// test assigning string type value to FLOAT SumAccum
+	@@floatSum1 = "test";
+	print @@floatSum1;
+}
+
+create batch query sumac_neg_test3_8(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<FLOAT> @@floatSum1;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@floatSum1 += s.id;
+	print @@floatSum1;
+}
+
+create batch query sumac_neg_test3_9() FOR GRAPH poc_graph{
+	SumAccum<DOUBLE> @@doubleSum1;
+	// test assigning string type value to DOUBLE SumAccum
+	@@doubleSum1 = "test";
+	print @@doubleSum1;
+}
+
+create batch query sumac_neg_test3_10(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<DOUBLE> @@doubleSum1;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@doubleSum1 += s.id;
+	print @@doubleSum1;
+}
+
+create batch query sumac_neg_test3_11() FOR GRAPH poc_graph{
+    SumAccum<STRING> @@stringSum1;
+	// test assigning string type value to STRING SumAccum
+	@@stringSum1 = 0;
+	print @@stringSum1;
+}
+
+create batch query sumac_neg_test3_12() FOR GRAPH poc_graph{
+    SumAccum<STRING> @@stringSum2;
+	// test assigning string type value to STRING SumAccum
+    @@stringSum2 = 1.4;
+	print @@stringSum2;
+}
+
+create batch query sumac_neg_test3_13(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<STRING> @@stringSum1;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@stringSum1 += tgt.nCount;
+	print @@stringSum1;
+}
+
+create batch query sumac_neg_test3_14(VERTEX<members> seed) FOR GRAPH poc_graph{
+	SumAccum<STRING> @@stringSum2;
+	L0 = {seed};
+	// test += operator with wrong type value in select block
+	L2 = select tgt
+	     from L0: s - (member_work_company: e) - company: tgt
+	     accum @@stringSum2 += e.positionId;
+	print @@stringSum2;
+}

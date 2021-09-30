@@ -1,0 +1,74 @@
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# positive test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# test global MinAccum/MaxAccum as              #
+# the parameter in expression function          #
+# default initial value, nested type            #
+#################################################
+
+create batch query minmaxac_test4(VERTEX<company> seed) FOR GRAPH poc_graph api("v2") {
+  // test declaration of global variable with type UINT
+  MinAccum<UINT> @@uintMin = 100;
+  // test declaration of global variable with type INT
+  MinAccum<INT> @@intMin = 100;
+  // test declaration of global variable with type FLOAT
+  MinAccum<FLOAT> @@floatMin = 100.0;
+  // test declaration of global variable with type DOUBLE
+  MinAccum<DOUBLE> @@doubleMin = 100.0;
+  // test declaration of global variable with type VERTEX
+  MinAccum<VERTEX> @@vertexMin;
+
+  // test declaration of global variable with type UINT
+  MaxAccum<UINT> @@uintMax = 0;
+  // test declaration of global variable with type INT
+  MaxAccum<INT> @@intMax = 0;
+  // test declaration of global variable with type FLOAT
+  MaxAccum<FLOAT> @@floatMax = 0;
+  // test declaration of global variable with type DOUBLE
+  MaxAccum<DOUBLE> @@doubleMax = 0;
+  // test declaration of global variable with type VERTEX
+  MaxAccum<VERTEX> @@vertexMax;
+
+  // Test default initial value of all global variables
+  print @@uintMin;
+  print @@intMin;
+  print @@floatMin;
+  print @@doubleMin;
+  print @@vertexMin;
+
+  print @@uintMax;
+  print @@intMax;
+  print @@floatMax;
+  print @@doubleMax;
+  print @@vertexMax;
+
+  // Test using global variables as parameters in expression function
+  @@intMin = addIntMinAccum(@@intMin);
+  @@uintMin = addUintMinAccum(@@uintMin);
+  @@floatMin = addFloatMinAccum(@@floatMin);
+  @@doubleMin = addDoubleMinAccum(@@doubleMin);
+  @@vertexMin = addVertexMinAccum(@@vertexMin, seed);
+
+  @@intMax = addIntMaxAccum(@@intMax);
+  @@uintMax = addUintMaxAccum(@@uintMax);
+  @@floatMax = addFloatMaxAccum(@@floatMax);
+  @@doubleMax = addDoubleMaxAccum(@@doubleMax);
+  @@vertexMax = addVertexMaxAccum(@@vertexMax, seed);
+
+  // Test modified values of all global variables
+  print @@uintMin;
+  print @@intMin;
+  print @@floatMin;
+  print @@doubleMin;
+  print @@vertexMin;
+
+  print @@uintMax;
+  print @@intMax;
+  print @@floatMax;
+  print @@doubleMax;
+  print @@vertexMax;
+}
+

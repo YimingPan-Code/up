@@ -1,0 +1,23 @@
+use graph poc_graph
+#################################################
+# GSQL language AndAccum & OrAccum declaration  #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# Test unsupported types.                       #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create query AndOrAccum_neg_test4() FOR GRAPH poc_graph api("v2") {
+  OrAccum<bool> @@orAccumVar;
+  OrAccum<bool> @@orAccumVar1;
+
+  # Test unsupported types
+  @@orAccumVar1 += 1;
+  @@orAccumVar += 1.0;
+
+  PRINT @@orAccumVar;
+}
+

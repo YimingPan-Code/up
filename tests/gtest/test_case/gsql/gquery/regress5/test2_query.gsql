@@ -1,0 +1,27 @@
+#################################################
+# GSQL language AndAccum & OrAccum declaration  #
+# positive test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# test local AndAccum & OrAccum declaration,    #
+# default initial value                         #
+#################################################
+
+create query AndOrAccum_test2(VERTEX<company> seed) FOR GRAPH poc_graph api("v2") {
+  // Test declaration of local variables
+  AndAccum @andAccumVar; # (default value = T)
+  OrAccum  @orAccumVar;  # (default value = F)
+  AndAccum @andAccumVar1, @andAccumVar2 = False;
+  OrAccum @orAccumVar1, @orAccumVar2 = True;
+
+  // Test += operator in select block
+  L0 = {seed};
+  L0 = SELECT s
+        FROM L0:s
+        ACCUM s.@andAccumVar += True, s.@andAccumVar1 = False, s.@andAccumVar2 = False,
+              s.@orAccumVar = True, s.@orAccumVar1 += False, s.@orAccumVar2 += False;
+
+  print L0;
+  print L0 [L0.@orAccumVar, L0.@andAccumVar];
+}

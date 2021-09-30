@@ -1,0 +1,59 @@
+##################################################
+# GSQL language BitwiseAndAccum & BitwiseOrAccum #
+# declaration                                    #
+# positive test cases                            #
+# Tester: Yong Tan                               #
+#                                                #
+# Details:                                       #
+# test global BitwiseAndAccum & BitwiseOrAccum   #
+# declaration, default initial value             #
+##################################################
+
+create query BitwiseAndOrAccum_test1() FOR GRAPH poc_graph api("v2") {
+  // test declaration of global variable
+  BitwiseAndAccum @@bwAndAccumVar; # default value = 64-bits of 1 = -1 (INT)
+  BitwiseOrAccum  @@bwOrAccumVar;  # default value = 64-bits of 0 = 0 (INT))
+
+  BitwiseAndAccum @@bwAndAccumVar1 = 170, @@bwAndAccumVar2 = 85;
+  BitwiseOrAccum @@bwOrAccumVar1 = 240, @@bwOrAccumVar2 = 15;
+
+  // test default values
+  print @@bwAndAccumVar;
+  print @@bwOrAccumVar;
+
+  print @@bwAndAccumVar1, @@bwAndAccumVar2;
+  print @@bwOrAccumVar1, @@bwOrAccumVar2;
+ 
+  // test += operator
+  @@bwOrAccumVar += @@bwAndAccumVar1; # 11111111 & 10101010 -> 10101010
+  print @@bwOrAccumVar;
+  @@bwAndAccumVar1 += @@bwAndAccumVar2; # 10101010 & 01010101 -> 00000000
+  print @@bwOrAccumVar1; # 0
+
+  @@bwAndAccumVar = @@bwOrAccumVar2; # reset to 00001111
+  @@bwAndAccumVar += @@bwAndAccumVar2; # 00001111 & 01010101 -> 00000101
+  print @@bwAndAccumVar; # 5
+
+  # BitwiseOrAccum
+  @@bwOrAccumVar += 170; # 00000000 | 10101010 -> 10101010
+  @@bwOrAccumVar += 85; # 10101010 | 01010101 -> 11111111 = 255
+  PRINT @@bwOrAccumVar; # 255
+  @@bwOrAccumVar = 15; # reset to 00001111
+
+  @@bwOrAccumVar += 85; # 00001111 | 01010101 -> 01011111 = 95
+  PRINT @@bwOrAccumVar; # 95
+
+  // test NOT, AND, OR
+  # @@bwAndAccumVar = (NOT @@bwOrAccumVar);
+  # @@bwOrAccumVar = (@@bwAndAccumVar1 AND @@bwAndAccumVar2);
+  # @@bwAndAccumVar1 = (@@bwOrAccumVar1 OR @@bwOrAccumVar2);
+  print @@bwAndAccumVar;
+  print @@bwAndAccumVar1;
+  print @@bwOrAccumVar;
+
+  if @@bwOrAccumVar
+  THEN
+    print @@bwAndAccumVar2;
+  END;
+}
+

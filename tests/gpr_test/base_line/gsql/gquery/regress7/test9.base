@@ -1,0 +1,10 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test9.sh
+
+### Connecting to local  server 127.0.0.1 ...
+
+### Connecting to local  server 127.0.0.1 ...
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+Semantic Check Fails: the query listac_test9 doesn't exist!
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,21 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress7/test9.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"@@companies": [
+    ["com1"],
+    ["com2"],
+    ["com3"],
+    ["com4"],
+    ["com5"]
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

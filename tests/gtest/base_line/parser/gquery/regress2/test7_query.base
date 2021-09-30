@@ -1,0 +1,8 @@
+Run query file: ../../../../.././test_case/parser/gquery/regress2/test7_query.gsql
+[GTEST_BEGIN]
+Using graph 'poc_graph'
+
+Type Check Error in query minmaxac_neg_test2 (TYP-153): line 17, col 8
+'MinAccum<vertex>' cannot serve as seed.
+The query minmaxac_neg_test2 cannot be added!
+[GTEST_END]

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Graph 'GSQL_Algo_Test' does not exist."}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"ResultSet":[{"v_id":"A","attributes":{"ResultSet.@dis":0},"v_type":"SHORTEST_SS_NO_WT_C1"}]}]}
+>>>>>>> base
+

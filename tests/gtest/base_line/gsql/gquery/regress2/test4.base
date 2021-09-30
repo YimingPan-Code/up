@@ -1,0 +1,177 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test4.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintSum": 0},
+    {"@@intSum": 0},
+    {"@@floatSum": 0},
+    {"@@doubleSum": 0},
+    {"@@stringSum": ""},
+    {
+      "@@int2": 0,
+      "@@int1": 0
+    },
+    {
+      "@@uint1": 0,
+      "@@uint2": 0
+    },
+    {
+      "@@float2": 0,
+      "@@float1": 0
+    },
+    {
+      "@@double1": 0,
+      "@@double2": 0
+    },
+    {
+      "@@str1": "",
+      "@@str2": ""
+    },
+    {"@@uintSum": 1},
+    {"@@intSum": 2},
+    {"@@floatSum": 1.2},
+    {"@@doubleSum": 2.22},
+    {"@@stringSum": "test"},
+    {
+      "@@int2": 4,
+      "@@int1": 3
+    },
+    {
+      "@@uint1": 5,
+      "@@uint2": 6
+    },
+    {
+      "@@float2": 1.4,
+      "@@float1": 1.3
+    },
+    {
+      "@@double1": 3.33,
+      "@@double2": 5.55
+    },
+    {
+      "@@str1": "mystr1",
+      "@@str2": "mystr2"
+    },
+    {"@@uintSum": 2},
+    {"@@intSum": 4},
+    {"@@floatSum": 2.4},
+    {"@@doubleSum": 4.44},
+    {"@@stringSum": "testtest"},
+    {
+      "@@int2": 8,
+      "@@int1": 6
+    },
+    {
+      "@@uint1": 10,
+      "@@uint2": 12
+    },
+    {
+      "@@float2": 2.8,
+      "@@float1": 2.6
+    },
+    {
+      "@@double1": 6.66,
+      "@@double2": 11.1
+    },
+    {
+      "@@str1": "mystr1mystr1",
+      "@@str2": "mystr2mystr2"
+    }
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintSum": 2},
+    {"@@intSum": 4},
+    {"@@floatSum": 2.4},
+    {"@@doubleSum": 4.44},
+    {"@@stringSum": "testtest"},
+    {
+      "@@int2": 8,
+      "@@int1": 6
+    },
+    {
+      "@@uint1": 10,
+      "@@uint2": 12
+    },
+    {
+      "@@float2": 2.8,
+      "@@float1": 2.6
+    },
+    {
+      "@@double1": 6.66,
+      "@@double2": 11.1
+    },
+    {
+      "@@str1": "mystr1mystr1",
+      "@@str2": "mystr2mystr2"
+    },
+    {"@@uintSum": 1},
+    {"@@intSum": 2},
+    {"@@floatSum": 1.2},
+    {"@@doubleSum": 2.22},
+    {"@@stringSum": "test"},
+    {
+      "@@int2": 4,
+      "@@int1": 3
+    },
+    {
+      "@@uint1": 5,
+      "@@uint2": 6
+    },
+    {
+      "@@float2": 1.4,
+      "@@float1": 1.3
+    },
+    {
+      "@@double1": 3.33,
+      "@@double2": 5.55
+    },
+    {
+      "@@str1": "mystr1",
+      "@@str2": "mystr2"
+    },
+    {"@@uintSum": 2},
+    {"@@intSum": 4},
+    {"@@floatSum": 2.4},
+    {"@@doubleSum": 4.44},
+    {"@@stringSum": "testtest"},
+    {
+      "@@int2": 8,
+      "@@int1": 6
+    },
+    {
+      "@@uint1": 10,
+      "@@uint2": 12
+    },
+    {
+      "@@float2": 2.8,
+      "@@float1": 2.6
+    },
+    {
+      "@@double1": 6.66,
+      "@@double2": 11.1
+    },
+    {
+      "@@str1": "mystr1mystr1",
+      "@@str2": "mystr2mystr2"
+    }
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

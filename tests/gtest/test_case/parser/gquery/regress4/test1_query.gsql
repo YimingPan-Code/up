@@ -1,0 +1,26 @@
+use graph poc_graph
+#################################################
+# GSQL language AndAccum & OrAccum declaration  #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# variables definition with no '@'              #
+# or more than two '@'                          #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create query AndOrAccum_neg_test1() FOR GRAPH poc_graph api("v2") {
+  // test declaration of global variables
+  AndAccum andAccumVar;
+  OrAccum  orAccumVar;
+  AndAccum @@@andAccumVar1;
+  OrAccum  @@@orAccumVar1;
+
+  print andAccumVar;
+  print orAccumVar;
+  print @@@andAccumVar1;
+  print @@@orAccumVar1;
+}
+

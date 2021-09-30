@@ -1,0 +1,58 @@
+use graph poc_graph
+#################################################
+# GSQL language MaxAccum & MinAccum declaration #
+# negative test cases                           #
+# Tester: Yong Tan                              #
+#                                               #
+# Details:                                      #
+# variables definition with no '@'              #
+# or more than two '@'                          #
+#                                               #
+#################################################
+set exit_on_error = false
+
+create batch query minmaxac_neg_test1() FOR GRAPH poc_graph api("v2") {
+  MinAccum<UINT> uintMin;  // test no @ when declaring with type UINT
+  MinAccum<INT> intMin; // test no @ when declaring with type INT
+  MinAccum<FLOAT> floatMin;  // test no @ when declaring with type FLOAT
+  MinAccum<DOUBLE> doubleMin;  // test no @ when declaring with type DOUBLE
+  MinAccum<VERTEX> vertexMin;  // test no @ when declaring with type VERTEX
+  MinAccum<UINT> @@@uintMin1;  // test using @@@ when declaring with type UINT
+  MinAccum<INT> @@@intMin1; // test using @@@ when declaring with type INT
+  MinAccum<FLOAT> @@@floatMin1;  // test using @@@ when declaring with type FLOAT
+  MinAccum<DOUBLE> @@@doubleMin1;  // test using @@@ when declaring with type DOUBLE
+  MinAccum<VERTEX> @@@vertexMin1;  // test using @@@ when declaring with type VERTEX
+
+  MaxAccum<UINT> uintMax;  // test no @ when declaring with type UINT
+  MaxAccum<INT> intMax; // test no @ when declaring with type INT
+  MaxAccum<FLOAT> floatMax;  // test no @ when declaring with type FLOAT
+  MaxAccum<DOUBLE> doubleMax;  // test no @ when declaring with type DOUBLE
+  MaxAccum<VERTEX> vertexMax;  // test no @ when declaring with type VERTEX
+  MaxAccum<UINT> @@@uintMax1;  // test using @@@ when declaring with type UINT
+  MaxAccum<INT> @@@intMax1; // test using @@@ when declaring with type INT
+  MaxAccum<FLOAT> @@@floatMax1;  // test using @@@ when declaring with type FLOAT
+  MaxAccum<DOUBLE> @@@doubleMax1;  // test using @@@ when declaring with type DOUBLE
+  MaxAccum<VERTEX> @@@vertexMax1;  // test using @@@ when declaring with type VERTEX
+
+  print unitMin;
+  print intMin;
+  print floatMin;
+  print doubleMin;
+  print vertexMin;
+  print @@@uintMin1;
+  print @@@intMin1;
+  print @@@floatMin1;
+  print @@@doubleMin1;
+  print @@@vertexMin1;
+
+  print unitMax;
+  print intMax;
+  print floatMax;
+  print doubleMax;
+  print vertexMax;
+  print @@@uintMax1;
+  print @@@intMax1;
+  print @@@floatMax1;
+  print @@@doubleMax1;
+  print @@@vertexMax1;
+}

@@ -1,0 +1,6 @@
+<<<<<<< log
+{"__GTEST__PARSED":"Semantic Check Fails: the query WCC_SmallWorld doesn't exist!"}
+========
+{"error":false,"message":"","version":{"schema":0,"edition":"enterprise","api":"v2"},"results":[{"Vertices":[{"v_id":"F","attributes":{"@outdegree":1,"@visited":false,"@indegree":1,"@degree_product":1,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"},{"v_id":"E","attributes":{"@outdegree":2,"@visited":false,"@indegree":2,"@degree_product":4,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"},{"v_id":"B","attributes":{"@outdegree":2,"@visited":false,"@indegree":2,"@degree_product":4,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"},{"v_id":"D","attributes":{"@outdegree":1,"@visited":false,"@indegree":1,"@degree_product":1,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"},{"v_id":"C","attributes":{"@outdegree":1,"@visited":false,"@indegree":1,"@degree_product":1,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"},{"v_id":"A","attributes":{"@outdegree":1,"@visited":false,"@indegree":1,"@degree_product":1,"@cc_id":6215958528},"v_type":"WCC_FAST_C3"}]}]}
+>>>>>>> base
+

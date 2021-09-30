@@ -1,0 +1,47 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress3/test3.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintMin": 0},
+    {"@@intMin": 0},
+    {"@@floatMin": 0},
+    {"@@doubleMin": 0},
+    {"@@vertexMin": "c1"},
+    {"@@uintMax": 100},
+    {"@@intMax": 100},
+    {"@@floatMax": 100},
+    {"@@doubleMax": 100},
+    {"@@vertexMax": "c1"}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@uintMin": 0},
+    {"@@intMin": 0},
+    {"@@floatMin": 0},
+    {"@@doubleMin": 0},
+    {"@@vertexMin": "c1"},
+    {"@@uintMax": 100},
+    {"@@intMax": 100},
+    {"@@floatMax": 100},
+    {"@@doubleMax": 100},
+    {"@@vertexMax": "c2"}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

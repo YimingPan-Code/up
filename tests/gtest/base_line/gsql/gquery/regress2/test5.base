@@ -1,0 +1,83 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@count": 1},
+    {"str": "Initial Value:"},
+    {"@@uintSum": 0},
+    {"@@intSum": 0},
+    {"@@floatSum": 0},
+    {"@@doubleSum": 0},
+    {"@@stringSum": ""},
+    {"str": "Modified Value:"},
+    {"@@uintSum": 6},
+    {"@@intSum": 0},
+    {"@@floatSum": 11},
+    {"@@doubleSum": 14},
+    {"@@stringSum": "companycompanycompanycompanycompanycompany"}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@count": 2},
+    {"str": "Initial Value from last time we ran this query:"},
+    {"@@uintSum": 6},
+    {"@@intSum": 0},
+    {"@@floatSum": 11},
+    {"@@doubleSum": 14},
+    {"@@stringSum": "companycompanycompanycompanycompanycompany"},
+    {"str": "Modified Value:"},
+    {"@@uintSum": 11},
+    {"@@intSum": 5},
+    {"@@floatSum": 27},
+    {"@@doubleSum": 36},
+    {"@@stringSum": "companycompanycompanycompanycompanycompanycompanycompanycompanycompanycompany"}
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@count": 3},
+    {"str": "Initial Value from last time we ran this query:"},
+    {"@@uintSum": 11},
+    {"@@intSum": 5},
+    {"@@floatSum": 27},
+    {"@@doubleSum": 36},
+    {"@@stringSum": "companycompanycompanycompanycompanycompanycompanycompanycompanycompanycompany"},
+    {"str": "Modified Value:"},
+    {"@@uintSum": 16},
+    {"@@intSum": 10},
+    {"@@floatSum": 43},
+    {"@@doubleSum": 58},
+    {"@@stringSum": "companycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompanycompany"},
+    {"str": "This is the third time you call query sumac_test5. @@count will reset to 0"},
+    {"@@uintSum": 0},
+    {"@@intSum": 0},
+    {"@@floatSum": 0},
+    {"@@doubleSum": 0},
+    {"@@stringSum": ""}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,44 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_TG_DEGREE_CENT_C2.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"top_scores": [
+    {
+      "score": 2,
+      "Vertex_ID": "E"
+    },
+    {
+      "score": 2,
+      "Vertex_ID": "F"
+    },
+    {
+      "score": 2,
+      "Vertex_ID": "D"
+    },
+    {
+      "score": 2,
+      "Vertex_ID": "C"
+    },
+    {
+      "score": 2,
+      "Vertex_ID": "B"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "A"
+    },
+    {
+      "score": 1,
+      "Vertex_ID": "G"
+    }
+  ]}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

@@ -1,0 +1,29 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress676/test_SCC_SMALLWORLD_C5.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@CC_count": {
+    "3721396224": 1,
+    "3155165184": 1,
+    "5542772736": 1,
+    "4873781248": 1,
+    "4873781249": 1,
+    "3599761409": 1,
+    "3599761408": 1,
+    "4293918721": 1,
+    "5510266880": 1,
+    "4293918720": 1,
+    "5393874944": 1,
+    "5393874945": 1,
+    "5552209920": 1
+  }}]
+}
+[GTEST_JSON_END]
+[GTEST_END]

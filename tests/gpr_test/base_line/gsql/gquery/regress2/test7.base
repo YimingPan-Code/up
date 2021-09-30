@@ -1,0 +1,67 @@
+Runing bash file: ../../../../.././test_case/gsql/gquery/regress2/test7.sh
+[GTEST_BEGIN]
+[GTEST_JSON_BEGIN]
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@intSum": 1},
+    {"@@floatSum": 7.7},
+    {"@@doubleSum": 17.16},
+    {"@@stringSum": "testtest"},
+    {"@@intSum": 78},
+    {"@@floatSum": 79.2},
+    {"@@doubleSum": 170.88},
+    {"@@stringSum": "testtesttest"},
+    {
+      "@@doubleSum": 113.6,
+      "@@intSum": 30,
+      "@@floatSum": 17.6,
+      "@@stringSum": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"
+    }
+  ]
+}
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition":"enterprise",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"L0": [{
+      "v_id": "m3",
+      "attributes": {
+        "@floatsum": 0,
+        "@doublesum": 0,
+        "id": "m3",
+        "profileIndustryId": "i1",
+        "@intsum": 0,
+        "@stringsum": "test"
+      },
+      "v_type": "members"
+    }]},
+    {"L2": [{
+      "v_id": "c1",
+      "attributes": {
+        "@floatsum": 0,
+        "@doublesum": 0,
+        "company_name": "com1",
+        "nCount": 1,
+        "id": "c1",
+        "label": true,
+        "@intsum": 0,
+        "@stringsum": "test"
+      },
+      "v_type": "company"
+    }]}
+  ]
+}
+[GTEST_JSON_END]
+[GTEST_END]
