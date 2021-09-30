@@ -145,53 +145,48 @@ BOOL print_accum = TRUE, STRING file_path = "")
 
 |  Characteristic   | Value  |
 |  ----  | ----  |
-| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
-| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
+| Result  | Compute the article rank score for each vertex in the GRAPH
+ In each iteration, compute a score for each vertex:
+     score = (1-damping) + damping*average outdegree*sum(received scores FROM its neighbors/average outdegree+Outdegree).
+ The article Rank algorithm stops when either of the following is true:
+ a) it reaches max_iter iterations;
+ b) the max score change for any vertex compared to the last iteration <= max_change. |
+| Required Input Parameters  | v_type: vertex types to traverse          print_accum: print JSON output
+ e_type: edge types to traverse            result_attr: INT attr to store results to
+ max_iter; max #iterations                 file_path: file to write CSV output to
+ top_k: #top scores to output              display_edges: output edges for visualization
+ max_change: max allowed change between iterations to achieve convergence
+ damping: importance of traversal vs. random teleport|
 | Result Size  | V = number of vertices |
 | Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
-| Graph Types  | Undirected edges |
+| Graph Types  | directed edges |
 
-## Speaker-listener Label Propagation Algorithm
+## eigenvector_cent
 
 ### Description and Uses
 
-The Speaker-listener Label Propagation Algorithm (SLPA) is a variation of the Label Propagation algorithm that is able to detect overlapping communities. The main difference between LPA and SLPA is that each node can only hold a single label in LPA while it is allowed to possess multiple labels in SLPA. The algorithm begins with each vertex having its own unique label. Next we iteratively record labels in a local accumulator based on specific speaking rule and listening rule. Then the post-processing of the record labels is applied. Finally we remove the nested communities and output all the communities. Note that it is not guaranteed to produce the same results every time.
+Eigenvector Centrality is an algorithm that measures the transitive influence of nodes. Relationships originating from high-scoring nodes contribute more to the score of a node than connections from low-scoring nodes. A high eigenvector score means that a node is connected to many nodes who themselves have high scores.
+
+The algorithm computes the eigenvector associated with the largest absolute eigenvalue. To compute that eigenvalue, the algorithm applies the power iteration approach. Within each iteration, the centrality score for each node is derived from the scores of its incoming neighbors. In the power iteration method, the eigenvector is L2-normalized after each iteration, leading to normalized results by default.
+
+The PageRank algorithm is a variant of Eigenvector Centrality with an additional jump probability.
+
+
 
 ### Specifications
 
-```
-CREATE QUERY tg_slpa (SET<STRING> v_type, SET<STRING> e_type, FLOAT threshold, INT max_iter, INT output_limit, 
-BOOL print_accum = TRUE, STRING file_path = "")
-```
 
 
 |  Characteristic   | Value  |
 |  ----  | ----  |
-| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
-| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
+| Result  | centrality value |
+| Required Input Parameters  | v_type: vertex types to traverse                 
+  e_type: edge types to traverse                   
+  maxIter: max iteration
+  convLimit: convergence limitation
+  top_k: report only this many top scores          print_accum: weather print the result
+  result_attr: attribute to write result to        file_path: file to write CSV output to |
 | Result Size  | V = number of vertices |
 | Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
-| Graph Types  | Undirected edges |
-
-## Speaker-listener Label Propagation Algorithm
-
-### Description and Uses
-
-The Speaker-listener Label Propagation Algorithm (SLPA) is a variation of the Label Propagation algorithm that is able to detect overlapping communities. The main difference between LPA and SLPA is that each node can only hold a single label in LPA while it is allowed to possess multiple labels in SLPA. The algorithm begins with each vertex having its own unique label. Next we iteratively record labels in a local accumulator based on specific speaking rule and listening rule. Then the post-processing of the record labels is applied. Finally we remove the nested communities and output all the communities. Note that it is not guaranteed to produce the same results every time.
-
-### Specifications
-
-```
-CREATE QUERY tg_slpa (SET<STRING> v_type, SET<STRING> e_type, FLOAT threshold, INT max_iter, INT output_limit, 
-BOOL print_accum = TRUE, STRING file_path = "")
-```
-
-
-|  Characteristic   | Value  |
-|  ----  | ----  |
-| Result  | Assigns a list of component id (INT) to each vertex, such that members of the same component have the same id value. |
-| Required Input Parameters  | **v_type**: vertex types to traverse <br> **e_type**: edge types to traverse <br> **threshold**: threshold to drop a label <br> **max_iter**: number of iterations <br> **print_accum**: print JSON output <br> **file_path**: file to write CSV output to <br> **output_limit**: max #vertices to output (-1 = all) |
-| Result Size  | V = number of vertices |
-| Time Complexity  | O(E*k), E = number of edges, k = number of iterations. |
-| Graph Types  | Undirected edges |
+| Graph Types  | directed edges |
 
