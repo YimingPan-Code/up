@@ -123,6 +123,8 @@ RUN QUERY astar(("Kings Cross","Station"), ("Kentish Town","Station"),["CONNECTI
 <div align=center>
 <img src="astar.png"/>
 </div>
+
+
 ## Article Rank
 
 ### Description and Uses
