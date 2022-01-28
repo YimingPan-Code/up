@@ -28,3 +28,8 @@ CREATE QUERY aggregate_query(/* Parameters here */) FOR GRAPH verisk_v1 {
   
   PRINT "aggregate_query works!";
 }
+
+CREATE LOADING JOB load_job_aggregate_edge FOR GRAPH verisk_v1 {
+      DEFINE FILENAME MyDataSource;
+      LOAD MyDataSource TO EDGE agg_interactions VALUES($0, $1, $2) USING SEPARATOR=",", HEADER="false", EOL="\n";
+    }
