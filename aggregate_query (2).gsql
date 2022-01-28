@@ -1,0 +1,30 @@
+CREATE QUERY aggregate_query(/* Parameters here */) FOR GRAPH verisk_v1 {
+  /* Write query logic here
+  The aggregation logic for louvain is in two parts:
+   1) We count all interactions between involved party and service provider
+   2) We count all events for involved parties across claims*/
+  MapAccum<VERTEX<Person>,FLOAT> @map;
+  MaxAccum<VERTEX<Person>> @id;
+  MaxAccum<INT> @idd;
+  SetAccum<VERTEX<Person>> @inter;
+  SetAccum<VERTEX<Person>> @event;
+  FILE f ("/home/tigergraph/agg.csv");
+  Start = {Person.*};
+  Start = SELECT s FROM Start:s-(party_person|sp_person)-:t ACCUM t.@id+=s,t.@idd+=getvid(s);
+  party = {InvolvedParty.*};
+  party = SELECT s FROM party:s-(party_ServiceProvider)-ServiceProvider:t
+          ACCUM IF s.@idd>t.@idd THEN s.@inter+=t.@id
+                ELSE t.@inter+=s.@id END;
+  Start = SELECT s FROM Start:s-(party_person|sp_person)-:t ACCUM FOREACH i in t.@inter DO s.@map+=(i->0.7) END;
+  cl = {Claim.*};
+  cl = SELECT s FROM cl:s-(party_claim)-InvolvedParty:t ACCUM s.@event+=t.@id;
+  ev = SELECT t FROM cl:s-(claim_has_event)-Event:t ACCUM t.@event+=s.@event;
+  cl = SELECT t FROM ev:s-(claim_has_event)-Claim:t ACCUM t.@event+=s.@event;
+  cl = SELECT s FROM cl:s-(party_claim)-InvolvedParty:t ACCUM t.@event+=s.@event;
+  Start = SELECT s FROM Start:s-(party_person)-InvolvedParty:t ACCUM FOREACH i in t.@event DO IF t.@idd>getvid(i) THEN s.@map+=(i->0.8) END END;
+  Start = SELECT s FROM Start:s
+  ACCUM FOREACH (key,weight) in s.@map DO
+        f.println(s,key,weight) END;
+  
+  PRINT "aggregate_query works!";
+}
